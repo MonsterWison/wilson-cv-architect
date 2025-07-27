@@ -2,6 +2,21 @@ import { Mail, Phone, Globe, MapPin, Image } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CVHeader = () => {
+  // 處理電話點擊
+  const handlePhoneClick = () => {
+    window.open('tel:+85292269702', '_self');
+  };
+
+  // 處理郵箱點擊
+  const handleEmailClick = () => {
+    window.open('mailto:monsterbb100@gmail.com?subject=CV Inquiry', '_self');
+  };
+
+  // 處理網站點擊
+  const handleWebsiteClick = () => {
+    window.open('https://wilson-cv-architect.vercel.app', '_blank');
+  };
+
   return (
     <header className="bg-gradient-primary text-primary-foreground py-16 px-8 relative overflow-hidden">
       {/* Background decoration */}
@@ -23,22 +38,38 @@ const CVHeader = () => {
           </div>
           
           <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+            <button 
+              onClick={handlePhoneClick}
+              className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-200 cursor-pointer border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl"
+              title="Click to call"
+            >
               <Phone className="w-4 h-4" />
               <span>9226 9702</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+            </button>
+            
+            <button 
+              onClick={handleEmailClick}
+              className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-200 cursor-pointer border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl"
+              title="Click to send email"
+            >
               <Mail className="w-4 h-4" />
               <span>monsterbb100@gmail.com</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+            </button>
+            
+            <button 
+              onClick={handleWebsiteClick}
+              className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-200 cursor-pointer border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl"
+              title="Click to visit website"
+            >
               <Globe className="w-4 h-4" />
               <span>wilson-cv-architect.vercel.app</span>
-            </div>
+            </button>
+            
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
               <MapPin className="w-4 h-4" />
               <span>Hong Kong</span>
             </div>
+            
             <Link to="/portfolio">
               <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/30 transition-all duration-200 cursor-pointer border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl">
                 <Image className="w-4 h-4" />
