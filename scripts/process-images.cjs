@@ -33,9 +33,9 @@ function getImageDimensions(imagePath) {
 // 智能壓縮圖片
 function processImage(inputPath, outputPath, options = {}) {
   const {
-    maxWidth = 1200,
-    maxHeight = 1200,
-    quality = 85,
+    maxWidth = 800,  // 降低到 800px
+    maxHeight = 800, // 降低到 800px
+    quality = 75,    // 降低品質到 75%
     format = 'webp',
     stripMetadata = true
   } = options;
@@ -76,11 +76,15 @@ function processImage(inputPath, outputPath, options = {}) {
       command += ' -strip';
     }
     
-    // 優化設置
-    command += ' -define webp:method=6'; // 最高壓縮方法
-    command += ' -define webp:pass=10';   // 最高壓縮通道
+    // 更激進的 WebP 優化設置
+    command += ' -define webp:method=6';     // 最高壓縮方法
+    command += ' -define webp:pass=10';      // 最高壓縮通道
     command += ' -define webp:target-size=0'; // 自動優化
     command += ' -define webp:auto-filter=true'; // 自動濾鏡
+    command += ' -define webp:lossless=false';   // 有損壓縮
+    command += ' -define webp:near-lossless=60'; // 近無損壓縮
+    command += ' -define webp:sharp-yuv=true';   // 銳化 YUV
+    command += ' -define webp:thread-level=1';   // 單線程（更穩定）
     
     // 輸出檔案
     command += ` "${outputPath}"`;
