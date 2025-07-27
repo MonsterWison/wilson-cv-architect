@@ -75,39 +75,90 @@ const Index = () => {
 
       {/* Portfolio Showcase */}
       <CVSection title="Portfolio Showcase">
-        <Card className="shadow-soft border-l-4 border-l-blue-500 bg-gradient-to-r from-blue-50 to-indigo-50">
-          <CardContent className="p-8">
-            <div className="text-center space-y-6">
-              <div className="flex justify-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Image className="w-8 h-8 text-blue-600" />
+        <div className="space-y-6">
+          {/* Miniature Dioramas */}
+          <Card className="shadow-soft border-l-4 border-l-blue-500 bg-gradient-to-r from-blue-50 to-indigo-50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <Image className="w-6 h-6 text-blue-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    Scale Miniature Dioramas
+                  </h3>
+                  <p className="text-gray-600 mb-3">
+                    1:100 architectural models featuring fantasy buildings, detailed interiors, and intricate craftsmanship.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-sm">
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">12 Works</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">1:100 Scale</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">LED Lighting</span>
+                  </div>
                 </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Scale Miniature Diorama Construction
-                </h3>
-                <p className="text-lg text-gray-600 mb-4">
-                  Explore my collection of 1:100 architectural models, featuring fantasy buildings, 
-                  detailed interiors, and intricate craftsmanship that showcases precision modeling skills.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-                  <span className="bg-white px-3 py-1 rounded-full shadow-sm">Fantasy Architecture</span>
-                  <span className="bg-white px-3 py-1 rounded-full shadow-sm">Interior Design</span>
-                  <span className="bg-white px-3 py-1 rounded-full shadow-sm">Micro Art</span>
-                  <span className="bg-white px-3 py-1 rounded-full shadow-sm">Commercial Buildings</span>
+            </CardContent>
+          </Card>
+
+          {/* Model Painting */}
+          <Card className="shadow-soft border-l-4 border-l-green-500 bg-gradient-to-r from-green-50 to-emerald-50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <Image className="w-6 h-6 text-green-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    High-Detail Model Painting
+                  </h3>
+                  <p className="text-gray-600 mb-3">
+                    Precision acrylic painting techniques on 1:35 scale miniatures with realistic textures and effects.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-sm">
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">9 Works</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">1:35 Scale</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">Acrylic Techniques</span>
+                  </div>
                 </div>
               </div>
-              <Link to="/portfolio">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-200">
-                  <Image className="w-5 h-5 mr-2" />
-                  View Portfolio
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+
+          {/* Resin Crafts */}
+          <Card className="shadow-soft border-l-4 border-l-purple-500 bg-gradient-to-r from-purple-50 to-violet-50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                  <Image className="w-6 h-6 text-purple-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    Resin Craft Production
+                  </h3>
+                  <p className="text-gray-600 mb-3">
+                    Decorative items and stationery featuring geometric patterns, marble effects, and artistic forms.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-sm">
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">22 Works</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">1:1 Scale</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">Epoxy Resin</span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* View All Button */}
+          <div className="text-center pt-4">
+            <Link to="/portfolio">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-200">
+                <Image className="w-5 h-5 mr-2" />
+                View Complete Portfolio
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
       </CVSection>
 
       {/* Footer */}
