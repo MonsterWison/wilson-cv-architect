@@ -32,7 +32,7 @@ const CVHeader = () => {
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
               <Globe className="w-4 h-4" />
-              <span>homework7.monsterwilson.online</span>
+              <span>monsterwison.github.io/wilson-cv-architect</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
               <MapPin className="w-4 h-4" />
