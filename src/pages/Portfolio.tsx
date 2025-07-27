@@ -204,472 +204,472 @@ const photoItems: PhotoItem[] = [
     }
   },
   
-  // Model Painting (高細節模型繪畫)
+  // Model Painting (高細節模型繪畫) - Optimus Prime Series
   {
     id: "13",
-    title: "Detailed Miniature Painting - Character Portrait",
-    description: "High-detail acrylic painting showcasing intricate facial features and realistic skin tones on miniature scale",
+    title: "Optimus Prime Model Painting - Initial Base",
+    description: "Starting phase of Optimus Prime model painting with base coat and primer application",
     category: "Model Painting",
-    imageUrl: "/portfolio/model-painting/IMG_7798.webp",
+    imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-1.webp",
     date: "2024",
     details: {
       scale: "1:35",
-      materials: ["Acrylic paint", "Primer", "Fine detail brushes", "Miniature base"],
-      techniques: ["Layering", "Wet blending", "Detail highlighting", "Skin tone mixing"],
-      dimensions: "3cm × 2cm × 1cm",
-      completionTime: "2 days"
+      materials: ["Acrylic paint", "Primer", "Fine detail brushes", "Optimus Prime model"],
+      techniques: ["Base coating", "Primer application", "Surface preparation", "Color planning"],
+      dimensions: "15cm × 8cm × 6cm",
+      completionTime: "1 day"
     }
   },
   {
     id: "14",
-    title: "Miniature Figure Painting - Armor Detail",
-    description: "Precision painting of miniature armor with metallic effects and weathering techniques",
+    title: "Optimus Prime Model Painting - Primary Colors",
+    description: "Application of primary colors and base painting on Optimus Prime model",
     category: "Model Painting",
-    imageUrl: "/portfolio/model-painting/IMG_7800.webp",
+    imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-2.webp",
     date: "2024",
     details: {
       scale: "1:35",
-      materials: ["Acrylic paint", "Metallic paint", "Wash", "Miniature figure"],
-      techniques: ["Metallic painting", "Washing", "Dry brushing", "Weathering"],
-      dimensions: "4cm × 2cm × 1cm",
-      completionTime: "3 days"
+      materials: ["Acrylic paint", "Primary colors", "Detail brushes", "Optimus Prime model"],
+      techniques: ["Color blocking", "Primary color application", "Brush control", "Color mixing"],
+      dimensions: "15cm × 8cm × 6cm",
+      completionTime: "2 days"
     }
   },
   {
     id: "15",
-    title: "Detailed Miniature - Equipment Painting",
-    description: "Intricate painting of miniature equipment and accessories with realistic textures",
+    title: "Optimus Prime Model Painting - Detail Work",
+    description: "Detailed painting work on Optimus Prime model with precision brush techniques",
     category: "Model Painting",
-    imageUrl: "/portfolio/model-painting/IMG_7802.webp",
+    imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-3.webp",
     date: "2024",
     details: {
       scale: "1:35",
-      materials: ["Acrylic paint", "Detail brushes", "Wash", "Miniature accessories"],
-      techniques: ["Detail painting", "Texturing", "Washing", "Highlighting"],
-      dimensions: "2cm × 1cm × 1cm",
-      completionTime: "1 day"
+      materials: ["Acrylic paint", "Fine detail brushes", "Metallic paint", "Optimus Prime model"],
+      techniques: ["Detail painting", "Fine brush work", "Metallic effects", "Precision control"],
+      dimensions: "15cm × 8cm × 6cm",
+      completionTime: "3 days"
     }
   },
   {
     id: "16",
-    title: "Miniature Painting - Weapon Detail",
-    description: "High-detail painting of miniature weapons with metallic effects and realistic wear",
+    title: "Optimus Prime Model Painting - Metallic Effects",
+    description: "Application of metallic effects and weathering on Optimus Prime model",
     category: "Model Painting",
-    imageUrl: "/portfolio/model-painting/IMG_7804.webp",
+    imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-4.webp",
     date: "2024",
     details: {
       scale: "1:35",
-      materials: ["Acrylic paint", "Metallic paint", "Wash", "Miniature weapon"],
-      techniques: ["Metallic painting", "Weathering", "Detail work", "Washing"],
-      dimensions: "3cm × 1cm × 0.5cm",
-      completionTime: "1 day"
+      materials: ["Metallic paint", "Weathering powder", "Detail brushes", "Optimus Prime model"],
+      techniques: ["Metallic painting", "Weathering effects", "Dry brushing", "Surface texturing"],
+      dimensions: "15cm × 8cm × 6cm",
+      completionTime: "2 days"
     }
   },
   {
     id: "17",
-    title: "Detailed Miniature - Face Painting",
-    description: "Precision painting of miniature faces with realistic skin tones and expressions",
+    title: "Optimus Prime Model Painting - Advanced Details",
+    description: "Advanced detail work including panel lines and mechanical features",
     category: "Model Painting",
-    imageUrl: "/portfolio/model-painting/IMG_7816.webp",
+    imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-5.webp",
     date: "2024",
     details: {
       scale: "1:35",
-      materials: ["Acrylic paint", "Fine detail brushes", "Skin tone paint", "Miniature head"],
-      techniques: ["Skin tone painting", "Detail highlighting", "Eye painting", "Expression work"],
-      dimensions: "1cm × 1cm × 1cm",
+      materials: ["Acrylic paint", "Panel line wash", "Fine detail brushes", "Optimus Prime model"],
+      techniques: ["Panel lining", "Detail highlighting", "Wash application", "Precision work"],
+      dimensions: "15cm × 8cm × 6cm",
       completionTime: "2 days"
     }
   },
   {
     id: "18",
-    title: "Miniature Painting - Clothing Detail",
-    description: "Detailed painting of miniature clothing with realistic fabric textures and folds",
+    title: "Optimus Prime Model Painting - Weathering",
+    description: "Weathering and aging effects applied to Optimus Prime model",
     category: "Model Painting",
-    imageUrl: "/portfolio/model-painting/IMG_7818.webp",
+    imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-6.webp",
     date: "2024",
     details: {
       scale: "1:35",
-      materials: ["Acrylic paint", "Detail brushes", "Wash", "Miniature clothing"],
-      techniques: ["Fabric painting", "Folding effects", "Washing", "Highlighting"],
-      dimensions: "2cm × 1cm × 1cm",
+      materials: ["Weathering powder", "Wash", "Detail brushes", "Optimus Prime model"],
+      techniques: ["Weathering", "Aging effects", "Surface texturing", "Realistic wear"],
+      dimensions: "15cm × 8cm × 6cm",
       completionTime: "1 day"
     }
   },
   {
     id: "19",
-    title: "Detailed Miniature - Accessory Painting",
-    description: "Precision painting of miniature accessories with realistic materials and textures",
+    title: "Optimus Prime Model Painting - Final Details",
+    description: "Final detail work and finishing touches on Optimus Prime model",
     category: "Model Painting",
-    imageUrl: "/portfolio/model-painting/IMG_7820.webp",
+    imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-7.webp",
     date: "2024",
     details: {
       scale: "1:35",
-      materials: ["Acrylic paint", "Detail brushes", "Wash", "Miniature accessories"],
-      techniques: ["Detail painting", "Material texturing", "Washing", "Highlighting"],
-      dimensions: "1.5cm × 1cm × 0.5cm",
+      materials: ["Acrylic paint", "Final detail brushes", "Highlight paint", "Optimus Prime model"],
+      techniques: ["Final detailing", "Highlight application", "Quality control", "Finishing touches"],
+      dimensions: "15cm × 8cm × 6cm",
       completionTime: "1 day"
     }
   },
   {
     id: "20",
-    title: "Miniature Painting - Complete Figure",
-    description: "Fully painted miniature figure showcasing comprehensive painting techniques",
+    title: "Optimus Prime Model Painting - Complete View",
+    description: "Complete view of finished Optimus Prime model with all painting techniques applied",
     category: "Model Painting",
-    imageUrl: "/portfolio/model-painting/IMG_7822.webp",
+    imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-8.webp",
     date: "2024",
     details: {
       scale: "1:35",
-      materials: ["Acrylic paint", "Primer", "Detail brushes", "Complete miniature"],
-      techniques: ["Full figure painting", "Color theory", "Detail work", "Finishing"],
-      dimensions: "5cm × 2cm × 1cm",
+      materials: ["Complete paint set", "All detail brushes", "Finishing materials", "Optimus Prime model"],
+      techniques: ["Complete painting", "All techniques combined", "Final assembly", "Presentation ready"],
+      dimensions: "15cm × 8cm × 6cm",
       completionTime: "1 week"
     }
   },
   {
     id: "21",
-    title: "Detailed Miniature - Final Detail",
-    description: "Final detail work on miniature painting with precision highlighting and finishing touches",
+    title: "Optimus Prime Model Painting - Showcase",
+    description: "Showcase presentation of the completed Optimus Prime model painting masterpiece",
     category: "Model Painting",
-    imageUrl: "/portfolio/model-painting/IMG_7824.webp",
+    imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-9.webp",
     date: "2024",
     details: {
       scale: "1:35",
-      materials: ["Acrylic paint", "Fine detail brushes", "Highlight paint", "Miniature"],
-      techniques: ["Final highlighting", "Detail refinement", "Quality control", "Finishing"],
-      dimensions: "4cm × 2cm × 1cm",
-      completionTime: "1 day"
+      materials: ["Complete paint set", "All detail brushes", "Showcase materials", "Optimus Prime model"],
+      techniques: ["Masterpiece creation", "Technical excellence", "Presentation quality", "Professional finish"],
+      dimensions: "15cm × 8cm × 6cm",
+      completionTime: "1 week"
     }
   },
   
-  // Resin Crafts (樹脂工藝品)
+  // Resin Crafts (樹脂工藝品) - 各種精美作品
   {
     id: "22",
-    title: "Resin Decorative Piece - Geometric Design",
-    description: "Handcrafted resin decorative item featuring intricate geometric patterns and color blending",
+    title: "Crystal Flower Hairpin",
+    description: "Elegant crystal flower hairpin with delicate resin petals and shimmering effects",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_7985.webp",
+    imageUrl: "/portfolio/resin-crafts/Crystal-Flower-Hairpin.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Pigments", "Molds", "Catalyst"],
-      techniques: ["Resin casting", "Color mixing", "Mold preparation", "Curing"],
-      dimensions: "15cm × 10cm × 2cm",
+      materials: ["Epoxy resin", "Crystal powder", "Flower mold", "Hairpin base"],
+      techniques: ["Resin casting", "Crystal effects", "Flower shaping", "Delicate work"],
+      dimensions: "8cm × 4cm × 1cm",
       completionTime: "2 days"
     }
   },
   {
     id: "23",
-    title: "Resin Stationery - Desk Organizer",
-    description: "Functional resin desk organizer with embedded decorative elements and smooth finish",
+    title: "Light-up Cat Claw Keychain",
+    description: "Glowing cat claw keychain with LED lighting and resin encapsulation",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8020.webp",
+    imageUrl: "/portfolio/resin-crafts/Light-up-cat-claw-keychain-1.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Embedded objects", "Mold", "Catalyst"],
-      techniques: ["Resin casting", "Embedding", "Mold making", "Finishing"],
-      dimensions: "12cm × 8cm × 3cm",
+      materials: ["Epoxy resin", "LED lights", "Cat claw mold", "Keychain hardware"],
+      techniques: ["Resin casting", "LED integration", "Light effects", "Electronics"],
+      dimensions: "6cm × 3cm × 1.5cm",
       completionTime: "3 days"
     }
   },
   {
     id: "24",
-    title: "Resin Art Piece - Abstract Design",
-    description: "Abstract resin art piece with flowing colors and organic patterns",
+    title: "Light-up Cat Claw Keychain - Variant",
+    description: "Alternative design of light-up cat claw keychain with different color scheme",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8026.webp",
+    imageUrl: "/portfolio/resin-crafts/Light-up-cat-claw-keychain-2.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Alcohol inks", "Canvas", "Catalyst"],
-      techniques: ["Resin pouring", "Alcohol ink effects", "Swirling", "Curing"],
-      dimensions: "20cm × 15cm × 0.5cm",
-      completionTime: "2 days"
-    }
-  },
-  {
-    id: "25",
-    title: "Resin Decoration - Marble Effect",
-    description: "Resin decorative piece with realistic marble effect and smooth polished surface",
-    category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8027.webp",
-    date: "2024",
-    details: {
-      scale: "1:1",
-      materials: ["Epoxy resin", "Marble powder", "Pigments", "Mold"],
-      techniques: ["Marble effect", "Color mixing", "Casting", "Polishing"],
-      dimensions: "18cm × 12cm × 2cm",
+      materials: ["Epoxy resin", "LED lights", "Cat claw mold", "Keychain hardware"],
+      techniques: ["Resin casting", "LED integration", "Color variation", "Electronics"],
+      dimensions: "6cm × 3cm × 1.5cm",
       completionTime: "3 days"
     }
   },
   {
-    id: "26",
-    title: "Resin Art - Ocean Wave Effect",
-    description: "Resin art piece featuring realistic ocean wave effects with depth and movement",
+    id: "25",
+    title: "Miniature Crystal Decoration",
+    description: "Miniature crystal decoration with intricate details and sparkling effects",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8033.webp",
+    imageUrl: "/portfolio/resin-crafts/Miniature-crystal-decoration.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Ocean pigments", "Wave effects", "Mold"],
-      techniques: ["Wave effects", "Layering", "Color blending", "Curing"],
-      dimensions: "25cm × 15cm × 3cm",
-      completionTime: "4 days"
+      materials: ["Epoxy resin", "Crystal powder", "Miniature mold", "Decorative base"],
+      techniques: ["Resin casting", "Miniature work", "Crystal effects", "Detail precision"],
+      dimensions: "5cm × 3cm × 2cm",
+      completionTime: "2 days"
+    }
+  },
+  {
+    id: "26",
+    title: "Cabbage Keychain",
+    description: "Whimsical cabbage-shaped keychain with realistic vegetable texture",
+    category: "Resin Crafts",
+    imageUrl: "/portfolio/resin-crafts/Cabbage-keychain.webp",
+    date: "2024",
+    details: {
+      scale: "1:1",
+      materials: ["Epoxy resin", "Green pigments", "Cabbage mold", "Keychain hardware"],
+      techniques: ["Resin casting", "Vegetable texture", "Realistic coloring", "Organic shape"],
+      dimensions: "4cm × 3cm × 2cm",
+      completionTime: "2 days"
     }
   },
   {
     id: "27",
-    title: "Resin Decoration - Crystal Effect",
-    description: "Resin decorative piece with crystal-like effects and geometric facets",
+    title: "Crystal Butterfly Hairpin",
+    description: "Beautiful crystal butterfly hairpin with delicate wings and shimmering effects",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8035.webp",
+    imageUrl: "/portfolio/resin-crafts/Crystal-Butterfly-Hairpin.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Crystal pigments", "Faceted mold", "Catalyst"],
-      techniques: ["Crystal effects", "Faceting", "Color layering", "Polishing"],
-      dimensions: "10cm × 8cm × 4cm",
+      materials: ["Epoxy resin", "Crystal powder", "Butterfly mold", "Hairpin base"],
+      techniques: ["Resin casting", "Butterfly shaping", "Crystal effects", "Delicate wings"],
+      dimensions: "10cm × 6cm × 1cm",
       completionTime: "3 days"
     }
   },
   {
     id: "28",
-    title: "Resin Art - Galaxy Effect",
-    description: "Resin art piece featuring deep space galaxy effects with stars and nebula",
+    title: "Gum Gourmet Pot",
+    description: "Decorative gum gourmet pot with resin coating and artistic design",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8096.webp",
+    imageUrl: "/portfolio/resin-crafts/Gum-Gourmet-Pot.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Galaxy pigments", "Glitter", "Mold"],
-      techniques: ["Galaxy effects", "Star placement", "Color blending", "Curing"],
-      dimensions: "22cm × 16cm × 2cm",
-      completionTime: "3 days"
+      materials: ["Epoxy resin", "Pot base", "Decorative elements", "Food-safe coating"],
+      techniques: ["Resin coating", "Pot decoration", "Food-safe finish", "Artistic design"],
+      dimensions: "8cm × 6cm × 4cm",
+      completionTime: "2 days"
     }
   },
   {
     id: "29",
-    title: "Resin Decoration - Landscape Scene",
-    description: "Resin decorative piece featuring miniature landscape scene with depth",
+    title: "Light-up Quicksand Cat Paw Keychain",
+    description: "Interactive quicksand cat paw keychain with LED lighting and flowing effects",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8098.webp",
+    imageUrl: "/portfolio/resin-crafts/Light-up-Quicksand-Cat-Paw-Keychain.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Landscape elements", "Pigments", "Mold"],
-      techniques: ["Landscape creation", "Layering", "Depth effects", "Curing"],
-      dimensions: "20cm × 12cm × 3cm",
+      materials: ["Epoxy resin", "LED lights", "Quicksand effect", "Cat paw mold"],
+      techniques: ["Resin casting", "Quicksand effects", "LED integration", "Interactive design"],
+      dimensions: "7cm × 4cm × 2cm",
       completionTime: "4 days"
     }
   },
   {
     id: "30",
-    title: "Resin Art - Abstract Flow",
-    description: "Abstract resin art with flowing organic patterns and vibrant colors",
+    title: "Luminous Bottle Keychain",
+    description: "Glowing bottle keychain with LED lighting and resin encapsulation",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8155.webp",
+    imageUrl: "/portfolio/resin-crafts/Luminous-bottle-keychain-1.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Flow pigments", "Canvas", "Catalyst"],
-      techniques: ["Flow effects", "Color mixing", "Organic patterns", "Curing"],
-      dimensions: "18cm × 14cm × 0.5cm",
-      completionTime: "2 days"
+      materials: ["Epoxy resin", "LED lights", "Bottle mold", "Keychain hardware"],
+      techniques: ["Resin casting", "LED integration", "Bottle shaping", "Light effects"],
+      dimensions: "5cm × 2cm × 1.5cm",
+      completionTime: "3 days"
     }
   },
   {
     id: "31",
-    title: "Resin Decoration - Geometric Pattern",
-    description: "Resin decorative piece with precise geometric patterns and clean lines",
+    title: "Luminous Bottle Keychain - Variant",
+    description: "Alternative luminous bottle keychain with different lighting pattern",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8157.webp",
+    imageUrl: "/portfolio/resin-crafts/Luminous-bottle-keychain-2.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Geometric molds", "Pigments", "Catalyst"],
-      techniques: ["Geometric casting", "Pattern creation", "Color separation", "Finishing"],
-      dimensions: "12cm × 10cm × 2cm",
-      completionTime: "2 days"
+      materials: ["Epoxy resin", "LED lights", "Bottle mold", "Keychain hardware"],
+      techniques: ["Resin casting", "LED integration", "Light pattern", "Bottle design"],
+      dimensions: "5cm × 2cm × 1.5cm",
+      completionTime: "3 days"
     }
   },
   {
     id: "32",
-    title: "Resin Art - Color Gradient",
-    description: "Resin art piece with smooth color gradients and modern aesthetic",
+    title: "Luminous Cat Keychain",
+    description: "Glowing cat keychain with LED lighting and cute feline design",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8159.webp",
+    imageUrl: "/portfolio/resin-crafts/Luminous-cat-keychain-1.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Gradient pigments", "Canvas", "Catalyst"],
-      techniques: ["Gradient effects", "Color blending", "Smooth transitions", "Curing"],
-      dimensions: "16cm × 12cm × 0.5cm",
-      completionTime: "2 days"
+      materials: ["Epoxy resin", "LED lights", "Cat mold", "Keychain hardware"],
+      techniques: ["Resin casting", "LED integration", "Cat design", "Light effects"],
+      dimensions: "6cm × 3cm × 1.5cm",
+      completionTime: "3 days"
     }
   },
   {
     id: "33",
-    title: "Resin Decoration - Organic Form",
-    description: "Resin decorative piece with organic flowing forms and natural textures",
+    title: "Luminous Cat Keychain - Variant",
+    description: "Alternative luminous cat keychain with different cat pose",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8187.webp",
+    imageUrl: "/portfolio/resin-crafts/Luminous-cat-keychain-2.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Organic molds", "Natural pigments", "Catalyst"],
-      techniques: ["Organic casting", "Texture creation", "Natural effects", "Finishing"],
-      dimensions: "15cm × 10cm × 3cm",
+      materials: ["Epoxy resin", "LED lights", "Cat mold", "Keychain hardware"],
+      techniques: ["Resin casting", "LED integration", "Cat pose", "Light effects"],
+      dimensions: "6cm × 3cm × 1.5cm",
       completionTime: "3 days"
     }
   },
   {
     id: "34",
-    title: "Resin Art - Modern Abstract",
-    description: "Modern abstract resin art with contemporary design elements",
+    title: "Miniature Crystal Suitcase",
+    description: "Charming miniature crystal suitcase with detailed luggage design",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8221.webp",
+    imageUrl: "/portfolio/resin-crafts/Miniature-crystal-suitcase.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Modern pigments", "Canvas", "Catalyst"],
-      techniques: ["Abstract design", "Modern aesthetics", "Color composition", "Curing"],
-      dimensions: "14cm × 11cm × 0.5cm",
+      materials: ["Epoxy resin", "Crystal powder", "Suitcase mold", "Miniature details"],
+      techniques: ["Resin casting", "Miniature work", "Crystal effects", "Luggage design"],
+      dimensions: "4cm × 3cm × 2cm",
       completionTime: "2 days"
     }
   },
   {
     id: "35",
-    title: "Resin Decoration - Complex Pattern",
-    description: "Resin decorative piece with complex intricate patterns and detailed work",
+    title: "Shells for Decoration - Set 1",
+    description: "Beautiful shell decorations with natural patterns and resin coating",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8237.webp",
+    imageUrl: "/portfolio/resin-crafts/Shells-for-decoration-1.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Complex molds", "Detail pigments", "Catalyst"],
-      techniques: ["Complex casting", "Detail work", "Pattern precision", "Finishing"],
-      dimensions: "18cm × 13cm × 2cm",
-      completionTime: "4 days"
+      materials: ["Natural shells", "Epoxy resin", "Decorative base", "Natural preservation"],
+      techniques: ["Shell preservation", "Resin coating", "Natural patterns", "Decorative arrangement"],
+      dimensions: "Various sizes",
+      completionTime: "2 days"
     }
   },
   {
     id: "36",
-    title: "Resin Art - Minimalist Design",
-    description: "Minimalist resin art piece with clean lines and subtle color variations",
+    title: "Shells for Decoration - Set 2",
+    description: "Second set of shell decorations with different arrangements and patterns",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8283.webp",
+    imageUrl: "/portfolio/resin-crafts/Shells-for-decoration-2.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Minimal pigments", "Canvas", "Catalyst"],
-      techniques: ["Minimalist design", "Clean lines", "Subtle effects", "Curing"],
-      dimensions: "20cm × 15cm × 0.5cm",
+      materials: ["Natural shells", "Epoxy resin", "Decorative base", "Natural preservation"],
+      techniques: ["Shell preservation", "Resin coating", "Pattern arrangement", "Natural beauty"],
+      dimensions: "Various sizes",
       completionTime: "2 days"
     }
   },
   {
     id: "37",
-    title: "Resin Decoration - Small Detail",
-    description: "Small detailed resin decoration with precision work and fine finish",
+    title: "Shells for Decoration - Set 3",
+    description: "Third set of shell decorations with unique arrangements and natural beauty",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8308.webp",
+    imageUrl: "/portfolio/resin-crafts/Shells-for-decoration-3.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Detail molds", "Fine pigments", "Catalyst"],
-      techniques: ["Detail casting", "Precision work", "Fine finishing", "Quality control"],
-      dimensions: "8cm × 6cm × 1cm",
-      completionTime: "1 day"
+      materials: ["Natural shells", "Epoxy resin", "Decorative base", "Natural preservation"],
+      techniques: ["Shell preservation", "Resin coating", "Unique arrangement", "Natural patterns"],
+      dimensions: "Various sizes",
+      completionTime: "2 days"
     }
   },
   {
     id: "38",
-    title: "Resin Art - Contemporary Style",
-    description: "Contemporary resin art piece with modern design and vibrant colors",
+    title: "Teardrop Keychain",
+    description: "Elegant teardrop-shaped keychain with crystal-like effects and smooth finish",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8529.webp",
+    imageUrl: "/portfolio/resin-crafts/Teardrop-Keychain.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Contemporary pigments", "Canvas", "Catalyst"],
-      techniques: ["Contemporary design", "Modern aesthetics", "Color vibrancy", "Curing"],
-      dimensions: "22cm × 16cm × 0.5cm",
-      completionTime: "3 days"
+      materials: ["Epoxy resin", "Crystal powder", "Teardrop mold", "Keychain hardware"],
+      techniques: ["Resin casting", "Teardrop shaping", "Crystal effects", "Smooth finish"],
+      dimensions: "5cm × 2cm × 1cm",
+      completionTime: "2 days"
     }
   },
   {
     id: "39",
-    title: "Resin Decoration - Artistic Form",
-    description: "Artistic resin decoration with unique form and creative expression",
+    title: "Butterfly Hairpin - Design 1",
+    description: "Beautiful butterfly hairpin with delicate wings and artistic design",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8535.webp",
+    imageUrl: "/portfolio/resin-crafts/butterfly-hairpin-1.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Artistic molds", "Creative pigments", "Catalyst"],
-      techniques: ["Artistic casting", "Creative expression", "Form design", "Finishing"],
-      dimensions: "16cm × 12cm × 3cm",
+      materials: ["Epoxy resin", "Butterfly mold", "Hairpin base", "Decorative elements"],
+      techniques: ["Resin casting", "Butterfly design", "Delicate wings", "Artistic work"],
+      dimensions: "12cm × 8cm × 1cm",
       completionTime: "3 days"
     }
   },
   {
     id: "40",
-    title: "Resin Art - Dynamic Composition",
-    description: "Dynamic resin art piece with energetic composition and bold colors",
+    title: "Butterfly Hairpin - Design 2",
+    description: "Alternative butterfly hairpin design with different wing patterns",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8536.webp",
+    imageUrl: "/portfolio/resin-crafts/butterfly-hairpin-2.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Dynamic pigments", "Canvas", "Catalyst"],
-      techniques: ["Dynamic composition", "Energetic design", "Bold colors", "Curing"],
-      dimensions: "19cm × 14cm × 0.5cm",
-      completionTime: "2 days"
+      materials: ["Epoxy resin", "Butterfly mold", "Hairpin base", "Decorative elements"],
+      techniques: ["Resin casting", "Butterfly design", "Wing patterns", "Artistic variation"],
+      dimensions: "12cm × 8cm × 1cm",
+      completionTime: "3 days"
     }
   },
   {
     id: "41",
-    title: "Resin Decoration - Large Scale Piece",
-    description: "Large scale resin decorative piece with impressive presence and detail",
+    title: "Crystal Comb",
+    description: "Elegant crystal comb with resin coating and decorative elements",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8613.webp",
+    imageUrl: "/portfolio/resin-crafts/crystal-comb.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Large molds", "Scale pigments", "Catalyst"],
-      techniques: ["Large scale casting", "Presence creation", "Detail work", "Finishing"],
-      dimensions: "30cm × 20cm × 4cm",
-      completionTime: "5 days"
+      materials: ["Epoxy resin", "Crystal powder", "Comb base", "Decorative elements"],
+      techniques: ["Resin casting", "Crystal effects", "Comb design", "Functional art"],
+      dimensions: "15cm × 4cm × 1cm",
+      completionTime: "2 days"
     }
   },
   {
     id: "42",
-    title: "Resin Art - Masterpiece Detail",
-    description: "Detailed view of resin art masterpiece showcasing technical excellence",
+    title: "Flower Hairpin",
+    description: "Delicate flower hairpin with realistic petals and natural colors",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8630.webp",
+    imageUrl: "/portfolio/resin-crafts/flower-hairpin.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Master pigments", "Canvas", "Catalyst"],
-      techniques: ["Masterpiece creation", "Technical excellence", "Detail perfection", "Curing"],
-      dimensions: "25cm × 18cm × 0.5cm",
-      completionTime: "4 days"
+      materials: ["Epoxy resin", "Flower mold", "Natural pigments", "Hairpin base"],
+      techniques: ["Resin casting", "Flower shaping", "Natural colors", "Petal detail"],
+      dimensions: "10cm × 6cm × 1cm",
+      completionTime: "3 days"
     }
   },
   {
     id: "43",
-    title: "Resin Decoration - Final Showcase",
-    description: "Final showcase piece representing the pinnacle of resin craft techniques",
+    title: "Labubu Charm",
+    description: "Cute Labubu character charm with resin encapsulation and detailed design",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/IMG_8631.webp",
+    imageUrl: "/portfolio/resin-crafts/labubu-charm.webp",
     date: "2024",
     details: {
       scale: "1:1",
-      materials: ["Epoxy resin", "Premium pigments", "Showcase molds", "Catalyst"],
-      techniques: ["Showcase creation", "Premium finish", "Technical mastery", "Presentation"],
-      dimensions: "28cm × 22cm × 3cm",
-      completionTime: "6 days"
+      materials: ["Epoxy resin", "Labubu figure", "Charm hardware", "Decorative elements"],
+      techniques: ["Resin casting", "Character design", "Charm making", "Detail work"],
+      dimensions: "3cm × 2cm × 1cm",
+      completionTime: "2 days"
     }
   }
 ];
