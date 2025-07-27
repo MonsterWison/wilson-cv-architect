@@ -121,14 +121,14 @@ const Portfolio = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Link to="/">
-                <Button variant="ghost" size="sm" className="gap-2">
+                <Button variant="default" size="sm" className="gap-2 bg-primary hover:bg-primary/90 shadow-md">
                   <ArrowLeft className="w-4 h-4" />
-                  Back to CV
+                  ← Back to CV
                 </Button>
               </Link>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Portfolio</h1>
-                <p className="text-sm text-gray-600">Ho Wai Shun Wilson - Professional Work</p>
+                <h1 className="text-3xl font-bold text-gray-900">Portfolio</h1>
+                <p className="text-sm text-gray-600 mt-1">Ho Wai Shun Wilson - Scale Miniature Diorama Construction (1:100 Architectural Models)</p>
               </div>
             </div>
           </div>

@@ -40,9 +40,10 @@ const CVHeader = () => {
               <span>Hong Kong</span>
             </div>
             <Link to="/portfolio">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-colors cursor-pointer">
+              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/30 transition-all duration-200 cursor-pointer border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl">
                 <Image className="w-4 h-4" />
-                <span>Portfolio</span>
+                <span className="font-medium">Portfolio</span>
+                <span className="text-xs opacity-80">→</span>
               </div>
             </Link>
           </div>
