@@ -470,7 +470,7 @@ const photoItems: PhotoItem[] = [
     title: "Light-up Quicksand Cat Paw Keychain",
     description: "Interactive quicksand cat paw keychain with LED lighting and flowing effects",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/Light-up-Quicksand-Cat-Paw-Keychain.webp",
+    imageUrl: "/portfolio/resin-crafts/Quicksand-Cat-Paw-Keychain.webp",
     date: "2024",
     details: {
       scale: "1:1",
@@ -485,7 +485,7 @@ const photoItems: PhotoItem[] = [
     title: "Luminous Bottle Keychain",
     description: "Glowing bottle keychain with LED lighting and resin encapsulation",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/Luminous-bottle-keychain-1.webp",
+    imageUrl: "/portfolio/resin-crafts/Bottle-keychain-1.webp",
     date: "2024",
     details: {
       scale: "1:1",
@@ -500,7 +500,7 @@ const photoItems: PhotoItem[] = [
     title: "Luminous Bottle Keychain - Variant",
     description: "Alternative luminous bottle keychain with different lighting pattern",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/Luminous-bottle-keychain-2.webp",
+    imageUrl: "/portfolio/resin-crafts/Bottle-keychain-2.webp",
     date: "2024",
     details: {
       scale: "1:1",
@@ -515,7 +515,7 @@ const photoItems: PhotoItem[] = [
     title: "Luminous Cat Keychain",
     description: "Glowing cat keychain with LED lighting and cute feline design",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/Luminous-cat-keychain-1.webp",
+    imageUrl: "/portfolio/resin-crafts/Cat-keychain-1.webp",
     date: "2024",
     details: {
       scale: "1:1",
@@ -530,7 +530,7 @@ const photoItems: PhotoItem[] = [
     title: "Luminous Cat Keychain - Variant",
     description: "Alternative luminous cat keychain with different cat pose",
     category: "Resin Crafts",
-    imageUrl: "/portfolio/resin-crafts/Luminous-cat-keychain-2.webp",
+    imageUrl: "/portfolio/resin-crafts/Cat-keychain-2.webp",
     date: "2024",
     details: {
       scale: "1:1",
