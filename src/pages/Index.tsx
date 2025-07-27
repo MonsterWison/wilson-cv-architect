@@ -99,12 +99,12 @@ const Index = () => {
                     <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">AI Integration</span>
                   </div>
                 </div>
-                <Link to="/portfolio">
+                <a href="https://apps.apple.com/hk/app/attraction-finder/id6748924079" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-                    View Complete Portfolio
+                    View on App Store
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
               </div>
             </CardContent>
           </Card>
@@ -132,12 +132,12 @@ const Index = () => {
                     <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">Python</span>
                   </div>
                 </div>
-                <Link to="/portfolio">
+                <a href="https://homework7.monsterwilson.online/" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-purple-500 hover:bg-purple-600 text-white">
-                    View Complete Portfolio
+                    View LLM Project
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
+                </a>
               </div>
             </CardContent>
           </Card>
