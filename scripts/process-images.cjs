@@ -112,6 +112,7 @@ function processImages(inputDir, outputDir) {
   
   if (!fs.existsSync(inputDir)) {
     console.log(`❌ 輸入目錄不存在: ${inputDir}`);
+    console.log(`📁 請創建目錄: mkdir -p ${inputDir}`);
     return;
   }
 
@@ -123,6 +124,8 @@ function processImages(inputDir, outputDir) {
 
   if (imageFiles.length === 0) {
     console.log('❌ 沒有找到支援的圖片檔案');
+    console.log('📋 支援的格式: JPG, JPEG, PNG, BMP, TIFF, TIF');
+    console.log('📁 請將照片放入 images/ 目錄');
     return;
   }
 
@@ -136,6 +139,7 @@ function processImages(inputDir, outputDir) {
   imageFiles.forEach((file, index) => {
     const inputPath = path.join(inputDir, file);
     const nameWithoutExt = path.parse(file).name;
+    // 使用原始檔案名稱，不強制重命名
     const outputPath = path.join(outputDir, `${nameWithoutExt}.webp`);
     
     console.log(`\n🔄 處理中 (${index + 1}/${imageFiles.length}): ${file}`);
@@ -160,6 +164,13 @@ function processImages(inputDir, outputDir) {
   console.log(`📁 輸出目錄: ${outputDir}`);
   console.log(`📊 總大小: ${totalInputSizeMB}MB → ${totalOutputSizeMB}MB (壓縮 ${totalCompressionRatio}%)`);
   console.log(`💾 節省空間: ${(totalInputSize - totalOutputSize) / (1024 * 1024)}MB`);
+  
+  if (successCount > 0) {
+    console.log('\n🚀 下一步：');
+    console.log('1. 更新 src/pages/Portfolio.tsx 中的 imageUrl 路徑');
+    console.log('2. 運行 npm run build');
+    console.log('3. 推送到 GitHub 部署到 Vercel');
+  }
 }
 
 // 主函數
