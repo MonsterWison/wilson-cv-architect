@@ -132,7 +132,7 @@ const Index = () => {
                     1:100 architectural models featuring fantasy buildings, detailed interiors, and intricate craftsmanship.
                   </p>
                   <div className="flex flex-wrap gap-2 text-sm">
-                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">12 Works</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">27 Works</span>
                     <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">1:100 Scale</span>
                     <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">LED Lighting</span>
                   </div>

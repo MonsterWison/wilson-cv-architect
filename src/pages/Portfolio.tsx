@@ -689,6 +689,329 @@ const photoItems: PhotoItem[] = [
       dimensions: "3cm × 2cm × 1cm",
       completionTime: "2 days"
     }
+  },
+  
+  // Additional Miniature Dioramas - Magic School Series
+  {
+    id: "44",
+    title: "Magic School - HELEVORN SCHOOL OF MAGIC",
+    description: "Magical academy building with mystical architecture and enchanting atmosphere",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-1.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Stone texture", "LED lights", "Acrylic paint"],
+      techniques: ["Gothic architecture", "Stone texturing", "Magical lighting", "Weathering"],
+      dimensions: "40cm × 30cm × 25cm",
+      completionTime: "6 weeks"
+    }
+  },
+  {
+    id: "45",
+    title: "Magic School - Tower View",
+    description: "Majestic tower of the magical academy with intricate stonework and mystical elements",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-2.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Stone texture", "Metal wire", "Acrylic paint"],
+      techniques: ["Tower construction", "Stone carving", "Metal working", "Detail painting"],
+      dimensions: "25cm × 20cm × 35cm",
+      completionTime: "4 weeks"
+    }
+  },
+  {
+    id: "46",
+    title: "Magic School - Courtyard",
+    description: "Peaceful courtyard with magical gardens and architectural details",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-3.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Moss", "Stone texture", "Acrylic paint"],
+      techniques: ["Landscaping", "Garden design", "Stone work", "Natural effects"],
+      dimensions: "35cm × 30cm × 20cm",
+      completionTime: "3 weeks"
+    }
+  },
+  {
+    id: "47",
+    title: "Magic School - Library Wing",
+    description: "Scholarly library section with bookshelves and magical study areas",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-4.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Fabric", "Miniature books", "Acrylic paint"],
+      techniques: ["Interior design", "Furniture making", "Book detailing", "Lighting effects"],
+      dimensions: "30cm × 25cm × 20cm",
+      completionTime: "4 weeks"
+    }
+  },
+  {
+    id: "48",
+    title: "Magic School - Entrance Hall",
+    description: "Grand entrance with magical portals and mystical decorations",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-5.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Crystal elements", "LED lights", "Acrylic paint"],
+      techniques: ["Portal design", "Crystal work", "Magical lighting", "Architectural detail"],
+      dimensions: "35cm × 30cm × 25cm",
+      completionTime: "5 weeks"
+    }
+  },
+  {
+    id: "49",
+    title: "Magic School - Dormitory Wing",
+    description: "Student living quarters with cozy rooms and magical atmosphere",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-6.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Fabric", "Miniature furniture", "Acrylic paint"],
+      techniques: ["Room design", "Furniture making", "Texturing", "Cozy atmosphere"],
+      dimensions: "40cm × 25cm × 20cm",
+      completionTime: "4 weeks"
+    }
+  },
+  {
+    id: "50",
+    title: "Magic School - Study Room",
+    description: "Intimate study space with magical books and learning materials",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-7.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Miniature books", "Fabric", "Acrylic paint"],
+      techniques: ["Study design", "Book detailing", "Furniture work", "Academic atmosphere"],
+      dimensions: "20cm × 15cm × 15cm",
+      completionTime: "2 weeks"
+    }
+  },
+  {
+    id: "51",
+    title: "Magic School - Exterior View",
+    description: "Complete exterior view of the magical academy with all architectural elements",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-8.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Stone texture", "Moss", "Acrylic paint"],
+      techniques: ["Exterior design", "Stone work", "Landscaping", "Weathering"],
+      dimensions: "50cm × 40cm × 30cm",
+      completionTime: "8 weeks"
+    }
+  },
+  {
+    id: "52",
+    title: "Magic School - Aerial View",
+    description: "Bird's eye view showing the complete layout and magical gardens",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-9.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Moss", "Stone texture", "Acrylic paint"],
+      techniques: ["Layout design", "Garden planning", "Aerial perspective", "Landscaping"],
+      dimensions: "60cm × 50cm × 25cm",
+      completionTime: "6 weeks"
+    }
+  },
+  {
+    id: "53",
+    title: "Magic School - Detail View",
+    description: "Close-up of architectural details and magical elements",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-10.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Stone texture", "Metal wire", "Acrylic paint"],
+      techniques: ["Detail work", "Stone carving", "Metal working", "Fine painting"],
+      dimensions: "15cm × 10cm × 8cm",
+      completionTime: "1 week"
+    }
+  },
+  
+  // Additional Miniature Dioramas - Magical Study Series
+  {
+    id: "54",
+    title: "Magical Study - Main Chamber",
+    description: "Enchanted study room with mystical books and magical artifacts",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/agical-study-1.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Miniature books", "Crystal elements", "Acrylic paint"],
+      techniques: ["Study design", "Book detailing", "Crystal work", "Magical atmosphere"],
+      dimensions: "25cm × 20cm × 15cm",
+      completionTime: "3 weeks"
+    }
+  },
+  {
+    id: "55",
+    title: "Magical Study - Library Corner",
+    description: "Cozy library nook with ancient tomes and magical scrolls",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/agical-study-2.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Fabric", "Miniature books", "Acrylic paint"],
+      techniques: ["Library design", "Book making", "Fabric work", "Cozy atmosphere"],
+      dimensions: "20cm × 15cm × 12cm",
+      completionTime: "2 weeks"
+    }
+  },
+  {
+    id: "56",
+    title: "Magical Study - Workbench",
+    description: "Magical workbench with potions, tools, and mystical equipment",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/agical-study-3.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Metal wire", "Miniature tools", "Acrylic paint"],
+      techniques: ["Workbench design", "Tool making", "Metal work", "Detail painting"],
+      dimensions: "15cm × 10cm × 8cm",
+      completionTime: "2 weeks"
+    }
+  },
+  {
+    id: "57",
+    title: "Magical Study - Potion Shelf",
+    description: "Organized shelf with colorful potions and magical ingredients",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/agical-study-4.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Glass beads", "Colored resin", "Acrylic paint"],
+      techniques: ["Shelf design", "Potion making", "Glass work", "Color effects"],
+      dimensions: "12cm × 8cm × 6cm",
+      completionTime: "1 week"
+    }
+  },
+  {
+    id: "58",
+    title: "Magical Study - Artifact Display",
+    description: "Collection of magical artifacts and enchanted objects",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/agical-study-5.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Metal wire", "Crystal elements", "Acrylic paint"],
+      techniques: ["Artifact design", "Metal working", "Crystal work", "Detail painting"],
+      dimensions: "10cm × 8cm × 5cm",
+      completionTime: "1 week"
+    }
+  },
+  
+  // Additional Miniature Dioramas - Walnut Bedroom Series
+  {
+    id: "59",
+    title: "Walnut Bedroom - Main View",
+    description: "Elegant bedroom with walnut furniture and warm lighting",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-1.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Walnut veneer", "Fabric", "Acrylic paint"],
+      techniques: ["Bedroom design", "Furniture making", "Fabric work", "Warm lighting"],
+      dimensions: "25cm × 20cm × 15cm",
+      completionTime: "3 weeks"
+    }
+  },
+  {
+    id: "60",
+    title: "Walnut Bedroom - Detail View",
+    description: "Close-up of the elegant walnut furniture and bedding details",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-2.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Walnut veneer", "Fabric", "Acrylic paint"],
+      techniques: ["Furniture detail", "Wood finishing", "Fabric detail", "Fine painting"],
+      dimensions: "15cm × 12cm × 10cm",
+      completionTime: "2 weeks"
+    }
+  },
+  {
+    id: "61",
+    title: "Walnut Bedroom - Corner View",
+    description: "Intimate corner view showing the cozy atmosphere and fine craftsmanship",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-3.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Walnut veneer", "Fabric", "Acrylic paint"],
+      techniques: ["Corner design", "Wood work", "Fabric detail", "Atmosphere creation"],
+      dimensions: "12cm × 10cm × 8cm",
+      completionTime: "1 week"
+    }
+  },
+  
+  // Additional Waterfront Workshop Series
+  {
+    id: "62",
+    title: "Waterfront Workshop - Workshop Detail",
+    description: "Detailed view of the workshop area with tools and equipment",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-4.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Metal wire", "Miniature tools", "Acrylic paint"],
+      techniques: ["Workshop detail", "Tool making", "Metal work", "Equipment design"],
+      dimensions: "20cm × 15cm × 12cm",
+      completionTime: "2 weeks"
+    }
+  },
+  {
+    id: "63",
+    title: "Waterfront Workshop - Water Feature",
+    description: "Beautiful water feature with flowing effects and natural elements",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-5.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Resin water", "Moss", "Acrylic paint"],
+      techniques: ["Water effects", "Flow design", "Natural texturing", "Landscaping"],
+      dimensions: "25cm × 20cm × 15cm",
+      completionTime: "3 weeks"
+    }
+  },
+  {
+    id: "64",
+    title: "Waterfront Workshop - Final View",
+    description: "Complete waterfront scene with all elements harmoniously combined",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-6.webp",
+    date: "2024",
+    details: {
+      scale: "1:100",
+      materials: ["Basswood", "Resin water", "Moss", "Acrylic paint"],
+      techniques: ["Scene composition", "Water effects", "Landscaping", "Final detailing"],
+      dimensions: "35cm × 30cm × 25cm",
+      completionTime: "4 weeks"
+    }
   }
 ];
 
