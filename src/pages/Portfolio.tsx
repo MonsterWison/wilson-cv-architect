@@ -40,6 +40,23 @@ const photoItems: PhotoItem[] = [
     }
   },
   
+  // AI/ML Development (人工智能/機器學習開發)
+  {
+    id: "ai-1",
+    title: "Custom LLM Project",
+    description: "Self-built Large Language Model implementation demonstrating deep understanding of AI architecture, natural language processing, and machine learning principles",
+    category: "AI/ML Development",
+    imageUrl: "/portfolio/ai-ml/custom-llm.svg",
+    date: "2024",
+    details: {
+      scale: "Full Stack AI",
+      materials: ["Python", "TensorFlow/PyTorch", "NLP Libraries", "Cloud Infrastructure"],
+      techniques: ["Neural Network Architecture", "Transformer Models", "Natural Language Processing", "Model Training & Optimization"],
+      dimensions: "Web Application",
+      completionTime: "4 months"
+    }
+  },
+  
   // Miniature Dioramas (微縮模型)
   {
     id: "1",
