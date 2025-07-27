@@ -1,4 +1,5 @@
-import { Mail, Phone, Globe, MapPin } from "lucide-react";
+import { Mail, Phone, Globe, MapPin, Image } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CVHeader = () => {
   return (
@@ -38,6 +39,12 @@ const CVHeader = () => {
               <MapPin className="w-4 h-4" />
               <span>Hong Kong</span>
             </div>
+            <Link to="/portfolio">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-colors cursor-pointer">
+                <Image className="w-4 h-4" />
+                <span>Portfolio</span>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
