@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Server, Code, Wrench } from "lucide-react";
+import { Server, Code, Wrench, Smartphone } from "lucide-react";
 
 const SkillsGrid = () => {
   const skillCategories = [
@@ -31,6 +31,18 @@ const SkillsGrid = () => {
       ]
     },
     {
+      title: "Mobile Development",
+      icon: <Smartphone className="w-6 h-6" />,
+      skills: [
+        "SwiftUI",
+        "iOS Development",
+        "Apple HIG",
+        "MVVM Architecture",
+        "AI Integration",
+        "App Store Publishing"
+      ]
+    },
+    {
       title: "Hardware",
       icon: <Wrench className="w-6 h-6" />,
       skills: [
@@ -42,7 +54,7 @@ const SkillsGrid = () => {
   ];
 
   return (
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {skillCategories.map((category, index) => (
         <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15 transition-all duration-300 group">
           <CardContent className="p-6">

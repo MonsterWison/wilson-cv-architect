@@ -76,6 +76,47 @@ const Index = () => {
       {/* Portfolio Showcase */}
       <CVSection title="Portfolio Showcase">
         <div className="space-y-6">
+          {/* iOS App Development */}
+          <Card className="shadow-soft border-l-4 border-l-orange-500 bg-gradient-to-r from-orange-50 to-amber-50">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    iOS App Development
+                  </h3>
+                  <p className="text-gray-600 mb-3">
+                    Native iOS applications built with SwiftUI, following Apple HIG design principles and MVVM architecture.
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-sm">
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">Attraction Finder</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">SwiftUI</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">HIG Design</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">AI Integration</span>
+                  </div>
+                  <div className="mt-3">
+                    <a 
+                      href="https://apps.apple.com/hk/app/attraction-finder/id6748924079" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 text-sm font-medium transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                      </svg>
+                      View on App Store
+                      <ArrowRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Miniature Dioramas */}
           <Card className="shadow-soft border-l-4 border-l-blue-500 bg-gradient-to-r from-blue-50 to-indigo-50">
             <CardContent className="p-6">

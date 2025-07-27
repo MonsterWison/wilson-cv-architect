@@ -23,6 +23,23 @@ interface PhotoItem {
 
 // 分類作品集 - 支援多個興趣領域 (Pydantic 格式)
 const photoItems: PhotoItem[] = [
+  // iOS App Development (iOS 應用程式開發)
+  {
+    id: "ios-1",
+    title: "Attraction Finder",
+    description: "AI-powered travel companion app that provides intelligent attraction search and personalized travel recommendations using advanced artificial intelligence technology",
+    category: "iOS Development",
+    imageUrl: "/portfolio/ios-apps/attraction-finder.svg",
+    date: "2025",
+    details: {
+      scale: "Native iOS",
+      materials: ["SwiftUI", "Apple HIG", "MVVM Architecture", "AI Integration"],
+      techniques: ["Native iOS Development", "Apple Human Interface Guidelines", "AI Content Generation", "App Store Publishing"],
+      dimensions: "iPhone & Mac Compatible",
+      completionTime: "3 months"
+    }
+  },
+  
   // Miniature Dioramas (微縮模型)
   {
     id: "1",
