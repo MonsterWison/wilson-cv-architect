@@ -77,7 +77,7 @@ npm run deploy
 部署完成後，你的CV網站將在以下地址可用：
 
 ```
-https://YOUR_USERNAME.github.io/wilson-cv-architect
+https://monsterwison.github.io/wilson-cv-architect
 ```
 
 **注意**: 首次部署可能需要5-10分鐘才能生效。

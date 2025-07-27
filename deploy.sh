@@ -53,7 +53,7 @@ echo "🌐 Deploying to GitHub Pages..."
 npm run deploy
 
 echo "🎉 Deployment completed!"
-echo "📱 Your CV is now available at: https://wilsonho.github.io/wilson-cv-architect"
+echo "📱 Your CV is now available at: https://monsterwison.github.io/wilson-cv-architect"
 echo ""
 echo "💡 Note: It may take a few minutes for changes to appear on GitHub Pages."
 echo "   You can check the deployment status in your GitHub repository's Actions tab." 
