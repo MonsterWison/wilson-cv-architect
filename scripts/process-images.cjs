@@ -106,14 +106,13 @@ function processImage(inputPath, outputPath, options = {}) {
   }
 }
 
-// 批量處理圖片
-function processImages(inputDir, outputDir) {
+// 處理分類資料夾
+function processCategory(inputDir, outputDir, categoryName) {
   const supportedFormats = ['.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif'];
   
   if (!fs.existsSync(inputDir)) {
-    console.log(`❌ 輸入目錄不存在: ${inputDir}`);
-    console.log(`📁 請創建目錄: mkdir -p ${inputDir}`);
-    return;
+    console.log(`📁 分類目錄不存在: ${inputDir}`);
+    return { count: 0, inputSize: 0, outputSize: 0 };
   }
 
   const files = fs.readdirSync(inputDir);
@@ -123,14 +122,11 @@ function processImages(inputDir, outputDir) {
   });
 
   if (imageFiles.length === 0) {
-    console.log('❌ 沒有找到支援的圖片檔案');
-    console.log('📋 支援的格式: JPG, JPEG, PNG, BMP, TIFF, TIF');
-    console.log('📁 請將照片放入 images/ 目錄');
-    return;
+    console.log(`📁 ${categoryName}: 沒有找到圖片檔案`);
+    return { count: 0, inputSize: 0, outputSize: 0 };
   }
 
-  console.log(`📸 找到 ${imageFiles.length} 張圖片`);
-  console.log('🔄 開始處理...\n');
+  console.log(`\n📸 ${categoryName}: 找到 ${imageFiles.length} 張圖片`);
 
   let successCount = 0;
   let totalInputSize = 0;
@@ -139,7 +135,6 @@ function processImages(inputDir, outputDir) {
   imageFiles.forEach((file, index) => {
     const inputPath = path.join(inputDir, file);
     const nameWithoutExt = path.parse(file).name;
-    // 使用原始檔案名稱，不強制重命名
     const outputPath = path.join(outputDir, `${nameWithoutExt}.webp`);
     
     console.log(`\n🔄 處理中 (${index + 1}/${imageFiles.length}): ${file}`);
@@ -155,21 +150,56 @@ function processImages(inputDir, outputDir) {
     }
   });
 
-  const totalInputSizeMB = (totalInputSize / (1024 * 1024)).toFixed(2);
-  const totalOutputSizeMB = (totalOutputSize / (1024 * 1024)).toFixed(2);
-  const totalCompressionRatio = ((1 - totalOutputSize / totalInputSize) * 100).toFixed(1);
+  return { count: successCount, inputSize: totalInputSize, outputSize: totalOutputSize };
+}
 
-  console.log(`\n🎉 處理完成！`);
-  console.log(`✅ 成功處理: ${successCount}/${imageFiles.length} 張圖片`);
-  console.log(`📁 輸出目錄: ${outputDir}`);
-  console.log(`📊 總大小: ${totalInputSizeMB}MB → ${totalOutputSizeMB}MB (壓縮 ${totalCompressionRatio}%)`);
-  console.log(`💾 節省空間: ${(totalInputSize - totalOutputSize) / (1024 * 1024)}MB`);
-  
-  if (successCount > 0) {
+// 批量處理所有分類
+function processAllCategories(inputBaseDir, outputBaseDir) {
+  const categories = [
+    { name: 'Miniature Dioramas', folder: 'miniature-dioramas' },
+    { name: 'Model Painting', folder: 'model-painting' },
+    { name: 'Resin Crafts', folder: 'resin-crafts' },
+    { name: 'Automotive', folder: 'automotive' },
+    { name: 'Home Engineering', folder: 'home-engineering' },
+    { name: 'Material Crafting', folder: 'material-crafting' }
+  ];
+
+  let totalInputSize = 0;
+  let totalOutputSize = 0;
+  let totalCount = 0;
+
+  console.log('🖼️  分類作品集處理工具');
+  console.log('========================');
+
+  categories.forEach(category => {
+    const inputDir = path.join(inputBaseDir, category.folder);
+    const outputDir = path.join(outputBaseDir, category.folder);
+    
+    const result = processCategory(inputDir, outputDir, category.name);
+    totalInputSize += result.inputSize;
+    totalOutputSize += result.outputSize;
+    totalCount += result.count;
+  });
+
+  if (totalCount > 0) {
+    const totalInputSizeMB = (totalInputSize / (1024 * 1024)).toFixed(2);
+    const totalOutputSizeMB = (totalOutputSize / (1024 * 1024)).toFixed(2);
+    const totalCompressionRatio = ((1 - totalOutputSize / totalInputSize) * 100).toFixed(1);
+
+    console.log(`\n🎉 處理完成！`);
+    console.log(`✅ 成功處理: ${totalCount} 張圖片`);
+    console.log(`📁 輸出目錄: ${outputBaseDir}`);
+    console.log(`📊 總大小: ${totalInputSizeMB}MB → ${totalOutputSizeMB}MB (壓縮 ${totalCompressionRatio}%)`);
+    console.log(`💾 節省空間: ${(totalInputSize - totalOutputSize) / (1024 * 1024)}MB`);
+    
     console.log('\n🚀 下一步：');
     console.log('1. 更新 src/pages/Portfolio.tsx 中的 imageUrl 路徑');
     console.log('2. 運行 npm run build');
     console.log('3. 推送到 GitHub 部署到 Vercel');
+  } else {
+    console.log('\n❌ 沒有找到任何圖片檔案');
+    console.log('📋 支援的格式: JPG, JPEG, PNG, BMP, TIFF, TIF');
+    console.log('📁 請將照片放入對應的分類目錄');
   }
 }
 
@@ -182,18 +212,11 @@ function main() {
   const inputDir = process.argv[2] || 'images';
   const outputDir = 'public/portfolio';
 
-  console.log('🖼️  微縮模型照片處理工具');
-  console.log('========================');
-  console.log(`📂 輸入目錄: ${inputDir}`);
-  console.log(`📂 輸出目錄: ${outputDir}`);
-  console.log('🎯 優化設置: WebP格式, 高品質壓縮, 智能尺寸調整');
-  console.log('');
-
-  processImages(inputDir, outputDir);
+  processAllCategories(inputDir, outputDir);
 }
 
 if (require.main === module) {
   main();
 }
 
-module.exports = { processImage, processImages }; 
+module.exports = { processImage, processCategory, processAllCategories }; 

@@ -12,102 +12,103 @@ interface PhotoItem {
   date: string;
 }
 
-// 微縮模型作品集 - 4個主要作品系列
+// 分類作品集 - 支援多個興趣領域
 const photoItems: PhotoItem[] = [
+  // Miniature Dioramas (微縮模型)
   {
     id: "1",
     title: "Fantasy Hobbit House",
     description: "Multi-level miniature dwelling with moss-covered thatched roofs, featuring warm interior lighting and intricate architectural details",
-    category: "Fantasy Architecture",
-    imageUrl: "/portfolio/fantasy-hobbit-house-1.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/fantasy-hobbit-house-1.webp",
     date: "2024"
   },
   {
     id: "2",
     title: "Fantasy Hobbit House - Interior View",
     description: "Detailed interior scenes showing cozy living spaces, bookshelves, and magical atmosphere within the hobbit house",
-    category: "Fantasy Architecture",
-    imageUrl: "/portfolio/fantasy-hobbit-house-2.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/fantasy-hobbit-house-2.webp",
     date: "2024"
   },
   {
     id: "3",
     title: "Fantasy Hobbit House - Architectural Detail",
     description: "Close-up view showcasing the intricate craftsmanship and architectural elements of the miniature dwelling",
-    category: "Fantasy Architecture",
-    imageUrl: "/portfolio/fantasy-hobbit-house-3.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/fantasy-hobbit-house-3.webp",
     date: "2024"
   },
   {
     id: "4",
     title: "Waterfront Workshop",
     description: "Rustic wooden platform over blue pond with detailed furniture, water wheel, and natural landscaping elements",
-    category: "Rustic Architecture",
-    imageUrl: "/portfolio/waterfront-workshop-1.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-1.webp",
     date: "2024"
   },
   {
     id: "5",
     title: "Waterfront Workshop - Detail View",
     description: "Close-up of the workshop area showing fine craftsmanship and authentic rustic details",
-    category: "Rustic Architecture",
-    imageUrl: "/portfolio/waterfront-workshop-2.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-2.webp",
     date: "2024"
   },
   {
     id: "6",
     title: "Waterfront Workshop - Landscape",
     description: "Natural landscape elements and water features surrounding the workshop structure",
-    category: "Rustic Architecture",
-    imageUrl: "/portfolio/waterfront-workshop-3.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-3.webp",
     date: "2024"
   },
   {
     id: "7",
     title: "Magic School - HELEVORN SCHOOL OF MAGIC",
     description: "Dark-themed building with mystical signage, featuring glowing windows and magical atmosphere",
-    category: "Fantasy Architecture",
-    imageUrl: "/portfolio/school-1.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-1.webp",
     date: "2024"
   },
   {
     id: "8",
     title: "Magic School - Exterior Detail",
     description: "Detailed exterior view showing the architectural elements and mystical design of the magic school",
-    category: "Fantasy Architecture",
-    imageUrl: "/portfolio/school-2.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-2.webp",
     date: "2024"
   },
   {
     id: "9",
     title: "Magic School - Interior Scene",
     description: "Interior view of the magic school showing mystical elements and magical atmosphere",
-    category: "Fantasy Architecture",
-    imageUrl: "/portfolio/school-3.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/school-3.webp",
     date: "2024"
   },
   {
     id: "10",
     title: "Walnut Shell Miniature - Cozy Room",
     description: "Exquisite miniature room inside a walnut shell with golden hinges, featuring cozy interior with lamp and furniture",
-    category: "Micro Art",
-    imageUrl: "/portfolio/walnut-bedroom-1.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-1.webp",
     date: "2024"
   },
   {
     id: "11",
     title: "Walnut Shell Miniature - Bedroom Detail",
     description: "Detailed view of the miniature bedroom showing the intricate details and cozy atmosphere",
-    category: "Micro Art",
-    imageUrl: "/portfolio/walnut-bedroom-2.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-2.webp",
     date: "2024"
   },
   {
     id: "12",
     title: "Walnut Shell Miniature - Close-up",
     description: "Close-up view showcasing the incredible detail and craftsmanship of the walnut shell miniature",
-    category: "Micro Art",
-    imageUrl: "/portfolio/walnut-bedroom-3.webp",
+    category: "Miniature Dioramas",
+    imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-3.webp",
     date: "2024"
   }
 ];
