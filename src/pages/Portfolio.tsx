@@ -12,102 +12,102 @@ interface PhotoItem {
   date: string;
 }
 
-// 微縮模型作品集
+// 微縮模型作品集 - 4個主要作品系列
 const photoItems: PhotoItem[] = [
   {
     id: "1",
     title: "Fantasy Hobbit House",
     description: "Multi-level miniature dwelling with moss-covered thatched roofs, featuring warm interior lighting and intricate architectural details",
     category: "Fantasy Architecture",
-    imageUrl: "/portfolio/fantasy-hobbit-house.webp",
+    imageUrl: "/portfolio/fantasy-hobbit-house-1.webp",
     date: "2024"
   },
   {
     id: "2",
-    title: "Waterfront Workshop",
-    description: "Rustic wooden platform over blue pond with detailed furniture, water wheel, and natural landscaping elements",
-    category: "Rustic Architecture",
-    imageUrl: "/portfolio/waterfront-workshop.webp",
+    title: "Fantasy Hobbit House - Interior View",
+    description: "Detailed interior scenes showing cozy living spaces, bookshelves, and magical atmosphere within the hobbit house",
+    category: "Fantasy Architecture",
+    imageUrl: "/portfolio/fantasy-hobbit-house-2.webp",
     date: "2024"
   },
   {
     id: "3",
-    title: "Multi-Story Bakery",
-    description: "Two-story coffee shop and bakery with detailed interior, wooden staircase, and authentic food displays",
-    category: "Commercial Architecture",
-    imageUrl: "/portfolio/multi-story-bakery.webp",
+    title: "Fantasy Hobbit House - Architectural Detail",
+    description: "Close-up view showcasing the intricate craftsmanship and architectural elements of the miniature dwelling",
+    category: "Fantasy Architecture",
+    imageUrl: "/portfolio/fantasy-hobbit-house-3.webp",
     date: "2024"
   },
   {
     id: "4",
-    title: "Magical Study Room",
-    description: "Gothic-style library with floating books, crystal balls, and mystical atmosphere featuring warm lighting",
-    category: "Fantasy Interior",
-    imageUrl: "/portfolio/magical-study.webp",
+    title: "Waterfront Workshop",
+    description: "Rustic wooden platform over blue pond with detailed furniture, water wheel, and natural landscaping elements",
+    category: "Rustic Architecture",
+    imageUrl: "/portfolio/waterfront-workshop-1.webp",
     date: "2024"
   },
   {
     id: "5",
-    title: "Walnut Shell Miniature",
-    description: "Exquisite miniature room inside a walnut shell with golden hinges, featuring cozy interior with lamp and furniture",
-    category: "Micro Art",
-    imageUrl: "/portfolio/walnut-shell-miniature.webp",
+    title: "Waterfront Workshop - Detail View",
+    description: "Close-up of the workshop area showing fine craftsmanship and authentic rustic details",
+    category: "Rustic Architecture",
+    imageUrl: "/portfolio/waterfront-workshop-2.webp",
     date: "2024"
   },
   {
     id: "6",
-    title: "Magic School Exterior",
-    description: "Dark-themed building with 'HELEVORN SCHOOL OF MAGIC' signage, featuring glowing windows and mystical atmosphere",
-    category: "Fantasy Architecture",
-    imageUrl: "/portfolio/magic-school.webp",
+    title: "Waterfront Workshop - Landscape",
+    description: "Natural landscape elements and water features surrounding the workshop structure",
+    category: "Rustic Architecture",
+    imageUrl: "/portfolio/waterfront-workshop-3.webp",
     date: "2024"
   },
   {
     id: "7",
-    title: "Cozy Living Room",
-    description: "Warm interior scene with green armchairs, decorative table, and French bread basket in rustic setting",
-    category: "Interior Design",
-    imageUrl: "/portfolio/cozy-living-room.webp",
+    title: "Magic School - HELEVORN SCHOOL OF MAGIC",
+    description: "Dark-themed building with mystical signage, featuring glowing windows and magical atmosphere",
+    category: "Fantasy Architecture",
+    imageUrl: "/portfolio/school-1.webp",
     date: "2024"
   },
   {
     id: "8",
-    title: "Wizard's Library",
-    description: "Detailed study with bookshelves, magical artifacts, chalkboard with symbols, and floating elements",
-    category: "Fantasy Interior",
-    imageUrl: "/portfolio/wizards-library.webp",
+    title: "Magic School - Exterior Detail",
+    description: "Detailed exterior view showing the architectural elements and mystical design of the magic school",
+    category: "Fantasy Architecture",
+    imageUrl: "/portfolio/school-2.webp",
     date: "2024"
   },
   {
     id: "9",
-    title: "Bakery Shop Interior",
-    description: "Detailed bakery interior with display cases, bread loaves, hanging fan light, and authentic shop atmosphere",
-    category: "Commercial Interior",
-    imageUrl: "/portfolio/bakery-interior.webp",
+    title: "Magic School - Interior Scene",
+    description: "Interior view of the magic school showing mystical elements and magical atmosphere",
+    category: "Fantasy Architecture",
+    imageUrl: "/portfolio/school-3.webp",
     date: "2024"
   },
   {
     id: "10",
-    title: "Walnut Shell Bedroom",
-    description: "Pink-themed miniature bedroom inside walnut shell with teddy bear, curtains, and cozy sleeping area",
+    title: "Walnut Shell Miniature - Cozy Room",
+    description: "Exquisite miniature room inside a walnut shell with golden hinges, featuring cozy interior with lamp and furniture",
     category: "Micro Art",
-    imageUrl: "/portfolio/walnut-bedroom.webp",
+    imageUrl: "/portfolio/walnut-bedroom-1.webp",
     date: "2024"
   },
   {
     id: "11",
-    title: "Coffee & Bakery Storefront",
-    description: "Two-story building with 'COFFEE & BAKERY' signage, detailed windows, and authentic shop front design",
-    category: "Commercial Architecture",
-    imageUrl: "/portfolio/coffee-bakery-storefront.webp",
+    title: "Walnut Shell Miniature - Bedroom Detail",
+    description: "Detailed view of the miniature bedroom showing the intricate details and cozy atmosphere",
+    category: "Micro Art",
+    imageUrl: "/portfolio/walnut-bedroom-2.webp",
     date: "2024"
   },
   {
     id: "12",
-    title: "Classic Study Room",
-    description: "Elegant study with antique furniture, paintings, books, and warm lighting creating scholarly atmosphere",
-    category: "Classic Interior",
-    imageUrl: "/portfolio/classic-study.webp",
+    title: "Walnut Shell Miniature - Close-up",
+    description: "Close-up view showcasing the incredible detail and craftsmanship of the walnut shell miniature",
+    category: "Micro Art",
+    imageUrl: "/portfolio/walnut-bedroom-3.webp",
     date: "2024"
   }
 ];
