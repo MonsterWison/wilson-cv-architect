@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 簡化的藍色漸變背景 -->
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007AFF"/>
+      <stop offset="100%" stop-color="#0051D0"/>
+    </linearGradient>
+    
+    <!-- 簡化的內陰影 -->
+    <linearGradient id="shadowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.05"/>
+    </linearGradient>
+    
+    <!-- 簡化的高光效果 -->
+    <linearGradient id="highlightGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F0F9FF"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 藍色圓角矩形背景 -->
+  <rect width="1024" height="1024" rx="229" ry="229" fill="url(#blueGradient)"/>
+  
+  <!-- 內陰影效果 -->
+  <rect width="1024" height="1024" rx="229" ry="229" fill="url(#shadowGradient)"/>
+  
+  <!-- 主要圖標元素 - 定位標記 -->
+  <g transform="translate(512, 400)">
+    <!-- 定位圖標主體 -->
+    <circle cx="0" cy="0" r="140" fill="url(#highlightGradient)" stroke="none"/>
+    <circle cx="0" cy="0" r="120" fill="#FFFFFF" stroke="none"/>
+    
+    <!-- 內部藍色定位點 -->
+    <circle cx="0" cy="0" r="45" fill="#007AFF"/>
+    
+    <!-- 定位標記底部尖角 -->
+    <path d="M -60 120 L 0 220 L 60 120 Z" fill="url(#highlightGradient)"/>
+    <path d="M -50 120 L 0 200 L 50 120 Z" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- 地圖路徑線條 -->
+  <g transform="translate(512, 650)" opacity="0.3">
+    <!-- 彎曲路徑線 -->
+    <path d="M -200 0 Q -100 -30 0 0 Q 100 30 200 0" 
+          stroke="#FFFFFF" 
+          stroke-width="8" 
+          fill="none" 
+          stroke-linecap="round"/>
+    
+    <path d="M -150 40 Q -50 10 50 40 Q 150 70 250 40" 
+          stroke="#FFFFFF" 
+          stroke-width="6" 
+          fill="none" 
+          stroke-linecap="round"/>
+  </g>
+  
+  <!-- 高光效果 -->
+  <ellipse cx="400" cy="300" rx="150" ry="80" fill="#FFFFFF" opacity="0.15" transform="rotate(-20 400 300)"/>
+</svg> 

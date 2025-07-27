@@ -1055,7 +1055,7 @@ const Portfolio = () => {
                   className="gap-2 bg-primary hover:bg-primary/90 shadow-md transition-all duration-200"
                 >
                   <ArrowLeft className="w-4 h-4" />
-                  ← Back to CV
+                  Back to CV
                 </Button>
               </Link>
               <div>
