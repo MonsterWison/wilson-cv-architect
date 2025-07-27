@@ -29,7 +29,7 @@ const photoItems: PhotoItem[] = [
     title: "Attraction Finder",
     description: "AI-powered travel companion app that provides intelligent attraction search and personalized travel recommendations using advanced artificial intelligence technology",
     category: "iOS Development",
-    imageUrl: "/portfolio/ios-apps/attraction-finder.svg",
+    imageUrl: "/portfolio/ios-apps/attraction-finder.webp",
     date: "2025",
     details: {
       scale: "Native iOS",
