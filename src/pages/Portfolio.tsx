@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, Tag, Filter } from "lucide-react";
+import { ArrowLeft, Calendar, Tag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -1073,17 +1073,13 @@ const Portfolio = () => {
       <main className="container mx-auto px-4 py-8">
         {/* Category Filter */}
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="mb-6">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Portfolio Categories</h2>
               <p className="text-gray-600">
                 Explore my comprehensive collection of precision modeling, painting, and crafting works, 
                 showcasing technical excellence across multiple disciplines and scales.
               </p>
-            </div>
-            <div className="flex items-center gap-2 text-gray-500">
-              <Filter className="w-4 h-4" />
-              <span className="text-sm font-medium">Filter by Category</span>
             </div>
           </div>
           
