@@ -205,7 +205,7 @@ const Index = () => {
                     Decorative items and stationery featuring geometric patterns, marble effects, and artistic forms.
                   </p>
                   <div className="flex flex-wrap gap-2 text-sm">
-                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">22 Works</span>
+                    <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">27 Works</span>
                     <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">1:1 Scale</span>
                     <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">Epoxy Resin</span>
                   </div>
