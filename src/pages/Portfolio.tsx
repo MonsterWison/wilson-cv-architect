@@ -1,8 +1,9 @@
-import { ArrowLeft, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, Tag, Filter } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useState, useMemo } from "react";
 
 interface PhotoItem {
   id: string;
@@ -675,6 +676,31 @@ const photoItems: PhotoItem[] = [
 ];
 
 const Portfolio = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  
+  // 獲取所有分類
+  const categories = useMemo(() => {
+    const cats = ["All", ...Array.from(new Set(photoItems.map(item => item.category)))];
+    return cats;
+  }, []);
+  
+  // 根據選擇的分類過濾作品
+  const filteredItems = useMemo(() => {
+    if (selectedCategory === "All") {
+      return photoItems;
+    }
+    return photoItems.filter(item => item.category === selectedCategory);
+  }, [selectedCategory]);
+  
+  // 獲取分類統計
+  const categoryStats = useMemo(() => {
+    const stats = photoItems.reduce((acc, item) => {
+      acc[item.category] = (acc[item.category] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+    return stats;
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Header */}
@@ -707,88 +733,140 @@ const Portfolio = () => {
       <main className="container mx-auto px-4 py-8">
         {/* Category Filter */}
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Portfolio Categories</h2>
-          <p className="text-gray-600 mb-6">
-            Explore my comprehensive collection of precision modeling, painting, and crafting works, 
-            showcasing technical excellence across multiple disciplines and scales.
-          </p>
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Portfolio Categories</h2>
+              <p className="text-gray-600">
+                Explore my comprehensive collection of precision modeling, painting, and crafting works, 
+                showcasing technical excellence across multiple disciplines and scales.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 text-gray-500">
+              <Filter className="w-4 h-4" />
+              <span className="text-sm font-medium">Filter by Category</span>
+            </div>
+          </div>
           
-          {/* Category Stats */}
+          {/* Category Filter Buttons - HIG Design */}
+          <div className="flex flex-wrap gap-3 mb-8">
+            {categories.map((category) => {
+              const isActive = selectedCategory === category;
+              const count = category === "All" ? photoItems.length : categoryStats[category] || 0;
+              
+              return (
+                <Button
+                  key={category}
+                  variant={isActive ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`transition-all duration-200 ${
+                    isActive 
+                      ? "bg-primary text-white shadow-md" 
+                      : "bg-white hover:bg-gray-50 border-gray-200 text-gray-700"
+                  }`}
+                >
+                  <span className="font-medium">{category}</span>
+                  <Badge 
+                    variant="secondary" 
+                    className={`ml-2 text-xs ${
+                      isActive 
+                        ? "bg-white/20 text-white" 
+                        : "bg-gray-100 text-gray-600"
+                    }`}
+                  >
+                    {count}
+                  </Badge>
+                </Button>
+              );
+            })}
+          </div>
+          
+          {/* Category Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div className="bg-white p-4 rounded-lg shadow-sm border">
+            <div className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Miniature Dioramas</h3>
-                  <p className="text-sm text-gray-600">12 works • 1:100 scale</p>
+                  <p className="text-sm text-gray-600">{categoryStats["Miniature Dioramas"] || 0} works • 1:100 scale</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm border">
+            <div className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Model Painting</h3>
-                  <p className="text-sm text-gray-600">9 works • 1:35 scale</p>
+                  <p className="text-sm text-gray-600">{categoryStats["Model Painting"] || 0} works • 1:35 scale</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm border">
+            <div className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Resin Crafts</h3>
-                  <p className="text-sm text-gray-600">22 works • 1:1 scale</p>
+                  <p className="text-sm text-gray-600">{categoryStats["Resin Crafts"] || 0} works • 1:1 scale</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {photoItems.map((item) => (
+        {/* Results Count */}
+        <div className="mb-6">
+          <p className="text-sm text-gray-600">
+            Showing <span className="font-medium text-gray-900">{filteredItems.length}</span> of <span className="font-medium text-gray-900">{photoItems.length}</span> works
+            {selectedCategory !== "All" && (
+              <span> in <span className="font-medium text-gray-900">{selectedCategory}</span></span>
+            )}
+          </p>
+        </div>
+
+        {/* Grid Layout - Improved Image Sizing */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredItems.map((item) => (
             <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              {/* Image */}
-              <div className="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+              {/* Image - Smaller and Better Proportioned */}
+              <div className="aspect-[3/2] bg-gray-200 relative overflow-hidden">
                 <img 
                   src={item.imageUrl} 
                   alt={item.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
               
               {/* Content */}
-              <CardHeader className="pb-4">
-                <div className="space-y-3">
+              <CardHeader className="pb-3">
+                <div className="space-y-2">
                   <div className="flex items-start justify-between">
-                    <CardTitle className="text-xl font-semibold text-gray-900 leading-tight">
+                    <CardTitle className="text-lg font-semibold text-gray-900 leading-tight line-clamp-2">
                       {item.title}
                     </CardTitle>
-                    <div className="flex items-center gap-1 text-gray-500">
+                    <div className="flex items-center gap-1 text-gray-500 flex-shrink-0 ml-2">
                       <Calendar className="w-3 h-3" />
                       <span className="text-xs">{item.date}</span>
                     </div>
                   </div>
                   
-                  <CardDescription className="text-gray-600 leading-relaxed">
+                  <CardDescription className="text-gray-600 leading-relaxed text-sm line-clamp-2">
                     {item.description}
                   </CardDescription>
                 </div>
               </CardHeader>
               
-              <CardContent className="pt-0 space-y-4">
+              <CardContent className="pt-0 space-y-3">
                 {/* Category Badge */}
                 <div className="flex items-center gap-2">
-                  <Tag className="w-4 h-4 text-blue-600" />
-                  <Badge variant="secondary" className="bg-blue-50 text-blue-700 border-blue-200">
+                  <Tag className="w-3 h-3 text-blue-600" />
+                  <Badge variant="secondary" className="bg-blue-50 text-blue-700 border-blue-200 text-xs">
                     {item.category}
                   </Badge>
                 </div>
                 
-                {/* Technical Details */}
-                <div className="space-y-3 pt-2 border-t border-gray-100">
-                  <div className="grid grid-cols-2 gap-3 text-sm">
+                {/* Technical Details - Compact Layout */}
+                <div className="space-y-2 pt-2 border-t border-gray-100">
+                  <div className="grid grid-cols-3 gap-2 text-xs">
                     <div>
                       <span className="font-medium text-gray-700">Scale:</span>
                       <span className="ml-1 text-gray-600">{item.details.scale}</span>
@@ -798,32 +876,42 @@ const Portfolio = () => {
                       <span className="ml-1 text-gray-600">{item.details.dimensions}</span>
                     </div>
                     <div>
-                      <span className="font-medium text-gray-700">Duration:</span>
+                      <span className="font-medium text-gray-700">Time:</span>
                       <span className="ml-1 text-gray-600">{item.details.completionTime}</span>
                     </div>
                   </div>
                   
-                  {/* Materials */}
+                  {/* Materials - Compact */}
                   <div>
-                    <span className="font-medium text-gray-700 text-sm">Materials:</span>
+                    <span className="font-medium text-gray-700 text-xs">Materials:</span>
                     <div className="flex flex-wrap gap-1 mt-1">
-                      {item.details.materials.map((material, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
+                      {item.details.materials.slice(0, 3).map((material, index) => (
+                        <Badge key={index} variant="outline" className="text-xs px-1 py-0">
                           {material}
                         </Badge>
                       ))}
+                      {item.details.materials.length > 3 && (
+                        <Badge variant="outline" className="text-xs px-1 py-0">
+                          +{item.details.materials.length - 3} more
+                        </Badge>
+                      )}
                     </div>
                   </div>
                   
-                  {/* Techniques */}
+                  {/* Techniques - Compact */}
                   <div>
-                    <span className="font-medium text-gray-700 text-sm">Techniques:</span>
+                    <span className="font-medium text-gray-700 text-xs">Techniques:</span>
                     <div className="flex flex-wrap gap-1 mt-1">
-                      {item.details.techniques.map((technique, index) => (
-                        <Badge key={index} variant="outline" className="text-xs bg-gray-50">
+                      {item.details.techniques.slice(0, 2).map((technique, index) => (
+                        <Badge key={index} variant="outline" className="text-xs px-1 py-0 bg-gray-50">
                           {technique}
                         </Badge>
                       ))}
+                      {item.details.techniques.length > 2 && (
+                        <Badge variant="outline" className="text-xs px-1 py-0 bg-gray-50">
+                          +{item.details.techniques.length - 2} more
+                        </Badge>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -833,16 +921,16 @@ const Portfolio = () => {
         </div>
 
         {/* Empty State */}
-        {photoItems.length === 0 && (
+        {filteredItems.length === 0 && (
           <div className="text-center py-12">
             <div className="w-24 h-24 mx-auto mb-4 bg-gray-200 rounded-full flex items-center justify-center">
               <span className="text-2xl">📸</span>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">No Photos Yet</h3>
-            <p className="text-gray-600 mb-4">Photos will be added here soon.</p>
-            <Link to="/">
-              <Button>Back to CV</Button>
-            </Link>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">No Works Found</h3>
+            <p className="text-gray-600 mb-4">No works found in the selected category.</p>
+            <Button onClick={() => setSelectedCategory("All")}>
+              View All Works
+            </Button>
           </div>
         )}
       </main>
