@@ -90,11 +90,23 @@ const EnhancedPDFButton = () => {
   const createEnhancedPDFStructure = (originalContent: HTMLElement) => {
     const enhancedDiv = document.createElement('div');
     enhancedDiv.style.cssText = `
+      background: white;
+      color: #1f2937;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 0;
+    `;
+
+    // 創建專業的標題頁
+    const headerSection = document.createElement('div');
+    headerSection.style.cssText = `
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 40px 30px;
-      margin-bottom: 30px;
-      border-radius: 0;
+      padding: 50px 40px;
+      margin-bottom: 40px;
+      text-align: center;
       position: relative;
       overflow: hidden;
     `;
@@ -103,32 +115,25 @@ const EnhancedPDFButton = () => {
     const bgDecoration = document.createElement('div');
     bgDecoration.style.cssText = `
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 200px;
-      height: 200px;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
       background: rgba(255,255,255,0.1);
       border-radius: 50%;
-      transform: translate(50%, -50%);
     `;
-    enhancedDiv.appendChild(bgDecoration);
-
-    // 創建專業的標題區域
-    const titleSection = document.createElement('div');
-    titleSection.style.cssText = `
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    `;
+    headerSection.appendChild(bgDecoration);
 
     const name = document.createElement('h1');
     name.textContent = 'Ho Wai Shun Wilson';
     name.style.cssText = `
       font-size: 48px;
       font-weight: 700;
-      margin: 0 0 10px 0;
+      margin: 0 0 15px 0;
       letter-spacing: -1px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     `;
 
     const title = document.createElement('h2');
@@ -136,17 +141,22 @@ const EnhancedPDFButton = () => {
     title.style.cssText = `
       font-size: 24px;
       font-weight: 300;
-      margin: 0 0 30px 0;
+      margin: 0 0 40px 0;
       opacity: 0.9;
+      position: relative;
+      z-index: 1;
     `;
 
     // 創建聯繫信息網格
     const contactGrid = document.createElement('div');
     contactGrid.style.cssText = `
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      margin-top: 30px;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     `;
 
     const contactInfo = [
@@ -159,9 +169,9 @@ const EnhancedPDFButton = () => {
     contactInfo.forEach(info => {
       const contactItem = document.createElement('div');
       contactItem.style.cssText = `
-        background: rgba(255,255,255,0.1);
-        padding: 15px;
-        border-radius: 8px;
+        background: rgba(255,255,255,0.15);
+        padding: 20px;
+        border-radius: 12px;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255,255,255,0.2);
       `;
@@ -173,13 +183,13 @@ const EnhancedPDFButton = () => {
         font-weight: 600;
         text-transform: uppercase;
         opacity: 0.8;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
       `;
 
       const value = document.createElement('div');
       value.textContent = info.value;
       value.style.cssText = `
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
       `;
 
@@ -188,19 +198,19 @@ const EnhancedPDFButton = () => {
       contactGrid.appendChild(contactItem);
     });
 
-    titleSection.appendChild(name);
-    titleSection.appendChild(title);
-    titleSection.appendChild(contactGrid);
-    enhancedDiv.appendChild(titleSection);
+    headerSection.appendChild(name);
+    headerSection.appendChild(title);
+    headerSection.appendChild(contactGrid);
+    enhancedDiv.appendChild(headerSection);
 
-    // 處理原始內容
-    const contentSections = originalContent.querySelectorAll('section');
-    contentSections.forEach((section, index) => {
+    // 處理原始內容 - 確保內容正確提取
+    const sections = originalContent.querySelectorAll('section');
+    sections.forEach((section, index) => {
       const enhancedSection = document.createElement('div');
       enhancedSection.style.cssText = `
         margin-bottom: 40px;
+        padding: 0 40px;
         page-break-inside: avoid;
-        ${index > 0 ? 'page-break-before: auto;' : ''}
       `;
 
       // 獲取標題
@@ -209,50 +219,62 @@ const EnhancedPDFButton = () => {
         const title = document.createElement('h2');
         title.textContent = sectionTitle.textContent;
         title.style.cssText = `
-          font-size: 28px;
+          font-size: 32px;
           font-weight: 700;
           color: #1f2937;
-          margin: 0 0 25px 0;
-          padding-bottom: 10px;
-          border-bottom: 3px solid #667eea;
+          margin: 0 0 30px 0;
+          padding-bottom: 15px;
+          border-bottom: 4px solid #667eea;
           position: relative;
         `;
         enhancedSection.appendChild(title);
       }
 
-      // 處理內容
-      const content = section.querySelector('.space-y-6');
-      if (content) {
-        const enhancedContent = content.cloneNode(true) as HTMLElement;
-        
-        // 優化卡片樣式
-        const cards = enhancedContent.querySelectorAll('.shadow-soft');
-        cards.forEach(card => {
-          (card as HTMLElement).style.cssText = `
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            page-break-inside: avoid;
-          `;
-        });
-
-        // 優化技能網格
-        const skillGrids = enhancedContent.querySelectorAll('.grid');
-        skillGrids.forEach(grid => {
-          (grid as HTMLElement).style.cssText = `
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-          `;
-        });
-
-        enhancedSection.appendChild(enhancedContent);
+      // 處理內容 - 直接複製整個 section 內容
+      const sectionContent = section.cloneNode(true) as HTMLElement;
+      
+      // 移除原始標題，避免重複
+      const originalTitle = sectionContent.querySelector('h2');
+      if (originalTitle) {
+        originalTitle.remove();
       }
 
+      // 優化樣式
+      const cards = sectionContent.querySelectorAll('.shadow-soft, .border-l-4');
+      cards.forEach(card => {
+        (card as HTMLElement).style.cssText = `
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 16px;
+          padding: 30px;
+          margin-bottom: 25px;
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          page-break-inside: avoid;
+        `;
+      });
+
+      // 優化技能網格
+      const skillGrids = sectionContent.querySelectorAll('.grid');
+      skillGrids.forEach(grid => {
+        (grid as HTMLElement).style.cssText = `
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+          margin: 25px 0;
+        `;
+      });
+
+      // 優化文字顏色
+      const allTextElements = sectionContent.querySelectorAll('*');
+      allTextElements.forEach(el => {
+        const element = el as HTMLElement;
+        const computedStyle = getComputedStyle(element);
+        if (computedStyle.color.includes('rgb(156, 163, 175)') || computedStyle.color.includes('rgb(107, 114, 128)')) {
+          element.style.color = '#374151';
+        }
+      });
+
+      enhancedSection.appendChild(sectionContent);
       enhancedDiv.appendChild(enhancedSection);
     });
 
@@ -274,7 +296,7 @@ const EnhancedPDFButton = () => {
       ) : (
         <>
           <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
-          <span className="font-medium text-sm">下載專業 CV PDF</span>
+          <span className="font-medium text-sm">下載 CV PDF</span>
         </>
       )}
     </Button>

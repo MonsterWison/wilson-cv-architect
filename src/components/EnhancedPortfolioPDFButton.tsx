@@ -214,87 +214,182 @@ const EnhancedPortfolioPDFButton = () => {
     titlePage.appendChild(statsGrid);
     enhancedDiv.appendChild(titlePage);
 
-    // 處理作品內容
-    const portfolioGrid = originalContent.querySelector('.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-4');
-    if (portfolioGrid) {
-      const enhancedGrid = portfolioGrid.cloneNode(true) as HTMLElement;
-      enhancedGrid.style.cssText = `
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        padding: 0 20px;
+    // 處理作品內容 - 直接從 Portfolio 頁面獲取作品數據
+    const portfolioItems = [
+      // iOS App Development
+      {
+        id: "ios-1",
+        title: "Attraction Finder",
+        description: "AI-powered travel companion app that provides intelligent attraction search and personalized travel recommendations using advanced artificial intelligence technology",
+        category: "iOS Development",
+        imageUrl: "/portfolio/ios-apps/attraction-finder.svg",
+        date: "2025",
+        details: {
+          scale: "Native iOS",
+          materials: ["SwiftUI", "Apple HIG", "MVVM Architecture", "AI Integration"],
+          techniques: ["Native iOS Development", "Apple Human Interface Guidelines", "AI Content Generation", "App Store Publishing"],
+          dimensions: "iPhone & Mac Compatible",
+          completionTime: "3 months"
+        }
+      },
+      // AI/ML Development
+      {
+        id: "ai-1",
+        title: "Custom LLM Project",
+        description: "Self-built Large Language Model implementation demonstrating deep understanding of AI architecture, natural language processing, and machine learning principles",
+        category: "AI/ML Development",
+        imageUrl: "/portfolio/ai-ml/custom-llm.svg",
+        date: "2024",
+        details: {
+          scale: "Full Stack AI",
+          materials: ["Python", "TensorFlow/PyTorch", "NLP Libraries", "Cloud Infrastructure"],
+          techniques: ["Neural Network Architecture", "Transformer Models", "Natural Language Processing", "Model Training & Optimization"],
+          dimensions: "Web Application",
+          completionTime: "4 months"
+        }
+      }
+    ];
+
+    // 創建作品展示區域
+    const portfolioSection = document.createElement('div');
+    portfolioSection.style.cssText = `
+      padding: 0 40px;
+      margin-bottom: 40px;
+    `;
+
+    const sectionTitle = document.createElement('h2');
+    sectionTitle.textContent = 'Featured Works';
+    sectionTitle.style.cssText = `
+      font-size: 32px;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0 0 30px 0;
+      padding-bottom: 15px;
+      border-bottom: 4px solid #667eea;
+    `;
+    portfolioSection.appendChild(sectionTitle);
+
+    // 創建作品網格
+    const portfolioGrid = document.createElement('div');
+    portfolioGrid.style.cssText = `
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    `;
+
+    portfolioItems.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.style.cssText = `
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        page-break-inside: avoid;
+        margin-bottom: 30px;
+        ${index % 4 === 0 ? 'page-break-before: always;' : ''}
       `;
 
-      // 優化每個作品卡片
-      const cards = enhancedGrid.querySelectorAll('.overflow-hidden.hover\\:shadow-xl');
-      cards.forEach((card, index) => {
-        const enhancedCard = card as HTMLElement;
-        enhancedCard.style.cssText = `
-          background: white;
-          border: 1px solid #e5e7eb;
-          border-radius: 16px;
-          overflow: hidden;
-          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-          page-break-inside: avoid;
-          margin-bottom: 30px;
-          ${index % 4 === 0 ? 'page-break-before: always;' : ''}
-        `;
+      // 創建圖片區域
+      const imageContainer = document.createElement('div');
+      imageContainer.style.cssText = `
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      `;
 
-        // 優化圖片
-        const image = enhancedCard.querySelector('img');
-        if (image) {
-          (image as HTMLElement).style.cssText = `
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px 12px 0 0;
-          `;
-        }
+      const imagePlaceholder = document.createElement('div');
+      imagePlaceholder.style.cssText = `
+        width: 80px;
+        height: 80px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+      `;
+      imagePlaceholder.textContent = item.category === 'iOS Development' ? '📱' : '🤖';
+      imageContainer.appendChild(imagePlaceholder);
 
-        // 優化內容區域
-        const content = enhancedCard.querySelector('.pb-3');
-        if (content) {
-          (content as HTMLElement).style.cssText = `
-            padding: 20px;
-          `;
-        }
+      // 創建內容區域
+      const contentContainer = document.createElement('div');
+      contentContainer.style.cssText = `
+        padding: 25px;
+      `;
 
-        // 優化標題
-        const title = enhancedCard.querySelector('.text-lg.font-semibold');
-        if (title) {
-          (title as HTMLElement).style.cssText = `
-            font-size: 18px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 10px;
-            line-height: 1.3;
-          `;
-        }
+      const title = document.createElement('h3');
+      title.textContent = item.title;
+      title.style.cssText = `
+        font-size: 20px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      `;
 
-        // 優化描述
-        const description = enhancedCard.querySelector('.text-gray-600.leading-relaxed');
-        if (description) {
-          (description as HTMLElement).style.cssText = `
-            font-size: 14px;
-            color: #6b7280;
-            line-height: 1.5;
-            margin-bottom: 15px;
-          `;
-        }
+      const description = document.createElement('p');
+      description.textContent = item.description;
+      description.style.cssText = `
+        font-size: 14px;
+        color: #6b7280;
+        line-height: 1.5;
+        margin-bottom: 15px;
+      `;
 
-        // 優化技術細節
-        const details = enhancedCard.querySelector('.space-y-2.pt-2');
-        if (details) {
-          (details as HTMLElement).style.cssText = `
-            padding-top: 15px;
-            border-top: 1px solid #f3f4f6;
-            margin-top: 15px;
-          `;
-        }
-      });
+      const category = document.createElement('div');
+      category.textContent = item.category;
+      category.style.cssText = `
+        font-size: 12px;
+        font-weight: 600;
+        color: #667eea;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      `;
 
-      enhancedDiv.appendChild(enhancedGrid);
-    }
+      const details = document.createElement('div');
+      details.style.cssText = `
+        padding-top: 15px;
+        border-top: 1px solid #f3f4f6;
+        margin-top: 15px;
+      `;
+
+      const scale = document.createElement('div');
+      scale.textContent = `Scale: ${item.details.scale}`;
+      scale.style.cssText = `
+        font-size: 12px;
+        color: #6b7280;
+        margin-bottom: 5px;
+      `;
+
+      const time = document.createElement('div');
+      time.textContent = `Completion: ${item.details.completionTime}`;
+      time.style.cssText = `
+        font-size: 12px;
+        color: #6b7280;
+      `;
+
+      details.appendChild(scale);
+      details.appendChild(time);
+
+      contentContainer.appendChild(title);
+      contentContainer.appendChild(description);
+      contentContainer.appendChild(category);
+      contentContainer.appendChild(details);
+
+      card.appendChild(imageContainer);
+      card.appendChild(contentContainer);
+      portfolioGrid.appendChild(card);
+    });
+
+    portfolioSection.appendChild(portfolioGrid);
+    enhancedDiv.appendChild(portfolioSection);
 
     return enhancedDiv;
   };
@@ -314,7 +409,7 @@ const EnhancedPortfolioPDFButton = () => {
       ) : (
         <>
           <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
-          <span className="font-medium text-sm">下載專業 Portfolio PDF</span>
+          <span className="font-medium text-sm">下載 Portfolio PDF</span>
         </>
       )}
     </Button>
