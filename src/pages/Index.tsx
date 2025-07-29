@@ -5,7 +5,7 @@ import ExperienceCard from "@/components/ExperienceCard";
 import EducationTimeline from "@/components/EducationTimeline";
 import InterestsSection from "@/components/InterestsSection";
 import PriorExperience from "@/components/PriorExperience";
-import PDFDownloadButton from "@/components/PDFDownloadButton";
+import EnhancedPDFButton from "@/components/EnhancedPDFButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Image, ArrowRight } from "lucide-react";
@@ -34,7 +34,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
-      <PDFDownloadButton />
+      <EnhancedPDFButton />
       <CVHeader />
       
       {/* Professional Summary */}
