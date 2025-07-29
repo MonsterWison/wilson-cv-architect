@@ -181,18 +181,17 @@ const EnhancedPDFButton = () => {
 
       // 添加點擊事件 - 取消電話功能，保留郵箱和網站
       if (info.type === 'mailto') {
+        contactItem.style.cursor = 'pointer';
         contactItem.onclick = () => {
-          const link = document.createElement('a');
-          link.href = `mailto:${info.value}?subject=CV Inquiry`;
-          link.click();
+          window.open(`mailto:${info.value}?subject=CV Inquiry`, '_self');
         };
       } else if (info.type === 'url') {
+        contactItem.style.cursor = 'pointer';
         contactItem.onclick = () => {
-          const link = document.createElement('a');
-          link.href = `https://${info.value}`;
-          link.target = '_blank';
-          link.click();
+          window.open(`https://${info.value}`, '_blank');
         };
+      } else {
+        contactItem.style.cursor = 'default';
       }
 
       const label = document.createElement('div');
@@ -326,35 +325,57 @@ const EnhancedPDFButton = () => {
       enhancedDiv.appendChild(enhancedSection);
     });
 
-    // 確保第一頁有內容 - 如果沒有內容，添加默認內容
-    if (enhancedDiv.children.length <= 1) {
-      const defaultSection = document.createElement('div');
-      defaultSection.style.cssText = `
-        padding: 40px;
-        text-align: center;
-        color: #6b7280;
+    // 強制添加內容到第一頁 - 確保不會空白
+    console.log('添加的內容元素數量:', enhancedDiv.children.length);
+    
+    // 如果內容太少，強制添加專業摘要
+    if (enhancedDiv.children.length < 3) {
+      console.log('內容不足，強制添加專業摘要');
+      
+      const summarySection = document.createElement('div');
+      summarySection.style.cssText = `
+        margin-bottom: 30px;
+        padding: 0 40px;
+        page-break-inside: avoid;
       `;
       
-      const defaultTitle = document.createElement('h2');
-      defaultTitle.textContent = 'Professional Summary';
-      defaultTitle.style.cssText = `
+      const summaryTitle = document.createElement('h2');
+      summaryTitle.textContent = 'Professional Summary';
+      summaryTitle.style.cssText = `
         font-size: 28px;
         font-weight: 700;
         color: #1f2937;
-        margin-bottom: 20px;
+        margin: 0 0 25px 0;
+        padding-bottom: 12px;
+        border-bottom: 3px solid #667eea;
+        position: relative;
       `;
       
-      const defaultContent = document.createElement('p');
-      defaultContent.textContent = 'ERP Solutions Architect with 28+ years in technology implementation. Core expertise in custom module development and client-facing technical support for inventory/accounting systems.';
-      defaultContent.style.cssText = `
+      const summaryContent = document.createElement('div');
+      summaryContent.style.cssText = `
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        page-break-inside: avoid;
+      `;
+      
+      const summaryText = document.createElement('p');
+      summaryText.textContent = 'ERP Solutions Architect with 28+ years in technology implementation. Core expertise in custom module development and client-facing technical support for inventory/accounting systems. Proven track record in end-to-end solution design and critical issue resolution.';
+      summaryText.style.cssText = `
         font-size: 16px;
         line-height: 1.6;
         color: #374151;
+        text-align: center;
+        margin: 0;
       `;
       
-      defaultSection.appendChild(defaultTitle);
-      defaultSection.appendChild(defaultContent);
-      enhancedDiv.appendChild(defaultSection);
+      summaryContent.appendChild(summaryText);
+      summarySection.appendChild(summaryTitle);
+      summarySection.appendChild(summaryContent);
+      enhancedDiv.appendChild(summarySection);
     }
 
     return enhancedDiv;
