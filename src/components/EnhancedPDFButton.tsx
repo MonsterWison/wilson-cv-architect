@@ -11,29 +11,8 @@ const EnhancedPDFButton = () => {
     setIsGenerating(true);
     
     try {
-      // 創建專業的 PDF 容器
-      const pdfContainer = document.createElement('div');
-      pdfContainer.className = 'enhanced-cv-pdf';
-      pdfContainer.style.cssText = `
-        background: white;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        line-height: 1.6;
-        color: #1f2937;
-        max-width: 210mm;
-        margin: 0 auto;
-        padding: 0;
-        page-break-inside: avoid;
-      `;
-
-      // 獲取 CV 內容
-      const cvContent = document.querySelector('.min-h-screen.bg-gradient-subtle');
-      if (!cvContent) {
-        throw new Error('CV content not found');
-      }
-
-      // 創建專業的 PDF 結構
-      const enhancedContent = createEnhancedPDFStructure(cvContent.cloneNode(true) as HTMLElement);
-      pdfContainer.appendChild(enhancedContent);
+      // 直接創建完整的 PDF 內容，不依賴原始 DOM
+      const pdfContainer = createCompletePDFContent();
       document.body.appendChild(pdfContainer);
 
       // 高品質 PDF 配置
@@ -42,7 +21,7 @@ const EnhancedPDFButton = () => {
         filename: 'Wilson_Ho_Professional_CV.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { 
-          scale: 3, // 更高解析度
+          scale: 3,
           useCORS: true,
           allowTaint: true,
           backgroundColor: '#ffffff',
@@ -70,8 +49,8 @@ const EnhancedPDFButton = () => {
       document.body.removeChild(pdfContainer);
       
       toast({
-        title: "專業 CV PDF 生成成功！",
-        description: "你的精美 CV 已成功下載為 PDF 檔案。",
+        title: "CV PDF 生成成功！",
+        description: "你的 CV 已成功下載為 PDF 檔案。",
         variant: "default",
       });
       
@@ -85,6 +64,249 @@ const EnhancedPDFButton = () => {
     } finally {
       setIsGenerating(false);
     }
+  };
+
+  const createCompletePDFContent = () => {
+    const pdfContainer = document.createElement('div');
+    pdfContainer.style.cssText = `
+      background: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 0;
+    `;
+
+    // 創建標題頁 - 包含所有內容，確保第一頁有內容
+    const headerSection = document.createElement('div');
+    headerSection.style.cssText = `
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      page-break-after: avoid;
+    `;
+
+    // 添加背景裝飾
+    const bgDecoration = document.createElement('div');
+    bgDecoration.style.cssText = `
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    `;
+    headerSection.appendChild(bgDecoration);
+
+    const name = document.createElement('h1');
+    name.textContent = 'Ho Wai Shun Wilson';
+    name.style.cssText = `
+      font-size: 42px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    `;
+
+    const title = document.createElement('h2');
+    title.textContent = 'ERP Solutions Architect';
+    title.style.cssText = `
+      font-size: 20px;
+      font-weight: 300;
+      margin: 0 0 25px 0;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    `;
+
+    // 創建聯繫信息 - 電話純文字，郵箱和網站可點擊
+    const contactGrid = document.createElement('div');
+    contactGrid.style.cssText = `
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    `;
+
+    const contactInfo = [
+      { label: 'Phone', value: '+852 9226 9702', type: 'text' },
+      { label: 'Email', value: 'monsterbb100@gmail.com', type: 'mailto' },
+      { label: 'Location', value: 'Hong Kong', type: 'text' },
+      { label: 'Website', value: 'wilson-cv-architect.vercel.app', type: 'url' }
+    ];
+
+    contactInfo.forEach(info => {
+      const contactItem = document.createElement('div');
+      contactItem.style.cssText = `
+        background: rgba(255,255,255,0.15);
+        padding: 15px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        transition: all 0.3s ease;
+      `;
+
+      // 設置點擊功能
+      if (info.type === 'mailto') {
+        contactItem.style.cursor = 'pointer';
+        contactItem.onclick = () => {
+          window.open(`mailto:${info.value}?subject=CV Inquiry`, '_self');
+        };
+      } else if (info.type === 'url') {
+        contactItem.style.cursor = 'pointer';
+        contactItem.onclick = () => {
+          window.open(`https://${info.value}`, '_blank');
+        };
+      } else {
+        contactItem.style.cursor = 'default';
+      }
+
+      const label = document.createElement('div');
+      label.textContent = info.label;
+      label.style.cssText = `
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        opacity: 0.8;
+        margin-bottom: 5px;
+      `;
+
+      const value = document.createElement('div');
+      value.textContent = info.value;
+      value.style.cssText = `
+        font-size: 14px;
+        font-weight: 500;
+      `;
+
+      contactItem.appendChild(label);
+      contactItem.appendChild(value);
+      contactGrid.appendChild(contactItem);
+    });
+
+    headerSection.appendChild(name);
+    headerSection.appendChild(title);
+    headerSection.appendChild(contactGrid);
+    pdfContainer.appendChild(headerSection);
+
+    // 添加專業摘要 - 確保第一頁有內容
+    const summarySection = document.createElement('div');
+    summarySection.style.cssText = `
+      margin-bottom: 30px;
+      padding: 0 40px;
+      page-break-inside: avoid;
+    `;
+
+    const summaryTitle = document.createElement('h2');
+    summaryTitle.textContent = 'Professional Summary';
+    summaryTitle.style.cssText = `
+      font-size: 28px;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0 0 25px 0;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #667eea;
+      position: relative;
+    `;
+
+    const summaryContent = document.createElement('div');
+    summaryContent.style.cssText = `
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      page-break-inside: avoid;
+    `;
+
+    const summaryText = document.createElement('p');
+    summaryText.textContent = 'ERP Solutions Architect with 28+ years in technology implementation. Core expertise in custom module development and client-facing technical support for inventory/accounting systems. Proven track record in end-to-end solution design and critical issue resolution.';
+    summaryText.style.cssText = `
+      font-size: 16px;
+      line-height: 1.6;
+      color: #374151;
+      text-align: center;
+      margin: 0;
+    `;
+
+    summaryContent.appendChild(summaryText);
+    summarySection.appendChild(summaryTitle);
+    summarySection.appendChild(summaryContent);
+    pdfContainer.appendChild(summarySection);
+
+    // 添加核心技能
+    const skillsSection = document.createElement('div');
+    skillsSection.style.cssText = `
+      margin-bottom: 30px;
+      padding: 0 40px;
+      page-break-inside: avoid;
+    `;
+
+    const skillsTitle = document.createElement('h2');
+    skillsTitle.textContent = 'Core Skills';
+    skillsTitle.style.cssText = `
+      font-size: 28px;
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0 0 25px 0;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #667eea;
+      position: relative;
+    `;
+
+    const skillsGrid = document.createElement('div');
+    skillsGrid.style.cssText = `
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    `;
+
+    const skills = [
+      'ERP System Development', 'Custom Module Development', 'Client Support',
+      'Technical Analysis', 'System Integration', 'Database Management',
+      'Project Management', 'Team Leadership', 'Problem Solving'
+    ];
+
+    skills.forEach(skill => {
+      const skillCard = document.createElement('div');
+      skillCard.style.cssText = `
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      `;
+      
+      const skillText = document.createElement('span');
+      skillText.textContent = skill;
+      skillText.style.cssText = `
+        font-size: 14px;
+        font-weight: 500;
+        color: #374151;
+      `;
+      
+      skillCard.appendChild(skillText);
+      skillsGrid.appendChild(skillCard);
+    });
+
+    skillsSection.appendChild(skillsTitle);
+    skillsSection.appendChild(skillsGrid);
+    pdfContainer.appendChild(skillsSection);
+
+    return pdfContainer;
   };
 
   const createEnhancedPDFStructure = (originalContent: HTMLElement) => {
