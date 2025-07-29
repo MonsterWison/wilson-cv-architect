@@ -179,13 +179,26 @@ const EnhancedPDFButton = () => {
         transition: all 0.3s ease;
       `;
 
-      // 添加點擊事件
+      // 添加點擊事件 - 使用更直接的方法
       if (info.type === 'tel') {
-        contactItem.onclick = () => window.open(`tel:${info.value}`, '_self');
+        contactItem.onclick = () => {
+          const link = document.createElement('a');
+          link.href = `tel:${info.value}`;
+          link.click();
+        };
       } else if (info.type === 'mailto') {
-        contactItem.onclick = () => window.open(`mailto:${info.value}?subject=CV Inquiry`, '_self');
+        contactItem.onclick = () => {
+          const link = document.createElement('a');
+          link.href = `mailto:${info.value}?subject=CV Inquiry`;
+          link.click();
+        };
       } else if (info.type === 'url') {
-        contactItem.onclick = () => window.open(`https://${info.value}`, '_blank');
+        contactItem.onclick = () => {
+          const link = document.createElement('a');
+          link.href = `https://${info.value}`;
+          link.target = '_blank';
+          link.click();
+        };
       }
 
       const label = document.createElement('div');
@@ -304,6 +317,37 @@ const EnhancedPDFButton = () => {
       enhancedSection.appendChild(sectionContent);
       enhancedDiv.appendChild(enhancedSection);
     });
+
+    // 確保第一頁有內容 - 如果沒有內容，添加默認內容
+    if (enhancedDiv.children.length <= 1) {
+      const defaultSection = document.createElement('div');
+      defaultSection.style.cssText = `
+        padding: 40px;
+        text-align: center;
+        color: #6b7280;
+      `;
+      
+      const defaultTitle = document.createElement('h2');
+      defaultTitle.textContent = 'Professional Summary';
+      defaultTitle.style.cssText = `
+        font-size: 28px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 20px;
+      `;
+      
+      const defaultContent = document.createElement('p');
+      defaultContent.textContent = 'ERP Solutions Architect with 28+ years in technology implementation. Core expertise in custom module development and client-facing technical support for inventory/accounting systems.';
+      defaultContent.style.cssText = `
+        font-size: 16px;
+        line-height: 1.6;
+        color: #374151;
+      `;
+      
+      defaultSection.appendChild(defaultTitle);
+      defaultSection.appendChild(defaultContent);
+      enhancedDiv.appendChild(defaultSection);
+    }
 
     return enhancedDiv;
   };

@@ -359,34 +359,52 @@ const EnhancedPortfolioPDFButton = () => {
         ${index % 4 === 0 ? 'page-break-before: always;' : ''}
       `;
 
-      // 創建圖片區域
+      // 創建圖片區域 - 使用真實圖片
       const imageContainer = document.createElement('div');
       imageContainer.style.cssText = `
         width: 100%;
-        height: 180px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        height: 200px;
+        background: #f8fafc;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         border-radius: 12px 12px 0 0;
+        overflow: hidden;
       `;
 
-      const imagePlaceholder = document.createElement('div');
-      imagePlaceholder.style.cssText = `
-        width: 70px;
-        height: 70px;
-        background: rgba(255,255,255,0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 32px;
-        color: white;
-        font-weight: bold;
+      // 嘗試載入真實圖片
+      const img = document.createElement('img');
+      img.src = item.imageUrl;
+      img.style.cssText = `
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
       `;
-      imagePlaceholder.textContent = item.icon;
-      imageContainer.appendChild(imagePlaceholder);
+      
+      // 如果圖片載入失敗，顯示圖標
+      img.onerror = () => {
+        imageContainer.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        const iconPlaceholder = document.createElement('div');
+        iconPlaceholder.style.cssText = `
+          width: 70px;
+          height: 70px;
+          background: rgba(255,255,255,0.2);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 32px;
+          color: white;
+          font-weight: bold;
+        `;
+        iconPlaceholder.textContent = item.icon;
+        imageContainer.innerHTML = '';
+        imageContainer.appendChild(iconPlaceholder);
+      };
+      
+      imageContainer.appendChild(img);
 
       // 創建內容區域
       const contentContainer = document.createElement('div');
@@ -460,6 +478,37 @@ const EnhancedPortfolioPDFButton = () => {
 
     portfolioSection.appendChild(portfolioGrid);
     enhancedDiv.appendChild(portfolioSection);
+
+    // 確保第一頁有內容 - 如果沒有內容，添加默認內容
+    if (enhancedDiv.children.length <= 1) {
+      const defaultSection = document.createElement('div');
+      defaultSection.style.cssText = `
+        padding: 40px;
+        text-align: center;
+        color: #6b7280;
+      `;
+      
+      const defaultTitle = document.createElement('h2');
+      defaultTitle.textContent = 'Portfolio Works';
+      defaultTitle.style.cssText = `
+        font-size: 28px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 20px;
+      `;
+      
+      const defaultContent = document.createElement('p');
+      defaultContent.textContent = 'Professional portfolio showcasing expertise in iOS development, AI/ML projects, miniature dioramas, model painting, and resin crafts.';
+      defaultContent.style.cssText = `
+        font-size: 16px;
+        line-height: 1.6;
+        color: #374151;
+      `;
+      
+      defaultSection.appendChild(defaultTitle);
+      defaultSection.appendChild(defaultContent);
+      enhancedDiv.appendChild(defaultSection);
+    }
 
     return enhancedDiv;
   };
