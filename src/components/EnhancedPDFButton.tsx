@@ -109,7 +109,7 @@ const EnhancedPDFButton = () => {
         `;
       });
 
-      // 移除 Portfolio Showcase 的無用內容
+      // 優化 Portfolio Showcase - 增加圖片信息
       const portfolioSection = clonedContent.querySelector('[class*="portfolio"]');
       if (portfolioSection) {
         const portfolioCards = portfolioSection.querySelectorAll('[class*="card"]');
@@ -117,14 +117,9 @@ const EnhancedPDFButton = () => {
           const cardElement = card as HTMLElement;
           const cardText = cardElement.textContent || '';
           
-          // 保留標題，移除詳細內容
-          if (cardText.includes('iOS App Development') || 
-              cardText.includes('AI/ML Development') || 
-              cardText.includes('Miniature Dioramas') || 
-              cardText.includes('Model Painting') || 
-              cardText.includes('Resin Craft')) {
-            
-            // 只保留標題和簡短描述
+          // 為不同類型的作品集添加圖片信息
+          if (cardText.includes('iOS App Development')) {
+            // iOS App Development - 添加App Store圖標和應用截圖信息
             const title = cardElement.querySelector('h3');
             const description = cardElement.querySelector('p');
             
@@ -135,6 +130,146 @@ const EnhancedPDFButton = () => {
               shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
               cardElement.appendChild(shortDesc);
             }
+            
+            // 添加圖片信息
+            const imageInfo = document.createElement('div');
+            imageInfo.style.cssText = `
+              margin-top: 10px;
+              padding: 8px;
+              background: #f8fafc;
+              border-radius: 6px;
+              font-size: 12px;
+              color: #6b7280;
+            `;
+            imageInfo.innerHTML = `
+              <strong>📱 App Screenshots:</strong> Available on App Store<br>
+              <strong>🎨 UI Design:</strong> SwiftUI with Apple HIG guidelines<br>
+              <strong>📊 Features:</strong> AI-powered attraction recommendations
+            `;
+            cardElement.appendChild(imageInfo);
+            
+          } else if (cardText.includes('AI/ML Development')) {
+            // AI/ML Development - 添加模型架構圖信息
+            const title = cardElement.querySelector('h3');
+            const description = cardElement.querySelector('p');
+            
+            cardElement.innerHTML = '';
+            if (title) cardElement.appendChild(title.cloneNode(true));
+            if (description) {
+              const shortDesc = description.cloneNode(true) as HTMLElement;
+              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
+              cardElement.appendChild(shortDesc);
+            }
+            
+            // 添加圖片信息
+            const imageInfo = document.createElement('div');
+            imageInfo.style.cssText = `
+              margin-top: 10px;
+              padding: 8px;
+              background: #f8fafc;
+              border-radius: 6px;
+              font-size: 12px;
+              color: #6b7280;
+            `;
+            imageInfo.innerHTML = `
+              <strong>🧠 Model Architecture:</strong> Custom LLM implementation<br>
+              <strong>📈 Training Visualizations:</strong> Neural network diagrams<br>
+              <strong>🔬 Research Documentation:</strong> Technical specifications
+            `;
+            cardElement.appendChild(imageInfo);
+            
+          } else if (cardText.includes('Miniature Dioramas')) {
+            // Miniature Dioramas - 添加作品圖片信息
+            const title = cardElement.querySelector('h3');
+            const description = cardElement.querySelector('p');
+            
+            cardElement.innerHTML = '';
+            if (title) cardElement.appendChild(title.cloneNode(true));
+            if (description) {
+              const shortDesc = description.cloneNode(true) as HTMLElement;
+              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
+              cardElement.appendChild(shortDesc);
+            }
+            
+            // 添加圖片信息
+            const imageInfo = document.createElement('div');
+            imageInfo.style.cssText = `
+              margin-top: 10px;
+              padding: 8px;
+              background: #f8fafc;
+              border-radius: 6px;
+              font-size: 12px;
+              color: #6b7280;
+            `;
+            imageInfo.innerHTML = `
+              <strong>🏗️ 27 Architectural Models:</strong> 1:100 scale dioramas<br>
+              <strong>💡 LED Lighting:</strong> Integrated illumination systems<br>
+              <strong>🎨 Detailed Interiors:</strong> Fantasy buildings & realistic scenes<br>
+              <strong>📸 Portfolio Gallery:</strong> High-resolution documentation
+            `;
+            cardElement.appendChild(imageInfo);
+            
+          } else if (cardText.includes('Model Painting')) {
+            // Model Painting - 添加繪畫作品圖片信息
+            const title = cardElement.querySelector('h3');
+            const description = cardElement.querySelector('p');
+            
+            cardElement.innerHTML = '';
+            if (title) cardElement.appendChild(title.cloneNode(true));
+            if (description) {
+              const shortDesc = description.cloneNode(true) as HTMLElement;
+              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
+              cardElement.appendChild(shortDesc);
+            }
+            
+            // 添加圖片信息
+            const imageInfo = document.createElement('div');
+            imageInfo.style.cssText = `
+              margin-top: 10px;
+              padding: 8px;
+              background: #f8fafc;
+              border-radius: 6px;
+              font-size: 12px;
+              color: #6b7280;
+            `;
+            imageInfo.innerHTML = `
+              <strong>🎨 9 Detailed Paintings:</strong> 1:35 scale miniatures<br>
+              <strong>🎭 Realistic Textures:</strong> Acrylic painting techniques<br>
+              <strong>🌟 Special Effects:</strong> Weathering & aging effects<br>
+              <strong>📷 Process Documentation:</strong> Step-by-step tutorials
+            `;
+            cardElement.appendChild(imageInfo);
+            
+          } else if (cardText.includes('Resin Craft')) {
+            // Resin Craft - 添加手工藝品圖片信息
+            const title = cardElement.querySelector('h3');
+            const description = cardElement.querySelector('p');
+            
+            cardElement.innerHTML = '';
+            if (title) cardElement.appendChild(title.cloneNode(true));
+            if (description) {
+              const shortDesc = description.cloneNode(true) as HTMLElement;
+              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
+              cardElement.appendChild(shortDesc);
+            }
+            
+            // 添加圖片信息
+            const imageInfo = document.createElement('div');
+            imageInfo.style.cssText = `
+              margin-top: 10px;
+              padding: 8px;
+              background: #f8fafc;
+              border-radius: 6px;
+              font-size: 12px;
+              color: #6b7280;
+            `;
+            imageInfo.innerHTML = `
+              <strong>✨ 27 Craft Items:</strong> Decorative & functional pieces<br>
+              <strong>🌈 Geometric Patterns:</strong> Marble effects & artistic forms<br>
+              <strong>💎 Crystal Effects:</strong> Epoxy resin techniques<br>
+              <strong>📸 Product Photography:</strong> Professional lighting setup
+            `;
+            cardElement.appendChild(imageInfo);
           }
         });
       }
