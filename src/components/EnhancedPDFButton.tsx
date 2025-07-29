@@ -83,49 +83,45 @@ const EnhancedPDFButton = () => {
       // 確保所有聯繫信息都顯示在PDF中
       const headerSection = clonedContent.querySelector('header');
       if (headerSection) {
-        // 檢查是否已經有聯繫信息
-        const existingContacts = headerSection.querySelectorAll('button, [class*="rounded"]');
-        if (existingContacts.length === 0) {
-          // 如果沒有聯繫信息，手動添加
-          const contactContainer = document.createElement('div');
-          contactContainer.style.cssText = `
+        // 強制添加聯繫信息到PDF中
+        const contactContainer = document.createElement('div');
+        contactContainer.style.cssText = `
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
+          margin-top: 20px;
+        `;
+
+        const contactInfo = [
+          { icon: '📞', text: '+852 9226 9702', type: 'phone' },
+          { icon: '📧', text: 'monsterbb100@gmail.com', type: 'email' },
+          { icon: '🌐', text: 'wilson-cv-architect.vercel.app', type: 'website' },
+          { icon: '📍', text: 'Hong Kong', type: 'location' }
+        ];
+
+        contactInfo.forEach(info => {
+          const contactItem = document.createElement('div');
+          contactItem.style.cssText = `
+            background: rgba(255,255,255,0.15);
+            padding: 10px 15px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            font-size: 14px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+            align-items: center;
+            gap: 8px;
           `;
+          contactItem.innerHTML = `${info.icon} ${info.text}`;
+          contactContainer.appendChild(contactItem);
+        });
 
-          const contactInfo = [
-            { icon: '📞', text: '+852 9226 9702', type: 'phone' },
-            { icon: '📧', text: 'monsterbb100@gmail.com', type: 'email' },
-            { icon: '🌐', text: 'wilson-cv-architect.vercel.app', type: 'website' },
-            { icon: '📍', text: 'Hong Kong', type: 'location' }
-          ];
-
-          contactInfo.forEach(info => {
-            const contactItem = document.createElement('div');
-            contactItem.style.cssText = `
-              background: rgba(255,255,255,0.15);
-              padding: 10px 15px;
-              border-radius: 20px;
-              backdrop-filter: blur(10px);
-              border: 1px solid rgba(255,255,255,0.2);
-              color: white;
-              font-size: 14px;
-              display: flex;
-              align-items: center;
-              gap: 8px;
-            `;
-            contactItem.innerHTML = `${info.icon} ${info.text}`;
-            contactContainer.appendChild(contactItem);
-          });
-
-          // 找到標題後添加聯繫信息
-          const titleElement = headerSection.querySelector('p');
-          if (titleElement) {
-            titleElement.parentNode?.insertBefore(contactContainer, titleElement.nextSibling);
-          }
+        // 找到標題後添加聯繫信息
+        const titleElement = headerSection.querySelector('p');
+        if (titleElement) {
+          titleElement.parentNode?.insertBefore(contactContainer, titleElement.nextSibling);
         }
       }
 
