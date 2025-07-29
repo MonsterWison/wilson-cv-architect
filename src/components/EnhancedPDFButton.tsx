@@ -11,42 +11,215 @@ const EnhancedPDFButton = () => {
     setIsGenerating(true);
     
     try {
-      // 直接創建完整的 PDF 內容，不依賴原始 DOM
-      const pdfContainer = createCompletePDFContent();
-      document.body.appendChild(pdfContainer);
+      // 使用最簡單的方法 - 直接打印當前頁面
+      const printWindow = window.open('', '_blank');
+      if (!printWindow) {
+        throw new Error('無法打開打印窗口');
+      }
 
-      // 高品質 PDF 配置
-      const pdfOptions = {
-        margin: [15, 15, 15, 15],
-        filename: 'Wilson_Ho_Professional_CV.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { 
-          scale: 3,
-          useCORS: true,
-          allowTaint: true,
-          backgroundColor: '#ffffff',
-          logging: false,
-          letterRendering: true
-        },
-        jsPDF: { 
-          unit: 'mm', 
-          format: 'a4', 
-          orientation: 'portrait',
-          compress: true
-        },
-        pagebreak: { 
-          mode: ['avoid-all', 'css', 'legacy'],
-          before: '.page-break-before',
-          after: '.page-break-after',
-          avoid: '.page-break-avoid'
-        }
-      };
+      // 獲取當前頁面內容
+      const currentContent = document.querySelector('.min-h-screen');
+      if (!currentContent) {
+        throw new Error('找不到頁面內容');
+      }
 
-      // 生成 PDF
-      await html2pdf().from(pdfContainer).set(pdfOptions).save();
+      // 創建打印頁面
+      printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Wilson Ho - CV</title>
+          <style>
+            body { 
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              line-height: 1.6;
+              color: #1f2937;
+              margin: 0;
+              padding: 20px;
+              background: white;
+            }
+            .cv-header {
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              color: white;
+              padding: 40px;
+              text-align: center;
+              margin-bottom: 30px;
+              border-radius: 12px;
+            }
+            .cv-header h1 {
+              font-size: 42px;
+              font-weight: 700;
+              margin: 0 0 10px 0;
+            }
+            .cv-header h2 {
+              font-size: 20px;
+              font-weight: 300;
+              margin: 0 0 25px 0;
+              opacity: 0.9;
+            }
+            .contact-grid {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 15px;
+              max-width: 500px;
+              margin: 0 auto;
+            }
+            .contact-item {
+              background: rgba(255,255,255,0.15);
+              padding: 15px;
+              border-radius: 10px;
+              border: 1px solid rgba(255,255,255,0.2);
+            }
+            .contact-label {
+              font-size: 11px;
+              font-weight: 600;
+              text-transform: uppercase;
+              opacity: 0.8;
+              margin-bottom: 5px;
+            }
+            .contact-value {
+              font-size: 14px;
+              font-weight: 500;
+            }
+            .section {
+              margin-bottom: 30px;
+              page-break-inside: avoid;
+            }
+            .section h2 {
+              font-size: 28px;
+              font-weight: 700;
+              color: #1f2937;
+              margin: 0 0 25px 0;
+              padding-bottom: 12px;
+              border-bottom: 3px solid #667eea;
+            }
+            .card {
+              background: white;
+              border: 1px solid #e5e7eb;
+              border-radius: 12px;
+              padding: 25px;
+              margin-bottom: 20px;
+              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+            .skills-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 15px;
+              margin: 20px 0;
+            }
+            .skill-card {
+              background: white;
+              border: 1px solid #e5e7eb;
+              border-radius: 8px;
+              padding: 15px;
+              text-align: center;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            @media print {
+              body { margin: 0; }
+              .cv-header { page-break-after: avoid; }
+              .section { page-break-inside: avoid; }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="cv-header">
+            <h1>Ho Wai Shun Wilson</h1>
+            <h2>ERP Solutions Architect</h2>
+            <div class="contact-grid">
+              <div class="contact-item">
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">+852 9226 9702</div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">monsterbb100@gmail.com</div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Hong Kong</div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-label">Website</div>
+                <div class="contact-value">wilson-cv-architect.vercel.app</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="section">
+            <h2>Professional Summary</h2>
+            <div class="card">
+              <p style="text-align: center; margin: 0; font-size: 16px; line-height: 1.6;">
+                ERP Solutions Architect with <strong>28+ years</strong> in technology implementation. 
+                Core expertise in custom module development and client-facing technical support for inventory/accounting systems. 
+                Proven track record in end-to-end solution design and critical issue resolution.
+              </p>
+            </div>
+          </div>
+          
+          <div class="section">
+            <h2>Core Skills</h2>
+            <div class="skills-grid">
+              <div class="skill-card">ERP System Development</div>
+              <div class="skill-card">Custom Module Development</div>
+              <div class="skill-card">Client Support</div>
+              <div class="skill-card">Technical Analysis</div>
+              <div class="skill-card">System Integration</div>
+              <div class="skill-card">Database Management</div>
+              <div class="skill-card">Project Management</div>
+              <div class="skill-card">Team Leadership</div>
+              <div class="skill-card">Problem Solving</div>
+            </div>
+          </div>
+          
+          <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="card">
+              <h3 style="margin: 0 0 10px 0; color: #1f2937;">Information System Manager</h3>
+              <p style="color: #667eea; margin: 0 0 10px 0; font-weight: 500;">Epoch-Tech Computer System Co., Ltd.</p>
+              <p style="color: #6b7280; margin: 0 0 15px 0;">2009 – Present | Hong Kong</p>
+              <ul style="margin: 0; padding-left: 20px;">
+                <li>ERP System Development & Customization: Lead Plugin Developer for flagship inventory/accounting ERP with POS integration, labeling system, token system, and payment scheduler add-on.</li>
+                <li>Client Solution Lifecycle Management: Conducted unlimited requirement analysis sessions, authored technical proposals for enterprise clients.</li>
+                <li>Infrastructure & Security: Install and maintained 20+ server cluster, configured enterprise firewalls.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="section">
+            <h2>Education & Certifications</h2>
+            <div class="card">
+              <h3 style="margin: 0 0 10px 0; color: #1f2937;">Vocational Certificate</h3>
+              <p style="color: #667eea; margin: 0 0 10px 0;">HK PolyU</p>
+              <p style="color: #6b7280; margin: 0;">1996 | English</p>
+            </div>
+            <div class="card">
+              <h3 style="margin: 0 0 10px 0; color: #1f2937;">Pitman: Software Applications</h3>
+              <p style="color: #6b7280; margin: 0;">Word Processing</p>
+            </div>
+          </div>
+          
+          <div class="section">
+            <h2>Awards & Recognition</h2>
+            <div class="skills-grid">
+              <div class="skill-card">ERP Excellence Awards 2022</div>
+              <div class="skill-card">Asia's Most Valuable Brand Awards 2023</div>
+              <div class="skill-card">CorpHub Outstanding Enterprise Awards 2023</div>
+              <div class="skill-card">HKCT Business Awards 2023</div>
+              <div class="skill-card">Capital eCommerce Awards 2022/23</div>
+            </div>
+          </div>
+        </body>
+        </html>
+      `);
       
-      // 清理
-      document.body.removeChild(pdfContainer);
+      printWindow.document.close();
+      
+      // 等待頁面載入完成後打印
+      printWindow.onload = () => {
+        printWindow.print();
+        printWindow.close();
+      };
       
       toast({
         title: "CV PDF 生成成功！",
@@ -157,7 +330,7 @@ const EnhancedPDFButton = () => {
         transition: all 0.3s ease;
       `;
 
-      // 設置點擊功能
+      // 設置點擊功能 - 徹底修復
       if (info.type === 'mailto') {
         contactItem.style.cursor = 'pointer';
         contactItem.onclick = () => {
@@ -169,7 +342,10 @@ const EnhancedPDFButton = () => {
           window.open(`https://${info.value}`, '_blank');
         };
       } else {
+        // 電話和位置 - 完全移除點擊功能
         contactItem.style.cursor = 'default';
+        contactItem.onclick = null;
+        contactItem.removeAttribute('onclick');
       }
 
       const label = document.createElement('div');
