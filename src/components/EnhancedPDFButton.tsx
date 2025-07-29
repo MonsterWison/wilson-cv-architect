@@ -161,7 +161,7 @@ const EnhancedPDFButton = () => {
     `;
 
     const contactInfo = [
-      { label: 'Phone', value: '+852 9226 9702', type: 'tel' },
+      { label: 'Phone', value: '+852 9226 9702', type: 'text' }, // 改為純文字顯示
       { label: 'Email', value: 'monsterbb100@gmail.com', type: 'mailto' },
       { label: 'Location', value: 'Hong Kong', type: 'text' },
       { label: 'Website', value: 'wilson-cv-architect.vercel.app', type: 'url' }
@@ -179,14 +179,8 @@ const EnhancedPDFButton = () => {
         transition: all 0.3s ease;
       `;
 
-      // 添加點擊事件 - 使用更直接的方法
-      if (info.type === 'tel') {
-        contactItem.onclick = () => {
-          const link = document.createElement('a');
-          link.href = `tel:${info.value}`;
-          link.click();
-        };
-      } else if (info.type === 'mailto') {
+      // 添加點擊事件 - 取消電話功能，保留郵箱和網站
+      if (info.type === 'mailto') {
         contactItem.onclick = () => {
           const link = document.createElement('a');
           link.href = `mailto:${info.value}?subject=CV Inquiry`;
@@ -229,8 +223,22 @@ const EnhancedPDFButton = () => {
     enhancedDiv.appendChild(headerSection);
 
     // 處理原始內容 - 確保內容正確提取
+    console.log('原始內容:', originalContent);
     const sections = originalContent.querySelectorAll('section');
-    sections.forEach((section, index) => {
+    console.log('找到的 sections:', sections.length);
+    
+    // 如果沒有找到 section，嘗試其他選擇器
+    let contentElements = sections;
+    if (sections.length === 0) {
+      contentElements = originalContent.querySelectorAll('.py-16'); // CVSection 的樣式類
+      console.log('使用 .py-16 選擇器找到:', contentElements.length);
+    }
+    if (contentElements.length === 0) {
+      contentElements = originalContent.querySelectorAll('[class*="py-16"]'); // 包含 py-16 的元素
+      console.log('使用 [class*="py-16"] 選擇器找到:', contentElements.length);
+    }
+    
+    contentElements.forEach((section, index) => {
       const enhancedSection = document.createElement('div');
       enhancedSection.style.cssText = `
         margin-bottom: 30px;
