@@ -214,7 +214,7 @@ const EnhancedPortfolioPDFButton = () => {
     titlePage.appendChild(statsGrid);
     enhancedDiv.appendChild(titlePage);
 
-    // 處理作品內容 - 直接從 Portfolio 頁面獲取作品數據
+    // 處理作品內容 - 包含所有作品數據
     const portfolioItems = [
       // iOS App Development
       {
@@ -224,6 +224,7 @@ const EnhancedPortfolioPDFButton = () => {
         category: "iOS Development",
         imageUrl: "/portfolio/ios-apps/attraction-finder.svg",
         date: "2025",
+        icon: "📱",
         details: {
           scale: "Native iOS",
           materials: ["SwiftUI", "Apple HIG", "MVVM Architecture", "AI Integration"],
@@ -240,12 +241,80 @@ const EnhancedPortfolioPDFButton = () => {
         category: "AI/ML Development",
         imageUrl: "/portfolio/ai-ml/custom-llm.svg",
         date: "2024",
+        icon: "🤖",
         details: {
           scale: "Full Stack AI",
           materials: ["Python", "TensorFlow/PyTorch", "NLP Libraries", "Cloud Infrastructure"],
           techniques: ["Neural Network Architecture", "Transformer Models", "Natural Language Processing", "Model Training & Optimization"],
           dimensions: "Web Application",
           completionTime: "4 months"
+        }
+      },
+      // Miniature Dioramas - 添加代表性作品
+      {
+        id: "diorama-1",
+        title: "Fantasy Hobbit House",
+        description: "Multi-level miniature dwelling with moss-covered thatched roofs, featuring warm interior lighting and intricate architectural details",
+        category: "Miniature Dioramas",
+        imageUrl: "/portfolio/miniature-dioramas/fantasy-hobbit-house-1.webp",
+        date: "2024",
+        icon: "🏠",
+        details: {
+          scale: "1:100",
+          materials: ["Basswood", "Moss", "LED lights", "Acrylic paint"],
+          techniques: ["Laser cutting", "Hand painting", "Weathering", "Lighting installation"],
+          dimensions: "30cm × 25cm × 20cm",
+          completionTime: "3 weeks"
+        }
+      },
+      {
+        id: "diorama-2",
+        title: "Waterfront Workshop",
+        description: "Detailed waterfront scene with flowing water effects, featuring a traditional workshop building and natural landscaping",
+        category: "Miniature Dioramas",
+        imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-1.webp",
+        date: "2024",
+        icon: "🌊",
+        details: {
+          scale: "1:100",
+          materials: ["Basswood", "Resin water", "Moss", "Acrylic paint"],
+          techniques: ["Water effects", "Flow design", "Natural texturing", "Landscaping"],
+          dimensions: "25cm × 20cm × 15cm",
+          completionTime: "3 weeks"
+        }
+      },
+      // Model Painting - 添加代表性作品
+      {
+        id: "painting-1",
+        title: "WWII Tank Model",
+        description: "Highly detailed 1:35 scale military vehicle with realistic weathering, camouflage patterns, and battle damage effects",
+        category: "Model Painting",
+        imageUrl: "/portfolio/model-painting/wwii-tank-1.webp",
+        date: "2024",
+        icon: "🎨",
+        details: {
+          scale: "1:35",
+          materials: ["Plastic model kit", "Acrylic paints", "Weathering powders", "Decals"],
+          techniques: ["Airbrushing", "Weathering", "Camouflage", "Battle damage"],
+          dimensions: "15cm × 8cm × 6cm",
+          completionTime: "2 weeks"
+        }
+      },
+      // Resin Crafts - 添加代表性作品
+      {
+        id: "resin-1",
+        title: "Geometric Resin Art",
+        description: "Modern decorative pieces featuring geometric patterns, marble effects, and artistic color combinations",
+        category: "Resin Crafts",
+        imageUrl: "/portfolio/resin-crafts/geometric-resin-1.webp",
+        date: "2024",
+        icon: "💎",
+        details: {
+          scale: "1:1",
+          materials: ["Epoxy resin", "Pigments", "Molds", "UV light"],
+          techniques: ["Layering", "Color mixing", "Curing", "Polishing"],
+          dimensions: "20cm × 15cm × 3cm",
+          completionTime: "1 week"
         }
       }
     ];
@@ -294,28 +363,29 @@ const EnhancedPortfolioPDFButton = () => {
       const imageContainer = document.createElement('div');
       imageContainer.style.cssText = `
         width: 100%;
-        height: 200px;
+        height: 180px;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
+        border-radius: 12px 12px 0 0;
       `;
 
       const imagePlaceholder = document.createElement('div');
       imagePlaceholder.style.cssText = `
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         background: rgba(255,255,255,0.2);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
+        font-size: 32px;
         color: white;
         font-weight: bold;
       `;
-      imagePlaceholder.textContent = item.category === 'iOS Development' ? '📱' : '🤖';
+      imagePlaceholder.textContent = item.icon;
       imageContainer.appendChild(imagePlaceholder);
 
       // 創建內容區域
