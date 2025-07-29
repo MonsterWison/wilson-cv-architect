@@ -57,7 +57,7 @@ const EnhancedPDFButton = () => {
       });
 
       // 修復聯繫信息的點擊功能
-      const contactItems = clonedContent.querySelectorAll('[class*="contact"]');
+      const contactItems = clonedContent.querySelectorAll('[class*="contact"], [class*="bg-gradient"], [class*="rounded"]');
       contactItems.forEach(item => {
         const element = item as HTMLElement;
         const text = element.textContent || '';
@@ -79,6 +79,65 @@ const EnhancedPDFButton = () => {
           element.removeAttribute('onclick');
         }
       });
+
+      // 移除無用的按鈕
+      const buttons = clonedContent.querySelectorAll('button, a[href*="portfolio"], a[href*="app-store"], a[href*="homework7"]');
+      buttons.forEach(button => {
+        button.remove();
+      });
+
+      // 修復 Core Skills 排版
+      const skillsSection = clonedContent.querySelector('[class*="skills"]');
+      if (skillsSection) {
+        const skillsGrid = skillsSection.querySelector('.grid');
+        if (skillsGrid) {
+          (skillsGrid as HTMLElement).style.cssText = `
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+            gap: 20px !important;
+            margin: 20px 0 !important;
+          `;
+        }
+      }
+
+      // 修復標題和內容分頁問題
+      const sections = clonedContent.querySelectorAll('section');
+      sections.forEach(section => {
+        (section as HTMLElement).style.cssText = `
+          page-break-inside: avoid !important;
+          margin-bottom: 30px !important;
+        `;
+      });
+
+      // 移除 Portfolio Showcase 的無用內容
+      const portfolioSection = clonedContent.querySelector('[class*="portfolio"]');
+      if (portfolioSection) {
+        const portfolioCards = portfolioSection.querySelectorAll('[class*="card"]');
+        portfolioCards.forEach(card => {
+          const cardElement = card as HTMLElement;
+          const cardText = cardElement.textContent || '';
+          
+          // 保留標題，移除詳細內容
+          if (cardText.includes('iOS App Development') || 
+              cardText.includes('AI/ML Development') || 
+              cardText.includes('Miniature Dioramas') || 
+              cardText.includes('Model Painting') || 
+              cardText.includes('Resin Craft')) {
+            
+            // 只保留標題和簡短描述
+            const title = cardElement.querySelector('h3');
+            const description = cardElement.querySelector('p');
+            
+            cardElement.innerHTML = '';
+            if (title) cardElement.appendChild(title.cloneNode(true));
+            if (description) {
+              const shortDesc = description.cloneNode(true) as HTMLElement;
+              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
+              cardElement.appendChild(shortDesc);
+            }
+          }
+        });
+      }
 
       pdfContainer.appendChild(clonedContent);
       document.body.appendChild(pdfContainer);
