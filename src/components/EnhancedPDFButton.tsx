@@ -128,7 +128,7 @@ const EnhancedPDFButton = () => {
     `;
 
     const title = document.createElement('h2');
-    title.textContent = 'Full Stack Developer (include IOS)';
+    title.textContent = 'Full Stack Developer (include IOS Apps)';
     title.style.cssText = `
       font-size: 16pt;
       font-weight: 600;
