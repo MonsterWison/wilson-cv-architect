@@ -49,10 +49,10 @@ const EnhancedPDFButton = () => {
       await html2pdf().from(pdfContainer).set(pdfOptions).save();
       
       toast({
-        title: "PDF Generated Successfully",
-        description: "Your professional CV has been downloaded.",
+          title: "PDF Generated Successfully",
+          description: "Your CV has been downloaded.",
       });
-
+      
     } catch (error) {
       console.error('PDF generation error:', error);
       toast({
@@ -159,7 +159,23 @@ const EnhancedPDFButton = () => {
       contactItem.style.cssText = `
         white-space: nowrap;
         font-weight: 500;
+        cursor: pointer;
+        text-decoration: underline;
+        color: #1e3a8a;
       `;
+      
+      // Add click functionality for email only
+      if (item.text.includes('wilson_23@hotmail.com')) {
+        contactItem.onclick = () => {
+          window.open('mailto:wilson_23@hotmail.com?subject=CV Inquiry', '_blank');
+        };
+      } else {
+        // For website, phone and location - no click functionality
+        contactItem.style.cursor = 'default';
+        contactItem.style.textDecoration = 'none';
+        contactItem.style.color = '#6b7280';
+      }
+      
       contactInfo.appendChild(contactItem);
     });
 
@@ -833,7 +849,7 @@ const EnhancedPDFButton = () => {
       {isGenerating ? (
         <>
           <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-          <span className="font-medium text-sm">Generating Professional CV...</span>
+          <span className="font-medium text-sm">Generating CV...</span>
         </>
       ) : (
         <>
