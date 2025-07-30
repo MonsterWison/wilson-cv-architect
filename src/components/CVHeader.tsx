@@ -9,7 +9,7 @@ const CVHeader = () => {
 
   // 處理郵箱點擊
   const handleEmailClick = () => {
-    window.open('mailto:monsterbb100@gmail.com?subject=CV Inquiry', '_self');
+            window.open('mailto:wilson_23@hotmail.com?subject=CV Inquiry', '_self');
   };
 
   // 處理網站點擊
@@ -53,7 +53,7 @@ const CVHeader = () => {
               title="Click to send email"
             >
               <Mail className="w-4 h-4" />
-              <span>monsterbb100@gmail.com</span>
+                              <span>wilson_23@hotmail.com</span>
             </button>
             
             <button 

@@ -157,6 +157,6 @@ This is a personal CV website, but suggestions for improvements are welcome!
 
 ---
 
-**Contact**: monsterbb100@gmail.com  
+**Contact**: wilson_23@hotmail.com  
 **Location**: Hong Kong  
 **Website**: [https://monsterwison.github.io/wilson-cv-architect](https://monsterwison.github.io/wilson-cv-architect)
