@@ -30,7 +30,9 @@ const EducationTimeline = ({ variant = "default" }: EducationTimelineProps) => {
   const certifications = [
     "Pitman: Software Applications • Word Processing",
     "HK PolyU: Vocational English Certificate", 
-    "Microsoft Office Specialist (MOS)"
+    "Microsoft Office Specialist (MOS)",
+    "Venturenix Lab: Generative AI (Graduated: 29 July 2025)",
+    "Hong Kong College of Technology: Certificate in Python Programming (Part-time) (Graduated: 30 July 2025)"
   ];
 
   const getTextStyles = () => {
