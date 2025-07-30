@@ -3,42 +3,72 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Award } from "lucide-react";
 
 interface ExperienceCardProps {
+  title: string;
   company: string;
-  position: string;
-  duration: string;
+  period: string;
   location: string;
-  responsibilities?: string[];
+  description?: string;
   achievements?: string[];
   current?: boolean;
+  variant?: "default" | "print";
 }
 
 const ExperienceCard = ({ 
+  title, 
   company, 
-  position, 
-  duration, 
+  period, 
   location, 
-  responsibilities = [], 
+  description = "", 
   achievements = [],
-  current = false 
+  current = false,
+  variant = "default"
 }: ExperienceCardProps) => {
+  const getCardStyles = () => {
+    if (variant === "print") {
+      return "bg-white border border-cv-print-border shadow-print";
+    }
+    return "shadow-soft hover:shadow-elegant transition-all duration-300 border-l-4 border-l-primary";
+  };
+
+  const getTextStyles = () => {
+    if (variant === "print") {
+      return "text-cv-print-text-primary";
+    }
+    return "text-cv-text-primary";
+  };
+
+  const getSecondaryTextStyles = () => {
+    if (variant === "print") {
+      return "text-cv-print-text-secondary";
+    }
+    return "text-cv-text-secondary";
+  };
+
+  const getAccentStyles = () => {
+    if (variant === "print") {
+      return "text-cv-print-accent";
+    }
+    return "text-primary";
+  };
+
   return (
-    <Card className="shadow-soft hover:shadow-elegant transition-all duration-300 border-l-4 border-l-primary">
+    <Card className={getCardStyles()}>
       <CardContent className="p-8">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-2xl font-bold text-cv-text-primary">{position}</h3>
+              <h3 className={`text-2xl font-bold ${getTextStyles()}`}>{title}</h3>
               {current && (
-                <Badge variant="default" className="bg-green-100 text-green-800">
+                <Badge variant="default" className={variant === "print" ? "bg-cv-print-accent/10 text-cv-print-accent border border-cv-print-accent/20" : "bg-green-100 text-green-800"}>
                   Current
                 </Badge>
               )}
             </div>
-            <p className="text-xl text-primary font-semibold mb-1">{company}</p>
-            <div className="flex items-center gap-4 text-cv-text-secondary">
+            <p className={`text-xl font-semibold mb-1 ${getAccentStyles()}`}>{company}</p>
+            <div className={`flex items-center gap-4 ${getSecondaryTextStyles()}`}>
               <div className="flex items-center gap-1">
                 <Calendar className="w-4 h-4" />
-                <span>{duration}</span>
+                <span>{period}</span>
               </div>
               <div className="flex items-center gap-1">
                 <MapPin className="w-4 h-4" />
@@ -48,41 +78,28 @@ const ExperienceCard = ({
           </div>
         </div>
 
-        {responsibilities.length > 0 && (
+        {description && (
           <div className="mb-6">
-            <h4 className="text-lg font-semibold text-cv-text-primary mb-3">
-              Core Responsibilities & Deliverables:
-            </h4>
-            <ul className="space-y-3">
-              {responsibilities.map((responsibility, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-cv-text-primary leading-relaxed">{responsibility}</span>
-                </li>
-              ))}
-            </ul>
+            <p className={`${getTextStyles()} leading-relaxed`}>{description}</p>
           </div>
         )}
 
         {achievements.length > 0 && (
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <Award className="w-5 h-5 text-primary" />
-              <h4 className="text-lg font-semibold text-cv-text-primary">
-                Company Recognition:
+              <Award className={`w-5 h-5 ${getAccentStyles()}`} />
+              <h4 className={`text-lg font-semibold ${getTextStyles()}`}>
+                Key Achievements:
               </h4>
             </div>
-            <div className="grid md:grid-cols-2 gap-2">
+            <ul className="space-y-2">
               {achievements.map((achievement, index) => (
-                <Badge 
-                  key={index}
-                  variant="outline" 
-                  className="justify-start p-3 text-cv-text-secondary border-primary/20"
-                >
-                  {achievement}
-                </Badge>
+                <li key={index} className="flex items-start gap-3">
+                  <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${variant === "print" ? "bg-cv-print-accent" : "bg-primary"}`}></div>
+                  <span className={`${getTextStyles()} leading-relaxed`}>{achievement}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         )}
       </CardContent>

@@ -45,6 +45,16 @@ All colors MUST be HSL.
     --cv-text-secondary: 215 16% 47%;
     --cv-accent: 204 94% 50%;
     
+    /* Print-friendly CV tokens */
+    --cv-print-header-bg: 0 0% 96%;
+    --cv-print-header-border: 220 13% 91%;
+    --cv-print-section-bg: 0 0% 100%;
+    --cv-print-text-primary: 0 0% 13%;
+    --cv-print-text-secondary: 0 0% 45%;
+    --cv-print-accent: 221 83% 53%;
+    --cv-print-border: 0 0% 90%;
+    --cv-print-card-bg: 0 0% 98%;
+    
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--cv-section-bg)));
@@ -52,6 +62,7 @@ All colors MUST be HSL.
     /* Shadows */
     --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.15);
     --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-print: 0 2px 8px -2px hsl(0 0% 0% / 0.1);
 
     --radius: 0.5rem;
 
@@ -118,5 +129,27 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Print-friendly CV styles */
+.cv-print {
+  --cv-header-bg: var(--cv-print-header-bg);
+  --cv-section-bg: var(--cv-print-section-bg);
+  --cv-skills-bg: var(--cv-print-card-bg);
+  --cv-text-primary: var(--cv-print-text-primary);
+  --cv-text-secondary: var(--cv-print-text-secondary);
+  --cv-accent: var(--cv-print-accent);
+}
+
+/* Print media query */
+@media print {
+  .cv-print {
+    --cv-header-bg: 0 0% 96%;
+    --cv-section-bg: 0 0% 100%;
+    --cv-skills-bg: 0 0% 98%;
+    --cv-text-primary: 0 0% 13%;
+    --cv-text-secondary: 0 0% 45%;
+    --cv-accent: 221 83% 53%;
   }
 }
