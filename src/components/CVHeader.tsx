@@ -1,11 +1,7 @@
 import { Mail, Phone, Globe, MapPin, Image } from "lucide-react";
 import { Link } from "react-router-dom";
 
-interface CVHeaderProps {
-  variant?: "default" | "print";
-}
-
-const CVHeader = ({ variant = "default" }: CVHeaderProps) => {
+const CVHeader = () => {
   // 處理電話點擊
   const handlePhoneClick = () => {
     window.open('tel:+85292269702', '_self');
@@ -13,54 +9,13 @@ const CVHeader = ({ variant = "default" }: CVHeaderProps) => {
 
   // 處理郵箱點擊
   const handleEmailClick = () => {
-    window.open('mailto:monsterbb100@gmail.com?subject=CV Inquiry', '_self');
+    window.open('mailto:wilson_23@hotmail.com?subject=CV Inquiry', '_self');
   };
 
   // 處理網站點擊
   const handleWebsiteClick = () => {
     window.open('https://wilson-cv-architect.vercel.app', '_blank');
   };
-
-  if (variant === "print") {
-    return (
-      <header className="bg-cv-print-header-bg border-b-2 border-cv-print-header-border py-8 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-4">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2 text-cv-print-text-primary tracking-tight">
-                Ho Wai Shun Wilson
-              </h1>
-              <p className="text-xl md:text-2xl text-cv-print-accent font-semibold">
-                ERP Solutions Architect
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <div className="flex items-center gap-2 text-cv-print-text-secondary">
-                <Phone className="w-4 h-4 text-cv-print-accent" />
-                <span>+852 9226 9702</span>
-              </div>
-              
-              <div className="flex items-center gap-2 text-cv-print-text-secondary">
-                <Mail className="w-4 h-4 text-cv-print-accent" />
-                <span>monsterbb100@gmail.com</span>
-              </div>
-              
-              <div className="flex items-center gap-2 text-cv-print-text-secondary">
-                <Globe className="w-4 h-4 text-cv-print-accent" />
-                <span>wilson-cv-architect.vercel.app</span>
-              </div>
-              
-              <div className="flex items-center gap-2 text-cv-print-text-secondary">
-                <MapPin className="w-4 h-4 text-cv-print-accent" />
-                <span>Hong Kong</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    );
-  }
 
   return (
     <header className="bg-gradient-primary text-primary-foreground py-16 px-8 relative overflow-hidden">
@@ -98,7 +53,7 @@ const CVHeader = ({ variant = "default" }: CVHeaderProps) => {
               title="Click to send email"
             >
               <Mail className="w-4 h-4" />
-              <span>monsterbb100@gmail.com</span>
+              <span>wilson_23@hotmail.com</span>
             </button>
             
             <button 
