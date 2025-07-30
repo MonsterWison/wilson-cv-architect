@@ -128,7 +128,7 @@ const EnhancedPDFButton = () => {
     `;
 
     const title = document.createElement('h2');
-    title.textContent = 'ERP Solutions Architect';
+    title.textContent = 'Full Stack Developer (include IOS)';
     title.style.cssText = `
       font-size: 16pt;
       font-weight: 600;

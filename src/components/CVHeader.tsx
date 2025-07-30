@@ -33,7 +33,7 @@ const CVHeader = () => {
               Ho Wai Shun Wilson
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground/80 font-light">
-              ERP Solutions Architect
+              Full Stack Developer (include IOS)
             </p>
           </div>
           
