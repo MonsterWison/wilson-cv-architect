@@ -11,360 +11,53 @@ const EnhancedPDFButton = () => {
     setIsGenerating(true);
     
     try {
-      // 獲取完整的 CV 內容
-      const cvContent = document.querySelector('.min-h-screen');
-      if (!cvContent) {
-        throw new Error('找不到 CV 內容');
-      }
-
-      // 創建 PDF 容器
+      // 創建專業的 PDF 容器
       const pdfContainer = document.createElement('div');
       pdfContainer.style.cssText = `
         background: white;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        line-height: 1.6;
+        font-family: 'Arial', 'Calibri', sans-serif;
+        line-height: 1.4;
         color: #1f2937;
         max-width: 210mm;
         margin: 0 auto;
-        padding: 0;
+        padding: 20mm;
+        font-size: 11pt;
       `;
 
-      // 複製原始內容並優化
-      const clonedContent = cvContent.cloneNode(true) as HTMLElement;
-      
-      // 移除 PDF 按鈕
-      const pdfButton = clonedContent.querySelector('button');
-      if (pdfButton) {
-        pdfButton.remove();
-      }
+      // 創建專業的 CV 結構
+      const cvContent = createProfessionalCVStructure();
+      pdfContainer.appendChild(cvContent);
 
-      // 優化樣式
-      clonedContent.style.cssText = `
-        background: white !important;
-        color: #1f2937 !important;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-        line-height: 1.6 !important;
-        margin: 0 !important;
-        padding: 20px !important;
-      `;
-
-      // 確保所有文字顏色正確
-      const allElements = clonedContent.querySelectorAll('*');
-      allElements.forEach(el => {
-        const element = el as HTMLElement;
-        element.style.color = '#1f2937';
-        element.style.background = element.style.background.includes('gradient') ? '#f8fafc' : element.style.background;
-      });
-
-      // 修復聯繫信息的點擊功能
-      const contactItems = clonedContent.querySelectorAll('[class*="contact"], [class*="bg-gradient"], [class*="rounded"]');
-      contactItems.forEach(item => {
-        const element = item as HTMLElement;
-        const text = element.textContent || '';
-        
-        if (text.includes('wilson_23@hotmail.com')) {
-          element.style.cursor = 'pointer';
-          element.onclick = () => {
-                          window.open(`mailto:wilson_23@hotmail.com?subject=CV Inquiry`, '_self');
-          };
-        } else if (text.includes('wilson-cv-architect.vercel.app')) {
-          element.style.cursor = 'pointer';
-          element.onclick = () => {
-            window.open('https://wilson-cv-architect.vercel.app', '_blank');
-          };
-        } else {
-          // 電話和位置 - 移除點擊功能
-          element.style.cursor = 'default';
-          element.onclick = null;
-          element.removeAttribute('onclick');
-        }
-      });
-
-      // 確保所有聯繫信息都顯示在PDF中
-      const headerSection = clonedContent.querySelector('header');
-      if (headerSection) {
-        // 強制添加聯繫信息到PDF中
-        const contactContainer = document.createElement('div');
-        contactContainer.style.cssText = `
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 15px;
-          margin-top: 20px;
-        `;
-
-        const contactInfo = [
-          { icon: '📞', text: '+852 9226 9702', type: 'phone' },
-          { icon: '📧', text: 'wilson_23@hotmail.com', type: 'email' },
-          { icon: '🌐', text: 'wilson-cv-architect.vercel.app', type: 'website' },
-          { icon: '📍', text: 'Hong Kong', type: 'location' }
-        ];
-
-        contactInfo.forEach(info => {
-          const contactItem = document.createElement('div');
-          contactItem.style.cssText = `
-            background: rgba(255,255,255,0.15);
-            padding: 10px 15px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: white;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-          `;
-          contactItem.innerHTML = `${info.icon} ${info.text}`;
-          contactContainer.appendChild(contactItem);
-        });
-
-        // 找到標題後添加聯繫信息
-        const titleElement = headerSection.querySelector('p');
-        if (titleElement) {
-          titleElement.parentNode?.insertBefore(contactContainer, titleElement.nextSibling);
-        }
-      }
-
-      // 移除無用的按鈕
-      const buttons = clonedContent.querySelectorAll('button, a[href*="portfolio"], a[href*="app-store"], a[href*="homework7"]');
-      buttons.forEach(button => {
-        button.remove();
-      });
-
-      // 修復 Core Skills 排版
-      const skillsSection = clonedContent.querySelector('[class*="skills"]');
-      if (skillsSection) {
-        const skillsGrid = skillsSection.querySelector('.grid');
-        if (skillsGrid) {
-          (skillsGrid as HTMLElement).style.cssText = `
-            display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-            gap: 20px !important;
-            margin: 20px 0 !important;
-          `;
-        }
-      }
-
-      // 修復標題和內容分頁問題
-      const sections = clonedContent.querySelectorAll('section');
-      sections.forEach(section => {
-        (section as HTMLElement).style.cssText = `
-          page-break-inside: avoid !important;
-          margin-bottom: 30px !important;
-        `;
-      });
-
-      // 優化 Portfolio Showcase - 增加圖片信息
-      const portfolioSection = clonedContent.querySelector('[class*="portfolio"]');
-      if (portfolioSection) {
-        const portfolioCards = portfolioSection.querySelectorAll('[class*="card"]');
-        portfolioCards.forEach(card => {
-          const cardElement = card as HTMLElement;
-          const cardText = cardElement.textContent || '';
-          
-          // 為不同類型的作品集添加圖片信息
-          if (cardText.includes('iOS App Development')) {
-            // iOS App Development - 添加App Store圖標和應用截圖信息
-            const title = cardElement.querySelector('h3');
-            const description = cardElement.querySelector('p');
-            
-            cardElement.innerHTML = '';
-            if (title) cardElement.appendChild(title.cloneNode(true));
-            if (description) {
-              const shortDesc = description.cloneNode(true) as HTMLElement;
-              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
-              cardElement.appendChild(shortDesc);
-            }
-            
-            // 添加圖片信息
-            const imageInfo = document.createElement('div');
-            imageInfo.style.cssText = `
-              margin-top: 10px;
-              padding: 8px;
-              background: #f8fafc;
-              border-radius: 6px;
-              font-size: 12px;
-              color: #6b7280;
-            `;
-            imageInfo.innerHTML = `
-              <strong>📱 App Screenshots:</strong> Available on App Store<br>
-              <strong>🎨 UI Design:</strong> SwiftUI with Apple HIG guidelines<br>
-              <strong>📊 Features:</strong> AI-powered attraction recommendations
-            `;
-            cardElement.appendChild(imageInfo);
-            
-          } else if (cardText.includes('AI/ML Development')) {
-            // AI/ML Development - 添加模型架構圖信息
-            const title = cardElement.querySelector('h3');
-            const description = cardElement.querySelector('p');
-            
-            cardElement.innerHTML = '';
-            if (title) cardElement.appendChild(title.cloneNode(true));
-            if (description) {
-              const shortDesc = description.cloneNode(true) as HTMLElement;
-              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
-              cardElement.appendChild(shortDesc);
-            }
-            
-            // 添加圖片信息
-            const imageInfo = document.createElement('div');
-            imageInfo.style.cssText = `
-              margin-top: 10px;
-              padding: 8px;
-              background: #f8fafc;
-              border-radius: 6px;
-              font-size: 12px;
-              color: #6b7280;
-            `;
-            imageInfo.innerHTML = `
-              <strong>🧠 Model Architecture:</strong> Custom LLM implementation<br>
-              <strong>📈 Training Visualizations:</strong> Neural network diagrams<br>
-              <strong>🔬 Research Documentation:</strong> Technical specifications
-            `;
-            cardElement.appendChild(imageInfo);
-            
-          } else if (cardText.includes('Miniature Dioramas')) {
-            // Miniature Dioramas - 添加作品圖片信息
-            const title = cardElement.querySelector('h3');
-            const description = cardElement.querySelector('p');
-            
-            cardElement.innerHTML = '';
-            if (title) cardElement.appendChild(title.cloneNode(true));
-            if (description) {
-              const shortDesc = description.cloneNode(true) as HTMLElement;
-              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
-              cardElement.appendChild(shortDesc);
-            }
-            
-            // 添加圖片信息
-            const imageInfo = document.createElement('div');
-            imageInfo.style.cssText = `
-              margin-top: 10px;
-              padding: 8px;
-              background: #f8fafc;
-              border-radius: 6px;
-              font-size: 12px;
-              color: #6b7280;
-            `;
-            imageInfo.innerHTML = `
-              <strong>🏗️ 27 Architectural Models:</strong> 1:100 scale dioramas<br>
-              <strong>💡 LED Lighting:</strong> Integrated illumination systems<br>
-              <strong>🎨 Detailed Interiors:</strong> Fantasy buildings & realistic scenes<br>
-              <strong>📸 Portfolio Gallery:</strong> High-resolution documentation
-            `;
-            cardElement.appendChild(imageInfo);
-            
-          } else if (cardText.includes('Model Painting')) {
-            // Model Painting - 添加繪畫作品圖片信息
-            const title = cardElement.querySelector('h3');
-            const description = cardElement.querySelector('p');
-            
-            cardElement.innerHTML = '';
-            if (title) cardElement.appendChild(title.cloneNode(true));
-            if (description) {
-              const shortDesc = description.cloneNode(true) as HTMLElement;
-              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
-              cardElement.appendChild(shortDesc);
-            }
-            
-            // 添加圖片信息
-            const imageInfo = document.createElement('div');
-            imageInfo.style.cssText = `
-              margin-top: 10px;
-              padding: 8px;
-              background: #f8fafc;
-              border-radius: 6px;
-              font-size: 12px;
-              color: #6b7280;
-            `;
-            imageInfo.innerHTML = `
-              <strong>🎨 9 Detailed Paintings:</strong> 1:35 scale miniatures<br>
-              <strong>🎭 Realistic Textures:</strong> Acrylic painting techniques<br>
-              <strong>🌟 Special Effects:</strong> Weathering & aging effects<br>
-              <strong>📷 Process Documentation:</strong> Step-by-step tutorials
-            `;
-            cardElement.appendChild(imageInfo);
-            
-          } else if (cardText.includes('Resin Craft')) {
-            // Resin Craft - 添加手工藝品圖片信息
-            const title = cardElement.querySelector('h3');
-            const description = cardElement.querySelector('p');
-            
-            cardElement.innerHTML = '';
-            if (title) cardElement.appendChild(title.cloneNode(true));
-            if (description) {
-              const shortDesc = description.cloneNode(true) as HTMLElement;
-              shortDesc.textContent = shortDesc.textContent?.substring(0, 100) + '...';
-              cardElement.appendChild(shortDesc);
-            }
-            
-            // 添加圖片信息
-            const imageInfo = document.createElement('div');
-            imageInfo.style.cssText = `
-              margin-top: 10px;
-              padding: 8px;
-              background: #f8fafc;
-              border-radius: 6px;
-              font-size: 12px;
-              color: #6b7280;
-            `;
-            imageInfo.innerHTML = `
-              <strong>✨ 27 Craft Items:</strong> Decorative & functional pieces<br>
-              <strong>🌈 Geometric Patterns:</strong> Marble effects & artistic forms<br>
-              <strong>💎 Crystal Effects:</strong> Epoxy resin techniques<br>
-              <strong>📸 Product Photography:</strong> Professional lighting setup
-            `;
-            cardElement.appendChild(imageInfo);
-          }
-        });
-      }
-
-      pdfContainer.appendChild(clonedContent);
-      document.body.appendChild(pdfContainer);
-
-      // 使用 html2pdf.js 生成 PDF
+      // PDF 配置選項
       const pdfOptions = {
-        margin: [15, 15, 15, 15],
-        filename: 'Wilson_Ho_Professional_CV.pdf',
+        margin: [10, 10, 10, 10],
+        filename: 'Wilson_Ho_CV.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { 
-          scale: 3,
+          scale: 2,
           useCORS: true,
-          allowTaint: true,
-          backgroundColor: '#ffffff',
-          logging: false,
           letterRendering: true
         },
         jsPDF: { 
           unit: 'mm', 
           format: 'a4', 
-          orientation: 'portrait',
-          compress: true
-        },
-        pagebreak: { 
-          mode: ['avoid-all', 'css', 'legacy'],
-          before: '.page-break-before',
-          after: '.page-break-after',
-          avoid: '.page-break-avoid'
+          orientation: 'portrait'
         }
       };
 
+      // 生成 PDF
       await html2pdf().from(pdfContainer).set(pdfOptions).save();
       
-      // 清理
-      document.body.removeChild(pdfContainer);
-      
       toast({
-        title: "CV PDF 生成成功！",
-        description: "你的完整 CV 已成功下載為 PDF 檔案。",
-        variant: "default",
+        title: "PDF Generated Successfully",
+        description: "Your professional CV has been downloaded.",
       });
-      
+
     } catch (error) {
       console.error('PDF generation error:', error);
       toast({
-        title: "PDF 生成失敗",
-        description: "生成 PDF 時發生錯誤，請稍後再試。",
+        title: "PDF Generation Failed",
+        description: "Please try again or contact support.",
         variant: "destructive",
       });
     } finally {
@@ -372,22 +65,780 @@ const EnhancedPDFButton = () => {
     }
   };
 
+  const createProfessionalCVStructure = () => {
+    const cvDiv = document.createElement('div');
+    cvDiv.style.cssText = `
+      font-family: 'Arial', 'Calibri', sans-serif;
+      line-height: 1.4;
+      color: #1f2937;
+    `;
+
+    // Header Section
+    const header = createHeaderSection();
+    cvDiv.appendChild(header);
+
+    // Professional Summary
+    const summary = createSummarySection();
+    cvDiv.appendChild(summary);
+
+    // Core Skills
+    const skills = createSkillsSection();
+    cvDiv.appendChild(skills);
+
+    // Professional Experience
+    const experience = createExperienceSection();
+    cvDiv.appendChild(experience);
+
+    // Prior Technical Roles
+    const priorRoles = createPriorRolesSection();
+    cvDiv.appendChild(priorRoles);
+
+    // Education & Certifications
+    const education = createEducationSection();
+    cvDiv.appendChild(education);
+
+    // Technical Interests
+    const interests = createInterestsSection();
+    cvDiv.appendChild(interests);
+
+    // Portfolio Showcase
+    const portfolio = createPortfolioSection();
+    cvDiv.appendChild(portfolio);
+
+    return cvDiv;
+  };
+
+  const createHeaderSection = () => {
+    const header = document.createElement('div');
+    header.style.cssText = `
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #1e3a8a;
+      padding-bottom: 15px;
+    `;
+
+    const name = document.createElement('h1');
+    name.textContent = 'Ho Wai Shun Wilson';
+    name.style.cssText = `
+      font-size: 28pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 5px 0;
+      letter-spacing: 1px;
+    `;
+
+    const title = document.createElement('h2');
+    title.textContent = 'ERP Solutions Architect';
+    title.style.cssText = `
+      font-size: 16pt;
+      font-weight: 600;
+      color: #374151;
+      margin: 0 0 15px 0;
+    `;
+
+    const contactInfo = document.createElement('div');
+    contactInfo.style.cssText = `
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 10pt;
+      color: #6b7280;
+    `;
+
+    const contactItems = [
+      { icon: '📞', text: '+852 9226 9702' },
+      { icon: '📧', text: 'wilson_23@hotmail.com' },
+      { icon: '🌐', text: 'wilson-cv-architect.vercel.app' },
+      { icon: '📍', text: 'Hong Kong' }
+    ];
+
+    contactItems.forEach(item => {
+      const contactItem = document.createElement('span');
+      contactItem.textContent = `${item.icon} ${item.text}`;
+      contactItem.style.cssText = `
+        white-space: nowrap;
+        font-weight: 500;
+      `;
+      contactInfo.appendChild(contactItem);
+    });
+
+    header.appendChild(name);
+    header.appendChild(title);
+    header.appendChild(contactInfo);
+
+    return header;
+  };
+
+  const createSummarySection = () => {
+    const section = document.createElement('div');
+    section.style.cssText = `
+      margin-bottom: 20px;
+    `;
+
+    const title = document.createElement('h3');
+    title.textContent = 'PROFESSIONAL SUMMARY';
+    title.style.cssText = `
+      font-size: 14pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    `;
+
+    const content = document.createElement('p');
+    content.textContent = 'ERP Solutions Architect with 28+ years in technology implementation. Core expertise in custom module development and client-facing technical support for inventory/accounting systems. Proven track record in end-to-end solution design and critical issue resolution.';
+    content.style.cssText = `
+      font-size: 11pt;
+      line-height: 1.5;
+      margin: 0;
+      text-align: justify;
+    `;
+
+    section.appendChild(title);
+    section.appendChild(content);
+
+    return section;
+  };
+
+  const createSkillsSection = () => {
+    const section = document.createElement('div');
+    section.style.cssText = `
+      margin-bottom: 20px;
+    `;
+
+    const title = document.createElement('h3');
+    title.textContent = 'CORE SKILLS';
+    title.style.cssText = `
+      font-size: 14pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    `;
+
+    const skillsGrid = document.createElement('div');
+    skillsGrid.style.cssText = `
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    `;
+
+    const skillCategories = [
+      {
+        category: 'Technical Skills',
+        skills: 'ERP Development, Database Management, System Integration, API Development, Cloud Infrastructure, Security Implementation'
+      },
+      {
+        category: 'Programming & Tools',
+        skills: 'SQL, JavaScript, Python, HTML/CSS, Git, Docker, AWS, Azure, Linux Administration'
+      },
+      {
+        category: 'Business Skills',
+        skills: 'Project Management, Client Relations, Technical Documentation, Problem Solving, Team Leadership'
+      },
+      {
+        category: 'Domain Expertise',
+        skills: 'Inventory Management, Accounting Systems, POS Integration, Payment Processing, Workflow Automation'
+      }
+    ];
+
+    skillCategories.forEach(cat => {
+      const categoryDiv = document.createElement('div');
+      categoryDiv.style.cssText = `
+        background: #f8fafc;
+        padding: 10px;
+        border-left: 3px solid #3b82f6;
+      `;
+
+      const categoryTitle = document.createElement('h4');
+      categoryTitle.textContent = cat.category;
+      categoryTitle.style.cssText = `
+        font-size: 11pt;
+        font-weight: bold;
+        color: #1e3a8a;
+        margin: 0 0 5px 0;
+      `;
+
+      const skillsList = document.createElement('p');
+      skillsList.textContent = cat.skills;
+      skillsList.style.cssText = `
+        font-size: 10pt;
+        line-height: 1.4;
+        margin: 0;
+        color: #374151;
+      `;
+
+      categoryDiv.appendChild(categoryTitle);
+      categoryDiv.appendChild(skillsList);
+      skillsGrid.appendChild(categoryDiv);
+    });
+
+    section.appendChild(title);
+    section.appendChild(skillsGrid);
+
+    return section;
+  };
+
+  const createExperienceSection = () => {
+    const section = document.createElement('div');
+    section.style.cssText = `
+      margin-bottom: 20px;
+    `;
+
+    const title = document.createElement('h3');
+    title.textContent = 'PROFESSIONAL EXPERIENCE';
+    title.style.cssText = `
+      font-size: 14pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 15px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    `;
+
+    // Current Experience
+    const currentExp = document.createElement('div');
+    currentExp.style.cssText = `
+      margin-bottom: 15px;
+    `;
+
+    const companyHeader = document.createElement('div');
+    companyHeader.style.cssText = `
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    `;
+
+    const companyName = document.createElement('h4');
+    companyName.textContent = 'Epoch-Tech Computer System Co., Ltd.';
+    companyName.style.cssText = `
+      font-size: 12pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0;
+    `;
+
+    const duration = document.createElement('span');
+    duration.textContent = '2009 – Present';
+    duration.style.cssText = `
+      font-size: 10pt;
+      color: #6b7280;
+      font-weight: 500;
+    `;
+
+    companyHeader.appendChild(companyName);
+    companyHeader.appendChild(duration);
+
+    const position = document.createElement('h5');
+    position.textContent = 'Information System Manager';
+    position.style.cssText = `
+      font-size: 11pt;
+      font-weight: 600;
+      color: #374151;
+      margin: 0 0 10px 0;
+    `;
+
+    const responsibilities = [
+      'ERP System Development & Customization: Lead Plugin Developer for flagship inventory/accounting ERP with POS integration, labeling system, token system, and payment scheduler add-on. Developed 1500+ client-specific workflow solutions.',
+      'Client Solution Lifecycle Management: Conducted unlimited requirement analysis sessions, authored technical proposals for enterprise clients, and provided professional support for complex accounting/system issues.',
+      'Infrastructure & Security: Install and maintained 20+ server cluster, configured enterprise firewalls, performed monthly vulnerability assessments.',
+      'Practical Facility Upgrades: Installed touch-free restroom systems with occupancy indicators, implemented facial recognition time clocks, enhanced server room cooling via weatherproofing.'
+    ];
+
+    const responsibilitiesList = document.createElement('ul');
+    responsibilitiesList.style.cssText = `
+      margin: 0;
+      padding-left: 20px;
+    `;
+
+    responsibilities.forEach(resp => {
+      const li = document.createElement('li');
+      li.textContent = resp;
+      li.style.cssText = `
+        font-size: 10pt;
+        line-height: 1.4;
+        margin-bottom: 5px;
+        color: #374151;
+      `;
+      responsibilitiesList.appendChild(li);
+    });
+
+    const achievements = document.createElement('div');
+    achievements.style.cssText = `
+      margin-top: 10px;
+      padding: 8px;
+      background: #f0f9ff;
+      border-left: 3px solid #0ea5e9;
+      page-break-before: always;
+      break-before: page;
+    `;
+
+    const achievementsTitle = document.createElement('h6');
+    achievementsTitle.textContent = 'Key Achievements:';
+    achievementsTitle.style.cssText = `
+      font-size: 10pt;
+      font-weight: bold;
+      color: #0c4a6e;
+      margin: 0 0 5px 0;
+    `;
+
+    const achievementsList = document.createElement('p');
+    achievementsList.textContent = 'ERP Excellence Awards 2022 • Asia\'s Most Valuable Brand Awards 2023 • CorpHub Outstanding Enterprise Awards 2023 • HKCT Business Awards 2023 • Capital eCommerce Awards 2022/23';
+    achievementsList.style.cssText = `
+      font-size: 9pt;
+      line-height: 1.3;
+      margin: 0;
+      color: #0c4a6e;
+    `;
+
+    achievements.appendChild(achievementsTitle);
+    achievements.appendChild(achievementsList);
+
+    currentExp.appendChild(companyHeader);
+    currentExp.appendChild(position);
+    currentExp.appendChild(responsibilitiesList);
+    currentExp.appendChild(achievements);
+
+    section.appendChild(title);
+    section.appendChild(currentExp);
+
+    return section;
+  };
+
+  const createEducationSection = () => {
+    const section = document.createElement('div');
+    section.style.cssText = `
+      margin-bottom: 20px;
+    `;
+
+    const title = document.createElement('h3');
+    title.textContent = 'EDUCATION & CERTIFICATIONS';
+    title.style.cssText = `
+      font-size: 14pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 15px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    `;
+
+    const educationGrid = document.createElement('div');
+    educationGrid.style.cssText = `
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    `;
+
+    // Education Column
+    const educationCol = document.createElement('div');
+    const educationTitle = document.createElement('h4');
+    educationTitle.textContent = 'Education';
+    educationTitle.style.cssText = `
+      font-size: 12pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 10px 0;
+    `;
+
+    const educationItems = [
+      { title: 'Generative AI', institution: 'Venturenix LAB', year: '29/7/2025' },
+      { title: 'Certificate in Python Programming (Part-time)', institution: 'Hong Kong College of Technology (HKCT)', year: '30/7/2025' },
+      { title: 'Diploma in Practical IT Skill', institution: 'Unisoft Education Centre', year: '2000' },
+      { title: 'Vocational English Certificate', institution: 'HK PolyU', year: '1996' },
+      { title: 'Business Studies Diploma', institution: 'Caritas Institute', year: '1995' },
+      { title: 'HKCEE', institution: 'Hong Kong Certificate of Education Examination', subjects: 'Chinese • English • Geography • Mathematics' }
+    ];
+
+    const educationList = document.createElement('div');
+    educationList.style.cssText = `
+      space-y: 8px;
+    `;
+
+    educationItems.forEach(item => {
+      const eduItem = document.createElement('div');
+      eduItem.style.cssText = `
+        margin-bottom: 8px;
+        padding: 8px;
+        background: #f8fafc;
+        border-left: 2px solid #3b82f6;
+      `;
+
+      const eduTitle = document.createElement('h5');
+      eduTitle.textContent = item.title;
+      eduTitle.style.cssText = `
+        font-size: 10pt;
+        font-weight: bold;
+        color: #374151;
+        margin: 0 0 2px 0;
+      `;
+
+      const eduInstitution = document.createElement('p');
+      eduInstitution.textContent = item.institution;
+      eduInstitution.style.cssText = `
+        font-size: 9pt;
+        color: #1e3a8a;
+        font-weight: 500;
+        margin: 0 0 2px 0;
+      `;
+
+      const eduYear = document.createElement('p');
+      eduYear.textContent = item.year || item.subjects || '';
+      eduYear.style.cssText = `
+        font-size: 8pt;
+        color: #6b7280;
+        margin: 0;
+      `;
+
+      eduItem.appendChild(eduTitle);
+      eduItem.appendChild(eduInstitution);
+      eduItem.appendChild(eduYear);
+      educationList.appendChild(eduItem);
+    });
+
+    educationCol.appendChild(educationTitle);
+    educationCol.appendChild(educationList);
+
+    // Certifications Column
+    const certCol = document.createElement('div');
+    const certTitle = document.createElement('h4');
+    certTitle.textContent = 'Certifications';
+    certTitle.style.cssText = `
+      font-size: 12pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 10px 0;
+    `;
+
+    const certItems = [
+      'Pitman: Software Applications • Word Processing',
+      'HK PolyU: Vocational English Certificate',
+      'Microsoft Office Specialist (MOS)'
+    ];
+
+    const certList = document.createElement('div');
+    certList.style.cssText = `
+      space-y: 8px;
+    `;
+
+    certItems.forEach(cert => {
+      const certItem = document.createElement('div');
+      certItem.style.cssText = `
+        margin-bottom: 8px;
+        padding: 8px;
+        background: #f8fafc;
+        border-left: 2px solid #10b981;
+      `;
+
+      const certText = document.createElement('p');
+      certText.textContent = cert;
+      certText.style.cssText = `
+        font-size: 9pt;
+        color: #374151;
+        margin: 0;
+        font-weight: 500;
+      `;
+
+      certItem.appendChild(certText);
+      certList.appendChild(certItem);
+    });
+
+    certCol.appendChild(certTitle);
+    certCol.appendChild(certList);
+
+    educationGrid.appendChild(educationCol);
+    educationGrid.appendChild(certCol);
+
+    section.appendChild(title);
+    section.appendChild(educationGrid);
+
+    return section;
+  };
+
+  const createInterestsSection = () => {
+    const section = document.createElement('div');
+    section.style.cssText = `
+      margin-bottom: 20px;
+      page-break-before: always;
+      break-before: page;
+    `;
+
+    const title = document.createElement('h3');
+    title.textContent = 'TECHNICAL INTERESTS & CRAFTSMANSHIP';
+    title.style.cssText = `
+      font-size: 14pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    `;
+
+    const interestsGrid = document.createElement('div');
+    interestsGrid.style.cssText = `
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    `;
+
+    const interests = [
+      { title: 'iOS App Development', description: 'Native iOS applications with SwiftUI and AI integration' },
+      { title: 'AI/ML Development', description: 'Custom Large Language Model implementation and neural networks' },
+      { title: 'Scale Miniature Dioramas', description: '1:100 architectural models with intricate craftsmanship' },
+      { title: 'High-Detail Model Painting', description: 'Precision acrylic painting on 1:35 scale miniatures' },
+      { title: 'Resin Craft Production', description: 'Epoxy resin casting with LED integration and crystal effects' }
+    ];
+
+    interests.forEach(interest => {
+      const interestItem = document.createElement('div');
+      interestItem.style.cssText = `
+        padding: 8px;
+        background: #f8fafc;
+        border-left: 2px solid #8b5cf6;
+      `;
+
+      const interestTitle = document.createElement('h5');
+      interestTitle.textContent = interest.title;
+      interestTitle.style.cssText = `
+        font-size: 10pt;
+        font-weight: bold;
+        color: #374151;
+        margin: 0 0 3px 0;
+      `;
+
+      const interestDesc = document.createElement('p');
+      interestDesc.textContent = interest.description;
+      interestDesc.style.cssText = `
+        font-size: 8pt;
+        color: #6b7280;
+        margin: 0;
+        line-height: 1.3;
+      `;
+
+      interestItem.appendChild(interestTitle);
+      interestItem.appendChild(interestDesc);
+      interestsGrid.appendChild(interestItem);
+    });
+
+    section.appendChild(title);
+    section.appendChild(interestsGrid);
+
+    return section;
+  };
+
+  const createPriorRolesSection = () => {
+    const section = document.createElement('div');
+    section.style.cssText = `
+      margin-bottom: 20px;
+    `;
+
+    const title = document.createElement('h3');
+    title.textContent = 'PRIOR TECHNICAL ROLES (1993-2008)';
+    title.style.cssText = `
+      font-size: 14pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 15px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    `;
+
+    const rolesGrid = document.createElement('div');
+    rolesGrid.style.cssText = `
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    `;
+
+    const priorRoles = [
+      {
+        role: 'System Engineer',
+        company: 'United Technologies',
+        duration: '2008-2009'
+      },
+      {
+        role: 'IT Engineer',
+        company: 'I-Nem/NationMark/Skynet',
+        duration: '2005-2007'
+      },
+      {
+        role: 'IT Support Supervisor',
+        company: 'Melbourne Garment',
+        duration: '2001-2005'
+      },
+      {
+        role: 'Operations Specialist',
+        company: 'Banking & Logistics Firms',
+        duration: '1993-2000'
+      }
+    ];
+
+    priorRoles.forEach(role => {
+      const roleDiv = document.createElement('div');
+      roleDiv.style.cssText = `
+        background: #f8fafc;
+        padding: 12px;
+        border-left: 3px solid #3b82f6;
+      `;
+
+      const roleTitle = document.createElement('h4');
+      roleTitle.textContent = role.role;
+      roleTitle.style.cssText = `
+        font-size: 11pt;
+        font-weight: bold;
+        color: #374151;
+        margin: 0 0 5px 0;
+      `;
+
+      const roleCompany = document.createElement('p');
+      roleCompany.textContent = role.company;
+      roleCompany.style.cssText = `
+        font-size: 10pt;
+        color: #1e3a8a;
+        font-weight: 500;
+        margin: 0 0 3px 0;
+      `;
+
+      const roleDuration = document.createElement('p');
+      roleDuration.textContent = role.duration;
+      roleDuration.style.cssText = `
+        font-size: 9pt;
+        color: #6b7280;
+        margin: 0;
+      `;
+
+      roleDiv.appendChild(roleTitle);
+      roleDiv.appendChild(roleCompany);
+      roleDiv.appendChild(roleDuration);
+      rolesGrid.appendChild(roleDiv);
+    });
+
+    section.appendChild(title);
+    section.appendChild(rolesGrid);
+
+    return section;
+  };
+
+  const createPortfolioSection = () => {
+    const section = document.createElement('div');
+    section.style.cssText = `
+      margin-bottom: 20px;
+    `;
+
+    const title = document.createElement('h3');
+    title.textContent = 'PORTFOLIO SHOWCASE';
+    title.style.cssText = `
+      font-size: 14pt;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0 0 15px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    `;
+
+    const portfolioGrid = document.createElement('div');
+    portfolioGrid.style.cssText = `
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    `;
+
+    const portfolioItems = [
+      {
+        title: 'iOS App Development',
+        description: 'Native iOS applications built with SwiftUI, following Apple HIG design principles and MVVM architecture.',
+        skills: 'Attraction Finder, SwiftUI, HIG Design, AI Integration',
+        link: 'https://apps.apple.com/hk/app/attraction-finder/id6748924079'
+      },
+      {
+        title: 'AI/ML Development',
+        description: 'Custom Large Language Model implementation demonstrating deep understanding of AI architecture and machine learning principles.',
+        skills: 'Custom LLM, Neural Networks, NLP, Python',
+        link: 'https://homework7.monsterwilson.online/'
+      },
+      {
+        title: 'Scale Miniature Dioramas',
+        description: '1:100 architectural models featuring fantasy buildings, detailed interiors, and intricate craftsmanship.',
+        skills: 'Architectural Modeling, LED Lighting, Interior Design, Weathering Effects'
+      },
+      {
+        title: 'High-Detail Model Painting',
+        description: 'Precision acrylic painting on 1:35 scale miniatures with realistic textures and weathering effects.',
+        skills: 'Acrylic Painting, Weathering, Detail Work, Realistic Textures'
+      },
+      {
+        title: 'Resin Craft Production',
+        description: 'Epoxy resin casting with LED integration, crystal effects, and geometric patterns.',
+        skills: 'Resin Casting, LED Integration, Crystal Effects, Geometric Patterns'
+      }
+    ];
+
+    portfolioItems.forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.style.cssText = `
+        background: #f8fafc;
+        padding: 12px;
+        border-left: 3px solid #8b5cf6;
+      `;
+
+      const itemTitle = document.createElement('h4');
+      itemTitle.textContent = item.title;
+      itemTitle.style.cssText = `
+        font-size: 11pt;
+        font-weight: bold;
+        color: #374151;
+        margin: 0 0 5px 0;
+      `;
+
+      const itemDesc = document.createElement('p');
+      itemDesc.textContent = item.description;
+      itemDesc.style.cssText = `
+        font-size: 9pt;
+        line-height: 1.4;
+        color: #6b7280;
+        margin: 0 0 5px 0;
+      `;
+
+      const itemSkills = document.createElement('p');
+      itemSkills.textContent = `Skills: ${item.skills}`;
+      itemSkills.style.cssText = `
+        font-size: 8pt;
+        color: #1e3a8a;
+        font-weight: 500;
+        margin: 0;
+      `;
+
+      itemDiv.appendChild(itemTitle);
+      itemDiv.appendChild(itemDesc);
+      itemDiv.appendChild(itemSkills);
+      portfolioGrid.appendChild(itemDiv);
+    });
+
+    section.appendChild(title);
+    section.appendChild(portfolioGrid);
+
+    return section;
+  };
+
   return (
     <Button
       onClick={generateEnhancedPDF}
       disabled={isGenerating}
-      className="fixed top-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-300 text-white group rounded-full px-5 py-2"
+      className="fixed top-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 backdrop-blur-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-300 text-white group rounded-full px-5 py-2"
       size="sm"
     >
       {isGenerating ? (
         <>
           <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-          <span className="font-medium text-sm">生成專業 PDF...</span>
+          <span className="font-medium text-sm">Generating Professional CV...</span>
         </>
       ) : (
         <>
           <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
-          <span className="font-medium text-sm">下載 CV PDF</span>
+          <span className="font-medium text-sm">Download CV</span>
         </>
       )}
     </Button>

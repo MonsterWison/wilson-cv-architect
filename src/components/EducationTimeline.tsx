@@ -16,6 +16,12 @@ const EducationTimeline = () => {
       type: "Certificate"
     },
     {
+      title: "Diploma in Practical IT Skill",
+      institution: "Unisoft Education Centre",
+      year: "2000",
+      type: "Diploma"
+    },
+    {
       title: "Vocational English Certificate",
       institution: "HK PolyU",
       year: "1996",
