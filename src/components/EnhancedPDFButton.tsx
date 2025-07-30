@@ -62,10 +62,10 @@ const EnhancedPDFButton = () => {
         const element = item as HTMLElement;
         const text = element.textContent || '';
         
-        if (text.includes('wilson_23@hotmail.com')) {
+        if (text.includes('monsterbb100@gmail.com')) {
           element.style.cursor = 'pointer';
           element.onclick = () => {
-            window.open(`mailto:wilson_23@hotmail.com?subject=CV Inquiry`, '_self');
+            window.open(`mailto:monsterbb100@gmail.com?subject=CV Inquiry`, '_self');
           };
         } else if (text.includes('wilson-cv-architect.vercel.app')) {
           element.style.cursor = 'pointer';
@@ -95,7 +95,7 @@ const EnhancedPDFButton = () => {
 
         const contactInfo = [
           { icon: '📞', text: '+852 9226 9702', type: 'phone' },
-          { icon: '📧', text: 'wilson_23@hotmail.com', type: 'email' },
+          { icon: '📧', text: 'monsterbb100@gmail.com', type: 'email' },
           { icon: '🌐', text: 'wilson-cv-architect.vercel.app', type: 'website' },
           { icon: '📍', text: 'Hong Kong', type: 'location' }
         ];

@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 interface CVSectionProps {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   variant?: "default" | "skills" | "experience";
 }

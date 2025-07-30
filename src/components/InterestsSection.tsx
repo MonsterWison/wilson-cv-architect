@@ -1,11 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Wrench, Car, Home, Palette } from "lucide-react";
 
-interface InterestsSectionProps {
-  variant?: "default" | "print";
-}
-
-const InterestsSection = ({ variant = "default" }: InterestsSectionProps) => {
+const InterestsSection = () => {
   const interests = [
     {
       title: "Precision Modeling",
@@ -45,61 +41,24 @@ const InterestsSection = ({ variant = "default" }: InterestsSectionProps) => {
     }
   ];
 
-  const getTextStyles = () => {
-    if (variant === "print") {
-      return "text-cv-print-text-primary";
-    }
-    return "text-cv-text-primary";
-  };
-
-  const getSecondaryTextStyles = () => {
-    if (variant === "print") {
-      return "text-cv-print-text-secondary";
-    }
-    return "text-cv-text-secondary";
-  };
-
-  const getAccentStyles = () => {
-    if (variant === "print") {
-      return "text-cv-print-accent";
-    }
-    return "text-primary";
-  };
-
-  const getCardStyles = () => {
-    if (variant === "print") {
-      return "bg-white border border-cv-print-border shadow-print";
-    }
-    return "shadow-soft hover:shadow-elegant transition-all duration-300 group";
-  };
-
-  const getIconStyles = () => {
-    if (variant === "print") {
-      return "p-3 bg-cv-print-accent/10 rounded-lg";
-    }
-    return "p-3 bg-cv-accent/10 rounded-lg group-hover:bg-cv-accent/20 transition-colors";
-  };
-
   return (
     <div className="grid md:grid-cols-2 gap-6">
       {interests.map((interest, index) => (
-        <Card key={index} className={getCardStyles()}>
+        <Card key={index} className="shadow-soft hover:shadow-elegant transition-all duration-300 group">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
-              <div className={getIconStyles()}>
-                <div className={getAccentStyles()}>
-                  {interest.icon}
-                </div>
+              <div className="p-3 bg-cv-accent/10 rounded-lg group-hover:bg-cv-accent/20 transition-colors">
+                {interest.icon}
               </div>
-              <h3 className={`text-xl font-semibold ${getTextStyles()}`}>
+              <h3 className="text-xl font-semibold text-cv-text-primary">
                 {interest.title}
               </h3>
             </div>
             <ul className="space-y-2">
               {interest.activities.map((activity, actIndex) => (
                 <li key={actIndex} className="flex items-start gap-2">
-                  <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${variant === "print" ? "bg-cv-print-accent" : "bg-primary"}`}></div>
-                  <span className={`text-sm leading-relaxed ${getSecondaryTextStyles()}`}>
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-cv-text-secondary text-sm leading-relaxed">
                     {activity}
                   </span>
                 </li>

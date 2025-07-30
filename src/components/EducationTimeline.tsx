@@ -1,11 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Award } from "lucide-react";
 
-interface EducationTimelineProps {
-  variant?: "default" | "print";
-}
-
-const EducationTimeline = ({ variant = "default" }: EducationTimelineProps) => {
+const EducationTimeline = () => {
   const education = [
     {
       title: "Vocational English Certificate",
@@ -30,68 +26,31 @@ const EducationTimeline = ({ variant = "default" }: EducationTimelineProps) => {
   const certifications = [
     "Pitman: Software Applications • Word Processing",
     "HK PolyU: Vocational English Certificate", 
-    "Microsoft Office Specialist (MOS)",
-    "Venturenix Lab: Generative AI (Graduated: 29 July 2025)",
-    "Hong Kong College of Technology: Certificate in Python Programming (Part-time) (Graduated: 30 July 2025)"
+    "Microsoft Office Specialist (MOS)"
   ];
-
-  const getTextStyles = () => {
-    if (variant === "print") {
-      return "text-cv-print-text-primary";
-    }
-    return "text-cv-text-primary";
-  };
-
-  const getSecondaryTextStyles = () => {
-    if (variant === "print") {
-      return "text-cv-print-text-secondary";
-    }
-    return "text-cv-text-secondary";
-  };
-
-  const getAccentStyles = () => {
-    if (variant === "print") {
-      return "text-cv-print-accent";
-    }
-    return "text-primary";
-  };
-
-  const getCardStyles = () => {
-    if (variant === "print") {
-      return "bg-white border border-cv-print-border shadow-print";
-    }
-    return "border-l-4 border-l-cv-accent";
-  };
-
-  const getPrimaryCardStyles = () => {
-    if (variant === "print") {
-      return "bg-white border border-cv-print-border shadow-print";
-    }
-    return "border-l-4 border-l-primary";
-  };
 
   return (
     <div className="grid md:grid-cols-2 gap-8">
       <div>
-        <h3 className={`text-2xl font-semibold mb-6 flex items-center gap-2 ${getTextStyles()}`}>
-          <GraduationCap className={`w-6 h-6 ${getAccentStyles()}`} />
+        <h3 className="text-2xl font-semibold text-cv-text-primary mb-6 flex items-center gap-2">
+          <GraduationCap className="w-6 h-6 text-primary" />
           Education
         </h3>
         <div className="space-y-4">
           {education.map((edu, index) => (
-            <Card key={index} className={getCardStyles()}>
+            <Card key={index} className="border-l-4 border-l-cv-accent">
               <CardContent className="p-6">
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className={`font-semibold ${getTextStyles()}`}>{edu.title}</h4>
+                  <h4 className="font-semibold text-cv-text-primary">{edu.title}</h4>
                   {edu.year && (
-                    <span className={`text-sm px-2 py-1 rounded ${variant === "print" ? "bg-cv-print-card-bg border border-cv-print-border" : "bg-muted"} ${getSecondaryTextStyles()}`}>
+                    <span className="text-sm text-cv-text-secondary bg-muted px-2 py-1 rounded">
                       {edu.year}
                     </span>
                   )}
                 </div>
-                <p className={`font-medium ${getAccentStyles()}`}>{edu.institution}</p>
+                <p className="text-primary font-medium">{edu.institution}</p>
                 {edu.subjects && (
-                  <p className={`text-sm mt-1 ${getSecondaryTextStyles()}`}>{edu.subjects}</p>
+                  <p className="text-sm text-cv-text-secondary mt-1">{edu.subjects}</p>
                 )}
               </CardContent>
             </Card>
@@ -100,15 +59,15 @@ const EducationTimeline = ({ variant = "default" }: EducationTimelineProps) => {
       </div>
 
       <div>
-        <h3 className={`text-2xl font-semibold mb-6 flex items-center gap-2 ${getTextStyles()}`}>
-          <Award className={`w-6 h-6 ${getAccentStyles()}`} />
+        <h3 className="text-2xl font-semibold text-cv-text-primary mb-6 flex items-center gap-2">
+          <Award className="w-6 h-6 text-primary" />
           Certifications
         </h3>
         <div className="space-y-3">
           {certifications.map((cert, index) => (
-            <Card key={index} className={getPrimaryCardStyles()}>
+            <Card key={index} className="border-l-4 border-l-primary">
               <CardContent className="p-4">
-                <p className={getTextStyles()}>{cert}</p>
+                <p className="text-cv-text-primary">{cert}</p>
               </CardContent>
             </Card>
           ))}

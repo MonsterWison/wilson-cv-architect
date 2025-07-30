@@ -69,15 +69,7 @@ export default {
 					'skills-bg': 'hsl(var(--cv-skills-bg))',
 					'text-primary': 'hsl(var(--cv-text-primary))',
 					'text-secondary': 'hsl(var(--cv-text-secondary))',
-					'accent': 'hsl(var(--cv-accent))',
-					'print-header-bg': 'hsl(var(--cv-print-header-bg))',
-					'print-header-border': 'hsl(var(--cv-print-header-border))',
-					'print-section-bg': 'hsl(var(--cv-print-section-bg))',
-					'print-text-primary': 'hsl(var(--cv-print-text-primary))',
-					'print-text-secondary': 'hsl(var(--cv-print-text-secondary))',
-					'print-accent': 'hsl(var(--cv-print-accent))',
-					'print-border': 'hsl(var(--cv-print-border))',
-					'print-card-bg': 'hsl(var(--cv-print-card-bg))'
+					'accent': 'hsl(var(--cv-accent))'
 				}
 			},
 			backgroundImage: {
@@ -86,8 +78,7 @@ export default {
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
-				'soft': 'var(--shadow-soft)',
-				'print': 'var(--shadow-print)'
+				'soft': 'var(--shadow-soft)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
