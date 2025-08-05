@@ -1,162 +1,59 @@
-# Wilson Ho - ERP Solutions Architect CV
+# Wilson CV Architect
 
-A modern, responsive CV website showcasing 28+ years of technology expertise in ERP solutions and information systems management.
+A professional CV website showcasing 28+ years of technology expertise in ERP solutions, iOS development, AI/ML, and craftsmanship.
 
-## 🚀 Live Demo
+## Features
 
-Visit: [https://monsterwison.github.io/wilson-cv-architect](https://monsterwison.github.io/wilson-cv-architect)
+- **Professional CV Display**: Clean, modern design with responsive layout
+- **PDF Export**: Download professional PDF version of CV
+- **Portfolio Showcase**: Interactive portfolio with multiple categories
+- **Technical Skills**: Comprehensive skills grid with categorization
+- **Education Timeline**: Detailed education and certification history
+- **Experience Cards**: Professional experience with achievements
+- **Contact Integration**: Direct email and website links
 
-## 🛠️ Tech Stack
+## Technology Stack
 
-- **Frontend**: React 18 + TypeScript
-- **Styling**: Tailwind CSS + shadcn/ui
-- **Build Tool**: Vite
-- **Deployment**: GitHub Pages
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Routing**: React Router DOM
+- **PDF Generation**: html2pdf.js
+- **Deployment**: Cloudflare Pages
 
-## 📋 Features
+## Development
 
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Modern UI**: Clean, professional design with smooth animations
-- **SEO Optimized**: Proper meta tags and structured content
-- **Fast Loading**: Optimized build with Vite
-- **Accessible**: WCAG compliant components
-
-## 🏗️ Project Structure
-
-```
-src/
-├── components/          # Reusable UI components
-│   ├── ui/             # shadcn/ui components
-│   ├── CVHeader.tsx    # Header with contact info
-│   ├── CVSection.tsx   # Section wrapper
-│   ├── SkillsGrid.tsx  # Skills display
-│   └── ...
-├── pages/              # Page components
-│   ├── Index.tsx       # Main CV page
-│   └── NotFound.tsx    # 404 page
-├── hooks/              # Custom React hooks
-├── lib/                # Utility functions
-└── main.tsx           # App entry point
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/wilsonho/wilson-cv-architect.git
-cd wilson-cv-architect
-```
-
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Start development server:
-```bash
+# Start development server
 npm run dev
-```
 
-4. Open [http://localhost:8080](http://localhost:8080) in your browser.
-
-### Building for Production
-
-```bash
+# Build for production
 npm run build
+
+# Preview production build
+npm run preview
 ```
 
-The built files will be in the `dist/` directory.
+## Portfolio Categories
 
-## 🌐 Deployment to GitHub Pages
+1. **iOS App Development**: Native iOS applications with SwiftUI
+2. **AI/ML Development**: Custom LLM implementation and neural networks
+3. **Scale Miniature Dioramas**: 1:100 architectural models
+4. **High-Detail Model Painting**: Precision acrylic painting
+5. **Resin Craft Production**: Epoxy resin casting with LED integration
 
-### Automatic Deployment
+## Contact
 
-1. Push your changes to the main branch
-2. Run the deployment command:
-```bash
-npm run deploy
-```
+- **Email**: wilson_23@hotmail.com
+- **Website**: https://wilson-cv-architect.vercel.app/
+- **Location**: Hong Kong
 
-This will:
-- Build the project
-- Deploy to the `gh-pages` branch
-- Make it available at `https://wilsonho.github.io/wilson-cv-architect`
+## Professional Experience
 
-### Manual Deployment
+**ERP Solutions Architect** with 28+ years in technology implementation. Core expertise in custom module development and client-facing technical support for inventory/accounting systems.
 
-1. Build the project:
-```bash
-npm run build
-```
+## Latest Update
 
-2. Create a new branch called `gh-pages`:
-```bash
-git checkout -b gh-pages
-```
-
-3. Copy the contents of `dist/` to the root of the `gh-pages` branch
-
-4. Commit and push:
-```bash
-git add .
-git commit -m "Deploy to GitHub Pages"
-git push origin gh-pages
-```
-
-5. In your GitHub repository settings, set the source to `gh-pages` branch
-
-## 📝 Customization
-
-### Personal Information
-
-Update your personal information in:
-- `src/components/CVHeader.tsx` - Contact details and title
-- `src/pages/Index.tsx` - Professional summary and experience
-
-### Styling
-
-The project uses Tailwind CSS with custom CSS variables. Main styling files:
-- `src/index.css` - Global styles and CSS variables
-- `tailwind.config.ts` - Tailwind configuration
-
-### Content
-
-Update your CV content in the respective component files:
-- Experience: `src/pages/Index.tsx`
-- Skills: `src/components/SkillsGrid.tsx`
-- Education: `src/components/EducationTimeline.tsx`
-
-## 🔧 Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run deploy` - Deploy to GitHub Pages
-
-### Code Style
-
-The project uses ESLint for code linting. Run `npm run lint` to check for issues.
-
-## 📄 License
-
-This project is private and for personal use.
-
-## 🤝 Contributing
-
-This is a personal CV website, but suggestions for improvements are welcome!
-
----
-
-**Contact**: wilson_23@hotmail.com  
-**Location**: Hong Kong  
-**Website**: [https://monsterwison.github.io/wilson-cv-architect](https://monsterwison.github.io/wilson-cv-architect)
+Updated for Cloudflare Pages deployment with npm configuration.
