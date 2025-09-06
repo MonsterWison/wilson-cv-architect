@@ -462,7 +462,7 @@ const EnhancedPDFButton = () => {
 
     const educationItems = [
       { title: 'Generative AI', institution: 'Venturenix LAB', year: '29/7/2025' },
-      { title: 'Certificate in Python Programming (Part-time)', institution: 'Hong Kong College of Technology (HKCT)(ERB)', year: '30/7/2025' },
+      { title: 'Certificate in Python Programming (Part-time)', institution: 'Hong Kong College of Technology (HKCT)', year: '30/7/2025', additionalInfo: 'Employees Retraining Board' },
       { title: 'Diploma in Practical IT Skill', institution: 'Unisoft Education Centre', year: '2000' },
       { title: 'Vocational English Certificate', institution: 'HK PolyU', year: '1996' },
       { title: 'Business Studies Diploma', institution: 'Caritas Institute', year: '1995' },
@@ -511,6 +511,19 @@ const EnhancedPDFButton = () => {
 
       eduItem.appendChild(eduTitle);
       eduItem.appendChild(eduInstitution);
+      
+      if (item.additionalInfo) {
+        const eduAdditional = document.createElement('p');
+        eduAdditional.textContent = item.additionalInfo;
+        eduAdditional.style.cssText = `
+          font-size: 8pt;
+          color: #6b7280;
+          margin: 0 0 2px 0;
+          font-style: italic;
+        `;
+        eduItem.appendChild(eduAdditional);
+      }
+      
       eduItem.appendChild(eduYear);
       educationList.appendChild(eduItem);
     });

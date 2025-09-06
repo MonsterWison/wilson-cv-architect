@@ -11,9 +11,10 @@ const EducationTimeline = () => {
     },
     {
       title: "Certificate in Python Programming (Part-time)",
-      institution: "Hong Kong College of Technology (HKCT)(ERB)",
+      institution: "Hong Kong College of Technology (HKCT)",
       year: "30/7/2025",
-      type: "Certificate"
+      type: "Certificate",
+      additionalInfo: "Employees Retraining Board"
     },
     {
       title: "Diploma in Practical IT Skill",
@@ -67,6 +68,9 @@ const EducationTimeline = () => {
                   )}
                 </div>
                 <p className="text-primary font-medium">{edu.institution}</p>
+                {edu.additionalInfo && (
+                  <p className="text-sm text-cv-text-secondary mt-1">{edu.additionalInfo}</p>
+                )}
                 {edu.subjects && (
                   <p className="text-sm text-cv-text-secondary mt-1">{edu.subjects}</p>
                 )}
