@@ -462,7 +462,7 @@ const EnhancedPDFButton = () => {
 
     const educationItems = [
       { title: 'Generative AI', institution: 'Venturenix LAB', year: '29/7/2025' },
-      { title: 'Certificate in Python Programming (Part-time)', institution: 'Hong Kong College of Technology (HKCT)', year: '30/7/2025' },
+      { title: 'Certificate in Python Programming (Part-time)', institution: 'Hong Kong College of Technology (HKCT)(ERB)', year: '30/7/2025' },
       { title: 'Diploma in Practical IT Skill', institution: 'Unisoft Education Centre', year: '2000' },
       { title: 'Vocational English Certificate', institution: 'HK PolyU', year: '1996' },
       { title: 'Business Studies Diploma', institution: 'Caritas Institute', year: '1995' },

@@ -11,7 +11,7 @@ const EducationTimeline = () => {
     },
     {
       title: "Certificate in Python Programming (Part-time)",
-      institution: "Hong Kong College of Technology (HKCT)",
+      institution: "Hong Kong College of Technology (HKCT)(ERB)",
       year: "30/7/2025",
       type: "Certificate"
     },
