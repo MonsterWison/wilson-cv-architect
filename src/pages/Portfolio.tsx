@@ -1012,7 +1012,7 @@ const photoItems: PhotoItem[] = [
       scale: "1:1",
       materials: ["Wood strips", "Decorative panels", "Gold chains", "Pearl beads", "Resin ornaments"],
       techniques: ["Detail crafting", "Precision assembly", "Ornament placement", "Chain work"],
-      dimensions: "20cm × 12cm × 12cm",
+      dimensions: "25cm × 15cm × 15cm",
       completionTime: "3 days"
     }
   },
