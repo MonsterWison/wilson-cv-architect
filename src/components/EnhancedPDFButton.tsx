@@ -128,7 +128,7 @@ const EnhancedPDFButton = () => {
     `;
 
     const title = document.createElement('h2');
-    title.textContent = 'Full Stack Developer (include IOS Apps)';
+    title.textContent = 'Developer';
     title.style.cssText = `
       font-size: 16pt;
       font-weight: 600;
@@ -350,7 +350,7 @@ const EnhancedPDFButton = () => {
     companyHeader.appendChild(duration);
 
     const position = document.createElement('h5');
-    position.textContent = 'Information System Manager';
+    position.textContent = 'Developer';
     position.style.cssText = `
       font-size: 11pt;
       font-weight: 600;

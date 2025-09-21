@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const Index = () => {
   const currentExperience = {
     company: "Epoch-Tech Computer System Co., Ltd.",
-    position: "Information System Manager",
+    position: "Developer",
     duration: "2009 – Present",
     location: "Hong Kong",
     responsibilities: [
