@@ -1034,7 +1034,7 @@ const photoItems: PhotoItem[] = [
   {
     id: "handicraft-4",
     title: "Illuminated Rabbit Lantern - Festival View",
-    description: "Festive rabbit lantern with Chinese characters '平喜' (Peace and Joy), suspended from yellow stick with decorative elements",
+    description: "Festive rabbit lantern with Chinese characters '平安喜樂' (Peace and Joy), suspended from yellow stick with decorative elements",
     category: "Handicrafts",
     imageUrl: "/portfolio/handicrafts/rabbit-lantern-2.webp",
     date: "2024",
