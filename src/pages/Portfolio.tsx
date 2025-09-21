@@ -983,6 +983,68 @@ const photoItems: PhotoItem[] = [
       dimensions: "35cm × 30cm × 25cm",
       completionTime: "4 weeks"
     }
+  },
+  
+  // Handicrafts (手工藝) - Traditional Craftsmanship
+  {
+    id: "handicraft-1",
+    title: "Traditional Lantern - Main View",
+    description: "Exquisite traditional East Asian lantern with intricate wooden framework, decorative panels, and elegant hanging ornaments",
+    category: "Handicrafts",
+    imageUrl: "/portfolio/handicrafts/traditional-lantern-1.webp",
+    date: "2024",
+    details: {
+      scale: "1:1",
+      materials: ["Wood strips", "Decorative panels", "Gold chains", "Pearl beads", "Resin ornaments"],
+      techniques: ["Wood framework construction", "Panel decoration", "Chain assembly", "Ornament crafting"],
+      dimensions: "25cm × 15cm × 15cm",
+      completionTime: "3 days"
+    }
+  },
+  {
+    id: "handicraft-2",
+    title: "Traditional Lantern - Detail View",
+    description: "Close-up view showcasing the delicate craftsmanship and intricate details of the traditional lantern structure",
+    category: "Handicrafts",
+    imageUrl: "/portfolio/handicrafts/traditional-lantern-2.webp",
+    date: "2024",
+    details: {
+      scale: "1:1",
+      materials: ["Wood strips", "Decorative panels", "Gold chains", "Pearl beads", "Resin ornaments"],
+      techniques: ["Detail crafting", "Precision assembly", "Ornament placement", "Chain work"],
+      dimensions: "20cm × 12cm × 12cm",
+      completionTime: "3 days"
+    }
+  },
+  {
+    id: "handicraft-3",
+    title: "Illuminated Rabbit Lantern - Main View",
+    description: "Charming white rabbit-shaped lantern with warm yellow illumination, featuring red accents and traditional Chinese characters",
+    category: "Handicrafts",
+    imageUrl: "/portfolio/handicrafts/rabbit-lantern-1.webp",
+    date: "2024",
+    details: {
+      scale: "1:1",
+      materials: ["White fluffy fabric", "LED lighting", "Red string", "Pearl beads", "Red tassel"],
+      techniques: ["Lantern construction", "LED integration", "Fabric work", "Decorative assembly"],
+      dimensions: "15cm × 10cm × 8cm",
+      completionTime: "3 hours"
+    }
+  },
+  {
+    id: "handicraft-4",
+    title: "Illuminated Rabbit Lantern - Festival View",
+    description: "Festive rabbit lantern with Chinese characters '平喜' (Peace and Joy), suspended from yellow stick with decorative elements",
+    category: "Handicrafts",
+    imageUrl: "/portfolio/handicrafts/rabbit-lantern-2.webp",
+    date: "2024",
+    details: {
+      scale: "1:1",
+      materials: ["White fluffy fabric", "LED lighting", "Yellow stick", "Red string", "Decorative beads"],
+      techniques: ["Festival lantern making", "Character application", "Suspension design", "Traditional crafting"],
+      dimensions: "18cm × 12cm × 10cm",
+      completionTime: "3 hours"
+    }
   }
 ];
 
@@ -1089,7 +1151,7 @@ const Portfolio = () => {
           </div>
           
           {/* Category Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             <div className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
@@ -1114,6 +1176,15 @@ const Portfolio = () => {
                 <div>
                   <h3 className="font-semibold text-gray-900">Resin Crafts</h3>
                   <p className="text-sm text-gray-600">{categoryStats["Resin Crafts"] || 0} works • 1:1 scale</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Handicrafts</h3>
+                  <p className="text-sm text-gray-600">{categoryStats["Handicrafts"] || 0} works • Traditional craftsmanship</p>
                 </div>
               </div>
             </div>
