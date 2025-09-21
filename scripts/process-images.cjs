@@ -84,7 +84,8 @@ function processImage(inputPath, outputPath, options = {}) {
 const imageCategories = [
   'miniature-dioramas',
   'model-painting', 
-  'resin-crafts'
+  'resin-crafts',
+  'handicrafts'
 ];
 
 let totalInputSize = 0;
