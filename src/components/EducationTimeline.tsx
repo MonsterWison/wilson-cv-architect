@@ -4,7 +4,7 @@ import { GraduationCap, Award } from "lucide-react";
 const EducationTimeline = () => {
   const education = [
     {
-      title: "Generative AI",
+      title: "Certificate of Professional Program - Advanced Generative AI: End to end development with LLMs",
       institution: "Venturenix LAB",
       year: "29/7/2025",
       type: "Certificate"

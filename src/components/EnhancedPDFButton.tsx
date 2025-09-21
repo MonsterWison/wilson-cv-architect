@@ -461,7 +461,7 @@ const EnhancedPDFButton = () => {
     `;
 
     const educationItems = [
-      { title: 'Generative AI', institution: 'Venturenix LAB', year: '29/7/2025' },
+      { title: 'Certificate of Professional Program - Advanced Generative AI: End to end development with LLMs', institution: 'Venturenix LAB', year: '29/7/2025' },
       { title: 'Certificate in Python Programming (Part-time)', institution: 'Hong Kong College of Technology (HKCT)', year: '30/7/2025', additionalInfo: 'Employees Retraining Board' },
       { title: 'Diploma in Practical IT Skill', institution: 'Unisoft Education Centre', year: '2000' },
       { title: 'Vocational English Certificate', institution: 'HK PolyU', year: '1996' },

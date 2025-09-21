@@ -938,53 +938,6 @@ const photoItems: PhotoItem[] = [
     }
   },
   
-  // Additional Miniature Dioramas - Walnut Bedroom Series
-  {
-    id: "59",
-    title: "Walnut Bedroom - Main View",
-    description: "Elegant bedroom with walnut furniture and warm lighting",
-    category: "Miniature Dioramas",
-    imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-1.webp",
-    date: "2024",
-    details: {
-      scale: "1:100",
-      materials: ["Basswood", "Walnut veneer", "Fabric", "Acrylic paint"],
-      techniques: ["Bedroom design", "Furniture making", "Fabric work", "Warm lighting"],
-      dimensions: "25cm × 20cm × 15cm",
-      completionTime: "3 weeks"
-    }
-  },
-  {
-    id: "60",
-    title: "Walnut Bedroom - Detail View",
-    description: "Close-up of the elegant walnut furniture and bedding details",
-    category: "Miniature Dioramas",
-    imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-2.webp",
-    date: "2024",
-    details: {
-      scale: "1:100",
-      materials: ["Basswood", "Walnut veneer", "Fabric", "Acrylic paint"],
-      techniques: ["Furniture detail", "Wood finishing", "Fabric detail", "Fine painting"],
-      dimensions: "15cm × 12cm × 10cm",
-      completionTime: "2 weeks"
-    }
-  },
-  {
-    id: "61",
-    title: "Walnut Bedroom - Corner View",
-    description: "Intimate corner view showing the cozy atmosphere and fine craftsmanship",
-    category: "Miniature Dioramas",
-    imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-3.webp",
-    date: "2024",
-    details: {
-      scale: "1:100",
-      materials: ["Basswood", "Walnut veneer", "Fabric", "Acrylic paint"],
-      techniques: ["Corner design", "Wood work", "Fabric detail", "Atmosphere creation"],
-      dimensions: "12cm × 10cm × 8cm",
-      completionTime: "1 week"
-    }
-  },
-  
   // Additional Waterfront Workshop Series
   {
     id: "62",
