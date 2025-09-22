@@ -14,7 +14,7 @@ const CVHeader = () => {
 
   // 處理網站點擊
   const handleWebsiteClick = () => {
-    window.open('https://wilson-cv-architect.vercel.app', '_blank');
+    window.open('https://www.monsterwilson.online', '_blank');
   };
 
   return (
@@ -62,7 +62,7 @@ const CVHeader = () => {
               title="Click to visit website"
             >
               <Globe className="w-4 h-4" />
-              <span>wilson-cv-architect.vercel.app</span>
+              <span>www.monsterwilson.online</span>
             </button>
             
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">

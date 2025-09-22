@@ -149,7 +149,7 @@ const EnhancedPDFButton = () => {
     const contactItems = [
       { icon: '📞', text: '+852 9226 9702' },
       { icon: '📧', text: 'wilson_23@hotmail.com' },
-      { icon: '🌐', text: 'wilson-cv-architect.vercel.app' },
+      { icon: '🌐', text: 'www.monsterwilson.online' },
       { icon: '📍', text: 'Hong Kong' }
     ];
 
@@ -786,7 +786,7 @@ const EnhancedPDFButton = () => {
         title: 'AI/ML Development',
         description: 'Custom Large Language Model implementation demonstrating deep understanding of AI architecture and machine learning principles.',
         skills: 'Custom LLM, Neural Networks, NLP, Python',
-        link: 'https://homework7.monsterwilson.online/'
+        link: 'https://www.monsterwilson.online/'
       },
       {
         title: 'Scale Miniature Dioramas',

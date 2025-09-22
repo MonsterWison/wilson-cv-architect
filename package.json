@@ -7,7 +7,7 @@
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
   },
-  "homepage": "https://monsterwison.github.io/wilson-cv-architect",
+  "homepage": "https://www.monsterwilson.online",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

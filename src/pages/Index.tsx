@@ -134,7 +134,7 @@ const Index = () => {
                     <span className="bg-white px-2 py-1 rounded-full shadow-sm text-xs">Python</span>
                   </div>
                 </div>
-                <a href="https://homework7.monsterwilson.online/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.monsterwilson.online/" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-purple-500 hover:bg-purple-600 text-white">
                     View LLM Project
                     <ArrowRight className="ml-2 h-4 w-4" />
