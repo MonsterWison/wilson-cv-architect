@@ -150,51 +150,6 @@ const photoItems: PhotoItem[] = [
     }
   },
   {
-    id: "7",
-    title: "Magic School - HELEVORN SCHOOL OF MAGIC",
-    description: "Dark-themed building with mystical signage, featuring glowing windows and magical atmosphere",
-    category: "Miniature Dioramas",
-    imageUrl: "/portfolio/miniature-dioramas/school-1.webp",
-    date: "2025",
-    details: {
-      scale: "1:100",
-      materials: ["Basswood", "LED lights", "Acrylic paint", "Decals"],
-      techniques: ["Gothic architecture", "Lighting design", "Weathering", "Signage making"],
-      dimensions: "40cm × 30cm × 35cm",
-      completionTime: "5 weeks"
-    }
-  },
-  {
-    id: "8",
-    title: "Magic School - Exterior Detail",
-    description: "Detailed exterior view showing the architectural elements and mystical design of the magic school",
-    category: "Miniature Dioramas",
-    imageUrl: "/portfolio/miniature-dioramas/school-2.webp",
-    date: "2025",
-    details: {
-      scale: "1:100",
-      materials: ["Basswood", "Stone texture", "Acrylic paint", "Weathering powder"],
-      techniques: ["Stone texturing", "Gothic detailing", "Weathering", "Architectural modeling"],
-      dimensions: "25cm × 20cm × 15cm",
-      completionTime: "2 weeks"
-    }
-  },
-  {
-    id: "9",
-    title: "Magic School - Interior Scene",
-    description: "Interior view of the magic school showing mystical elements and magical atmosphere",
-    category: "Miniature Dioramas",
-    imageUrl: "/portfolio/miniature-dioramas/school-3.webp",
-    date: "2025",
-    details: {
-      scale: "1:100",
-      materials: ["Basswood", "LED lights", "Fabric", "Acrylic paint"],
-      techniques: ["Interior design", "Lighting effects", "Furniture making", "Atmospheric effects"],
-      dimensions: "20cm × 15cm × 12cm",
-      completionTime: "3 weeks"
-    }
-  },
-  {
     id: "10",
     title: "Walnut Shell Miniature - Cozy Room",
     description: "Exquisite miniature room inside a walnut shell with golden hinges, featuring cozy interior with lamp and furniture",
