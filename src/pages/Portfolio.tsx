@@ -48,7 +48,7 @@ const photoItems: PhotoItem[] = [
     description: "Self-built Large Language Model implementation demonstrating deep understanding of AI architecture, natural language processing, and machine learning principles",
     category: "AI/ML Development",
     imageUrl: "/portfolio/ai-ml/custom-llm.svg",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "Full Stack AI",
       materials: ["Python", "TensorFlow/PyTorch", "NLP Libraries", "Cloud Infrastructure"],
@@ -65,7 +65,7 @@ const photoItems: PhotoItem[] = [
     description: "Multi-level miniature dwelling with moss-covered thatched roofs, featuring warm interior lighting and intricate architectural details",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/fantasy-hobbit-house-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Moss", "LED lights", "Acrylic paint"],
@@ -80,7 +80,7 @@ const photoItems: PhotoItem[] = [
     description: "Detailed interior scenes showing cozy living spaces, bookshelves, and magical atmosphere within the hobbit house",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/fantasy-hobbit-house-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Fabric", "Miniature furniture", "Acrylic paint"],
@@ -95,7 +95,7 @@ const photoItems: PhotoItem[] = [
     description: "Close-up view showcasing the intricate craftsmanship and architectural elements of the miniature dwelling",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/fantasy-hobbit-house-3.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Stone texture", "Moss", "Acrylic paint"],
@@ -110,7 +110,7 @@ const photoItems: PhotoItem[] = [
     description: "Rustic wooden platform over blue pond with detailed furniture, water wheel, and natural landscaping elements",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Resin water", "Moss", "Acrylic paint"],
@@ -125,7 +125,7 @@ const photoItems: PhotoItem[] = [
     description: "Close-up of the workshop area showing fine craftsmanship and authentic rustic details",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Metal wire", "Fabric", "Acrylic paint"],
@@ -140,7 +140,7 @@ const photoItems: PhotoItem[] = [
     description: "Natural landscape elements and water features surrounding the workshop structure",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-3.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Resin", "Moss", "Rocks", "Acrylic paint"],
@@ -155,7 +155,7 @@ const photoItems: PhotoItem[] = [
     description: "Dark-themed building with mystical signage, featuring glowing windows and magical atmosphere",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "LED lights", "Acrylic paint", "Decals"],
@@ -170,7 +170,7 @@ const photoItems: PhotoItem[] = [
     description: "Detailed exterior view showing the architectural elements and mystical design of the magic school",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Stone texture", "Acrylic paint", "Weathering powder"],
@@ -185,7 +185,7 @@ const photoItems: PhotoItem[] = [
     description: "Interior view of the magic school showing mystical elements and magical atmosphere",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-3.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "LED lights", "Fabric", "Acrylic paint"],
@@ -200,7 +200,7 @@ const photoItems: PhotoItem[] = [
     description: "Exquisite miniature room inside a walnut shell with golden hinges, featuring cozy interior with lamp and furniture",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:200",
       materials: ["Walnut shell", "Basswood", "Metal hinges", "LED lights"],
@@ -215,7 +215,7 @@ const photoItems: PhotoItem[] = [
     description: "Detailed view of the miniature bedroom showing the intricate details and cozy atmosphere",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:200",
       materials: ["Walnut shell", "Fabric", "Basswood", "Acrylic paint"],
@@ -230,7 +230,7 @@ const photoItems: PhotoItem[] = [
     description: "Close-up view showcasing the incredible detail and craftsmanship of the walnut shell miniature",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/walnut-bedroom-3.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:200",
       materials: ["Walnut shell", "Basswood", "Acrylic paint", "Decorative elements"],
@@ -247,7 +247,7 @@ const photoItems: PhotoItem[] = [
     description: "Starting phase of Optimus Prime model painting with base coat and primer application",
     category: "Model Painting",
     imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:35",
       materials: ["Acrylic paint", "Primer", "Fine detail brushes", "Optimus Prime model"],
@@ -262,7 +262,7 @@ const photoItems: PhotoItem[] = [
     description: "Application of primary colors and base painting on Optimus Prime model",
     category: "Model Painting",
     imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:35",
       materials: ["Acrylic paint", "Primary colors", "Detail brushes", "Optimus Prime model"],
@@ -277,7 +277,7 @@ const photoItems: PhotoItem[] = [
     description: "Detailed painting work on Optimus Prime model with precision brush techniques",
     category: "Model Painting",
     imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-3.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:35",
       materials: ["Acrylic paint", "Fine detail brushes", "Metallic paint", "Optimus Prime model"],
@@ -292,7 +292,7 @@ const photoItems: PhotoItem[] = [
     description: "Application of metallic effects and weathering on Optimus Prime model",
     category: "Model Painting",
     imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-4.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:35",
       materials: ["Metallic paint", "Weathering powder", "Detail brushes", "Optimus Prime model"],
@@ -307,7 +307,7 @@ const photoItems: PhotoItem[] = [
     description: "Advanced detail work including panel lines and mechanical features",
     category: "Model Painting",
     imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-5.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:35",
       materials: ["Acrylic paint", "Panel line wash", "Fine detail brushes", "Optimus Prime model"],
@@ -322,7 +322,7 @@ const photoItems: PhotoItem[] = [
     description: "Weathering and aging effects applied to Optimus Prime model",
     category: "Model Painting",
     imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-6.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:35",
       materials: ["Weathering powder", "Wash", "Detail brushes", "Optimus Prime model"],
@@ -337,7 +337,7 @@ const photoItems: PhotoItem[] = [
     description: "Final detail work and finishing touches on Optimus Prime model",
     category: "Model Painting",
     imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-7.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:35",
       materials: ["Acrylic paint", "Final detail brushes", "Highlight paint", "Optimus Prime model"],
@@ -352,7 +352,7 @@ const photoItems: PhotoItem[] = [
     description: "Complete view of finished Optimus Prime model with all painting techniques applied",
     category: "Model Painting",
     imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-8.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:35",
       materials: ["Complete paint set", "All detail brushes", "Finishing materials", "Optimus Prime model"],
@@ -367,7 +367,7 @@ const photoItems: PhotoItem[] = [
     description: "Showcase presentation of the completed Optimus Prime model painting masterpiece",
     category: "Model Painting",
     imageUrl: "/portfolio/model-painting/Optimus-Prime-model-painting-9.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:35",
       materials: ["Complete paint set", "All detail brushes", "Showcase materials", "Optimus Prime model"],
@@ -384,7 +384,7 @@ const photoItems: PhotoItem[] = [
     description: "Elegant crystal flower hairpin with delicate resin petals and shimmering effects",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Crystal-Flower-Hairpin.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Crystal powder", "Flower mold", "Hairpin base"],
@@ -399,7 +399,7 @@ const photoItems: PhotoItem[] = [
     description: "Glowing cat claw keychain with LED lighting and resin encapsulation",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Light-up-cat-claw-keychain-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "LED lights", "Cat claw mold", "Keychain hardware"],
@@ -414,7 +414,7 @@ const photoItems: PhotoItem[] = [
     description: "Alternative design of light-up cat claw keychain with different color scheme",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Light-up-cat-claw-keychain-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "LED lights", "Cat claw mold", "Keychain hardware"],
@@ -429,7 +429,7 @@ const photoItems: PhotoItem[] = [
     description: "Miniature crystal decoration with intricate details and sparkling effects",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Miniature-crystal-decoration.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Crystal powder", "Miniature mold", "Decorative base"],
@@ -444,7 +444,7 @@ const photoItems: PhotoItem[] = [
     description: "Whimsical cabbage-shaped keychain with realistic vegetable texture",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Cabbage-keychain.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Green pigments", "Cabbage mold", "Keychain hardware"],
@@ -459,7 +459,7 @@ const photoItems: PhotoItem[] = [
     description: "Beautiful crystal butterfly hairpin with delicate wings and shimmering effects",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Crystal-Butterfly-Hairpin.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Crystal powder", "Butterfly mold", "Hairpin base"],
@@ -474,7 +474,7 @@ const photoItems: PhotoItem[] = [
     description: "Decorative gum gourmet pot with resin coating and artistic design",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Gum-Gourmet-Pot.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Pot base", "Decorative elements", "Food-safe coating"],
@@ -489,7 +489,7 @@ const photoItems: PhotoItem[] = [
     description: "Interactive quicksand cat paw keychain with LED lighting and flowing effects",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Quicksand-Cat-Paw-Keychain.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "LED lights", "Quicksand effect", "Cat paw mold"],
@@ -504,7 +504,7 @@ const photoItems: PhotoItem[] = [
     description: "Glowing bottle keychain with LED lighting and resin encapsulation",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Bottle-keychain-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "LED lights", "Bottle mold", "Keychain hardware"],
@@ -519,7 +519,7 @@ const photoItems: PhotoItem[] = [
     description: "Alternative luminous bottle keychain with different lighting pattern",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Bottle-keychain-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "LED lights", "Bottle mold", "Keychain hardware"],
@@ -534,7 +534,7 @@ const photoItems: PhotoItem[] = [
     description: "Glowing cat keychain with LED lighting and cute feline design",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Cat-keychain-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "LED lights", "Cat mold", "Keychain hardware"],
@@ -549,7 +549,7 @@ const photoItems: PhotoItem[] = [
     description: "Alternative luminous cat keychain with different cat pose",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Cat-keychain-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "LED lights", "Cat mold", "Keychain hardware"],
@@ -564,7 +564,7 @@ const photoItems: PhotoItem[] = [
     description: "Charming miniature crystal suitcase with detailed luggage design",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Miniature-crystal-suitcase.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Crystal powder", "Suitcase mold", "Miniature details"],
@@ -579,7 +579,7 @@ const photoItems: PhotoItem[] = [
     description: "Beautiful shell decorations with natural patterns and resin coating",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Shells-for-decoration-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Natural shells", "Epoxy resin", "Decorative base", "Natural preservation"],
@@ -594,7 +594,7 @@ const photoItems: PhotoItem[] = [
     description: "Second set of shell decorations with different arrangements and patterns",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Shells-for-decoration-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Natural shells", "Epoxy resin", "Decorative base", "Natural preservation"],
@@ -609,7 +609,7 @@ const photoItems: PhotoItem[] = [
     description: "Third set of shell decorations with unique arrangements and natural beauty",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Shells-for-decoration-3.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Natural shells", "Epoxy resin", "Decorative base", "Natural preservation"],
@@ -624,7 +624,7 @@ const photoItems: PhotoItem[] = [
     description: "Elegant teardrop-shaped keychain with crystal-like effects and smooth finish",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/Teardrop-Keychain.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Crystal powder", "Teardrop mold", "Keychain hardware"],
@@ -639,7 +639,7 @@ const photoItems: PhotoItem[] = [
     description: "Beautiful butterfly hairpin with delicate wings and artistic design",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/butterfly-hairpin-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Butterfly mold", "Hairpin base", "Decorative elements"],
@@ -654,7 +654,7 @@ const photoItems: PhotoItem[] = [
     description: "Alternative butterfly hairpin design with different wing patterns",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/butterfly-hairpin-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Butterfly mold", "Hairpin base", "Decorative elements"],
@@ -669,7 +669,7 @@ const photoItems: PhotoItem[] = [
     description: "Elegant crystal comb with resin coating and decorative elements",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/crystal-comb.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Crystal powder", "Comb base", "Decorative elements"],
@@ -684,7 +684,7 @@ const photoItems: PhotoItem[] = [
     description: "Delicate flower hairpin with realistic petals and natural colors",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/flower-hairpin.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Flower mold", "Natural pigments", "Hairpin base"],
@@ -699,7 +699,7 @@ const photoItems: PhotoItem[] = [
     description: "Cute Labubu character charm with resin encapsulation and detailed design",
     category: "Resin Crafts",
     imageUrl: "/portfolio/resin-crafts/labubu-charm.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Epoxy resin", "Labubu figure", "Charm hardware", "Decorative elements"],
@@ -716,7 +716,7 @@ const photoItems: PhotoItem[] = [
     description: "Magical academy building with mystical architecture and enchanting atmosphere",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Stone texture", "LED lights", "Acrylic paint"],
@@ -731,7 +731,7 @@ const photoItems: PhotoItem[] = [
     description: "Majestic tower of the magical academy with intricate stonework and mystical elements",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Stone texture", "Metal wire", "Acrylic paint"],
@@ -746,7 +746,7 @@ const photoItems: PhotoItem[] = [
     description: "Peaceful courtyard with magical gardens and architectural details",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-3.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Moss", "Stone texture", "Acrylic paint"],
@@ -761,7 +761,7 @@ const photoItems: PhotoItem[] = [
     description: "Scholarly library section with bookshelves and magical study areas",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-4.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Fabric", "Miniature books", "Acrylic paint"],
@@ -776,7 +776,7 @@ const photoItems: PhotoItem[] = [
     description: "Grand entrance with magical portals and mystical decorations",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-5.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Crystal elements", "LED lights", "Acrylic paint"],
@@ -791,7 +791,7 @@ const photoItems: PhotoItem[] = [
     description: "Student living quarters with cozy rooms and magical atmosphere",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-6.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Fabric", "Miniature furniture", "Acrylic paint"],
@@ -806,7 +806,7 @@ const photoItems: PhotoItem[] = [
     description: "Intimate study space with magical books and learning materials",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-7.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Miniature books", "Fabric", "Acrylic paint"],
@@ -821,7 +821,7 @@ const photoItems: PhotoItem[] = [
     description: "Complete exterior view of the magical academy with all architectural elements",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-8.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Stone texture", "Moss", "Acrylic paint"],
@@ -836,7 +836,7 @@ const photoItems: PhotoItem[] = [
     description: "Bird's eye view showing the complete layout and magical gardens",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-9.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Moss", "Stone texture", "Acrylic paint"],
@@ -851,7 +851,7 @@ const photoItems: PhotoItem[] = [
     description: "Close-up of architectural details and magical elements",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/school-10.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Stone texture", "Metal wire", "Acrylic paint"],
@@ -868,7 +868,7 @@ const photoItems: PhotoItem[] = [
     description: "Enchanted study room with mystical books and magical artifacts",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/agical-study-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Miniature books", "Crystal elements", "Acrylic paint"],
@@ -883,7 +883,7 @@ const photoItems: PhotoItem[] = [
     description: "Cozy library nook with ancient tomes and magical scrolls",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/agical-study-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Fabric", "Miniature books", "Acrylic paint"],
@@ -898,7 +898,7 @@ const photoItems: PhotoItem[] = [
     description: "Magical workbench with potions, tools, and mystical equipment",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/agical-study-3.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Metal wire", "Miniature tools", "Acrylic paint"],
@@ -913,7 +913,7 @@ const photoItems: PhotoItem[] = [
     description: "Organized shelf with colorful potions and magical ingredients",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/agical-study-4.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Glass beads", "Colored resin", "Acrylic paint"],
@@ -928,7 +928,7 @@ const photoItems: PhotoItem[] = [
     description: "Collection of magical artifacts and enchanted objects",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/agical-study-5.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Metal wire", "Crystal elements", "Acrylic paint"],
@@ -945,7 +945,7 @@ const photoItems: PhotoItem[] = [
     description: "Detailed view of the workshop area with tools and equipment",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-4.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Metal wire", "Miniature tools", "Acrylic paint"],
@@ -960,7 +960,7 @@ const photoItems: PhotoItem[] = [
     description: "Beautiful water feature with flowing effects and natural elements",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-5.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Resin water", "Moss", "Acrylic paint"],
@@ -975,7 +975,7 @@ const photoItems: PhotoItem[] = [
     description: "Complete waterfront scene with all elements harmoniously combined",
     category: "Miniature Dioramas",
     imageUrl: "/portfolio/miniature-dioramas/waterfront-workshop-6.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:100",
       materials: ["Basswood", "Resin water", "Moss", "Acrylic paint"],
@@ -992,7 +992,7 @@ const photoItems: PhotoItem[] = [
     description: "Exquisite traditional East Asian lantern with intricate wooden framework, decorative panels, and elegant hanging ornaments",
     category: "Handicrafts",
     imageUrl: "/portfolio/handicrafts/traditional-lantern-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Wood strips", "Decorative panels", "Gold chains", "Pearl beads", "Resin ornaments"],
@@ -1007,7 +1007,7 @@ const photoItems: PhotoItem[] = [
     description: "Close-up view showcasing the delicate craftsmanship and intricate details of the traditional lantern structure",
     category: "Handicrafts",
     imageUrl: "/portfolio/handicrafts/traditional-lantern-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["Wood strips", "Decorative panels", "Gold chains", "Pearl beads", "Resin ornaments"],
@@ -1022,7 +1022,7 @@ const photoItems: PhotoItem[] = [
     description: "Charming white rabbit-shaped lantern with warm yellow illumination, featuring red accents and traditional Chinese characters",
     category: "Handicrafts",
     imageUrl: "/portfolio/handicrafts/rabbit-lantern-1.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["White fluffy fabric", "LED lighting", "Red string", "Pearl beads", "Red tassel"],
@@ -1037,7 +1037,7 @@ const photoItems: PhotoItem[] = [
     description: "Festive rabbit lantern with Chinese characters '平安喜樂' (Peace and Joy), suspended from yellow stick with decorative elements",
     category: "Handicrafts",
     imageUrl: "/portfolio/handicrafts/rabbit-lantern-2.webp",
-    date: "2024",
+    date: "2025",
     details: {
       scale: "1:1",
       materials: ["White fluffy fabric", "LED lighting", "Yellow stick", "Red string", "Decorative beads"],
