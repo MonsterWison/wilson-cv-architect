@@ -393,8 +393,6 @@ const EnhancedPDFButton = () => {
       padding: 8px;
       background: #f0f9ff;
       border-left: 3px solid #0ea5e9;
-      page-break-before: always;
-      break-before: page;
     `;
 
     const achievementsTitle = document.createElement('h6');
@@ -425,6 +423,14 @@ const EnhancedPDFButton = () => {
 
     section.appendChild(title);
     section.appendChild(currentExp);
+
+    // 添加分页，确保Professional Experience完整在一页
+    const pageBreak = document.createElement('div');
+    pageBreak.style.cssText = `
+      page-break-after: always;
+      break-after: page;
+    `;
+    section.appendChild(pageBreak);
 
     return section;
   };
@@ -666,6 +672,8 @@ const EnhancedPDFButton = () => {
     const section = document.createElement('div');
     section.style.cssText = `
       margin-bottom: 20px;
+      page-break-before: always;
+      break-before: page;
     `;
 
     const title = document.createElement('h3');
