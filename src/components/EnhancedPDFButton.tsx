@@ -299,7 +299,7 @@ const EnhancedPDFButton = () => {
     section.appendChild(title);
     section.appendChild(skillsGrid);
 
-    // 在Core Skills后添加分页
+    // 在Core Skills后添加分页，让Professional Experience在新页面开始
     const pageBreak = document.createElement('div');
     pageBreak.style.cssText = `
       page-break-after: always;
@@ -314,8 +314,6 @@ const EnhancedPDFButton = () => {
     const section = document.createElement('div');
     section.style.cssText = `
       margin-bottom: 20px;
-      page-break-before: always;
-      break-before: page;
     `;
 
     const title = document.createElement('h3');
@@ -434,7 +432,7 @@ const EnhancedPDFButton = () => {
     section.appendChild(title);
     section.appendChild(currentExp);
 
-    // 添加分页，确保Professional Experience完整在一页
+    // 在Professional Experience后添加分页，让Prior Technical Roles在新页面开始
     const pageBreak = document.createElement('div');
     pageBreak.style.cssText = `
       page-break-after: always;
@@ -682,8 +680,6 @@ const EnhancedPDFButton = () => {
     const section = document.createElement('div');
     section.style.cssText = `
       margin-bottom: 20px;
-      page-break-before: always;
-      break-before: page;
     `;
 
     const title = document.createElement('h3');
