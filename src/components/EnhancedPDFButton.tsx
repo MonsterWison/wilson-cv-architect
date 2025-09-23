@@ -238,26 +238,30 @@ const EnhancedPDFButton = () => {
     const skillsGrid = document.createElement('div');
     skillsGrid.style.cssText = `
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 15px;
     `;
 
     const skillCategories = [
       {
-        category: 'Technical Skills',
-        skills: 'ERP Development, Database Management, System Integration, API Development, Cloud Infrastructure, Security Implementation'
+        category: 'Systems & Cloud',
+        skills: 'Cloud ERP Migration, Firewall Configuration, Server Maintenance (20+ units), Docker, AWS, CloudFlare, Vercel, Zeabur, Alibaba Cloud, Tencent Cloud, Baidu Smart Cloud, GitHub'
       },
       {
-        category: 'Programming & Tools',
-        skills: 'SQL, JavaScript, Python, HTML/CSS, Git, Docker, AWS, Azure, Linux Administration'
+        category: 'Development & APIs',
+        skills: 'Python, Generative AI, MS SQL, N8N, Langfuse, Cursor, XCode, DeepSeek, OpenRouter AI, ERP Module Customization, API Gateway, JWT Token, RESTful APIs, GraphQL, Microservices'
       },
       {
-        category: 'Business Skills',
-        skills: 'Project Management, Client Relations, Technical Documentation, Problem Solving, Team Leadership'
+        category: 'AI/ML Development',
+        skills: 'Large Language Models, Neural Networks, Natural Language Processing, TensorFlow/PyTorch, Model Training, AI Architecture Design'
       },
       {
-        category: 'Domain Expertise',
-        skills: 'Inventory Management, Accounting Systems, POS Integration, Payment Processing, Workflow Automation'
+        category: 'Mobile Development',
+        skills: 'SwiftUI, iOS Development, Apple HIG, MVVM Architecture, AI Integration, App Store Publishing'
+      },
+      {
+        category: 'Hardware & IoT',
+        skills: 'IoT Device Installation, Access Control Systems, Facility Modifications'
       }
     ];
 

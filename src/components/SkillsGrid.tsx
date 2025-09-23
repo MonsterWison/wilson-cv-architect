@@ -11,7 +11,15 @@ const SkillsGrid = () => {
         "Cloud ERP Migration",
         "Firewall Configuration", 
         "Server Maintenance (20+ units)",
-        "Docker"
+        "Docker",
+        "AWS",
+        "CloudFlare",
+        "Vercel",
+        "Zeabur",
+        "Alibaba Cloud",
+        "Tencent Cloud",
+        "Baidu Smart Cloud",
+        "GitHub"
       ]
     },
     {
@@ -27,7 +35,12 @@ const SkillsGrid = () => {
         "XCode",
         "DeepSeek",
         "OpenRouter AI",
-        "ERP Module Customization"
+        "ERP Module Customization",
+        "API Gateway",
+        "JWT Token",
+        "RESTful APIs",
+        "GraphQL",
+        "Microservices"
       ]
     },
     {
