@@ -299,6 +299,14 @@ const EnhancedPDFButton = () => {
     section.appendChild(title);
     section.appendChild(skillsGrid);
 
+    // 在Core Skills后添加分页
+    const pageBreak = document.createElement('div');
+    pageBreak.style.cssText = `
+      page-break-after: always;
+      break-after: page;
+    `;
+    section.appendChild(pageBreak);
+
     return section;
   };
 
@@ -306,6 +314,8 @@ const EnhancedPDFButton = () => {
     const section = document.createElement('div');
     section.style.cssText = `
       margin-bottom: 20px;
+      page-break-before: always;
+      break-before: page;
     `;
 
     const title = document.createElement('h3');
