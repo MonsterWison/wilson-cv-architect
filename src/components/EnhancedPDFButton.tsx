@@ -249,7 +249,7 @@ const EnhancedPDFButton = () => {
       },
       {
         category: 'Development & APIs',
-        skills: 'Python, Generative AI, MS SQL, N8N, Langfuse, Cursor, XCode, DeepSeek, OpenRouter AI, ERP Module Customization, API Gateway, JWT Token, RESTful APIs, GraphQL, Microservices'
+        skills: 'Python, Generative AI, MS SQL, N8N, Langfuse, Cursor, XCode, DeepSeek, OpenRouter AI, ERP Module Customization, API Gateway, JWT Security, RESTful APIs, GraphQL, Microservices'
       },
       {
         category: 'AI/ML Development',
