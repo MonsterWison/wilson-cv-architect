@@ -245,7 +245,7 @@ const EnhancedPDFButton = () => {
     const skillCategories = [
       {
         category: 'Systems & Cloud',
-        skills: 'Cloud ERP Migration, Firewall Configuration, Server Maintenance (20+ units), Docker, AWS, CloudFlare, Vercel, Zeabur, Alibaba Cloud, Tencent Cloud, Baidu Smart Cloud, GitHub'
+        skills: 'Cloud ERP Migration, Firewall Configuration, Server Maintenance (20+ units), Docker, AWS, CloudFlare, Vercel, Zeabur, Alibaba Cloud, Tencent Cloud, Baidu Smart Cloud, GitHub, Firebase'
       },
       {
         category: 'Development & APIs',
@@ -431,14 +431,6 @@ const EnhancedPDFButton = () => {
 
     section.appendChild(title);
     section.appendChild(currentExp);
-
-    // 在Professional Experience后添加分页，让Prior Technical Roles在新页面开始
-    const pageBreak = document.createElement('div');
-    pageBreak.style.cssText = `
-      page-break-after: always;
-      break-after: page;
-    `;
-    section.appendChild(pageBreak);
 
     return section;
   };
@@ -765,6 +757,14 @@ const EnhancedPDFButton = () => {
 
     section.appendChild(title);
     section.appendChild(rolesGrid);
+
+    // 在Prior Technical Roles后添加分页，让Education独立一页
+    const pageBreak = document.createElement('div');
+    pageBreak.style.cssText = `
+      page-break-after: always;
+      break-after: page;
+    `;
+    section.appendChild(pageBreak);
 
     return section;
   };

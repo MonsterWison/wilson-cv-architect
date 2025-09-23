@@ -19,7 +19,8 @@ const SkillsGrid = () => {
         "Alibaba Cloud",
         "Tencent Cloud",
         "Baidu Smart Cloud",
-        "GitHub"
+        "GitHub",
+        "Firebase"
       ]
     },
     {
