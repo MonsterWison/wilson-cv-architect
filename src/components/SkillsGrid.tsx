@@ -38,7 +38,7 @@ const SkillsGrid = () => {
         "OpenRouter AI",
         "ERP Module Customization",
         "API Gateway",
-        "JWT Token",
+        "JWT Security",
         "RESTful APIs",
         "GraphQL",
         "Microservices"
