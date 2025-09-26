@@ -804,7 +804,7 @@ const EnhancedPDFButton = () => {
         title: 'AI/ML Development',
         description: 'Custom Large Language Model implementation demonstrating deep understanding of AI architecture and machine learning principles.',
         skills: 'Custom LLM, Neural Networks, NLP, Python',
-        link: 'https://www.monsterwilson.online/'
+        link: 'https://homework7.monsterwilson.online/'
       },
       {
         title: 'Scale Miniature Dioramas',
